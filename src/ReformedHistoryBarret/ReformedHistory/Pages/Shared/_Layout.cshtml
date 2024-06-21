@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>@ViewData["Title"] - ReformedHistory</title>
+    <link rel="stylesheet" href="~/css/site.css" />
+    <script src="https://unpkg.com/htmx.org@1.8.4"></script>
+</head>
+<body>
+    <header>
+        <nav class="bg-gray-800 p-4">
+            <div class="container mx-auto">
+                <a href="/" class="text-white">Home</a>
+                <a href="/documents" class="text-white ml-4">Documents</a>
+            </div>
+        </nav>
+    </header>
+    <div class="container mx-auto mt-5">
+        @RenderBody()
+    </div>
+    <footer class="bg-gray-800 p-4 mt-5 text-center text-white">
+        &copy; 2024 - ReformedHistory
+    </footer>
+</body>
+</html>
+
