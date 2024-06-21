@@ -1,0 +1,5 @@
+/.idea/.idea.ReformedHistory/.idea/.gitignore
+/.idea/.idea.ReformedHistory/.idea/encodings.xml
+node_modules
+bin
+obj
