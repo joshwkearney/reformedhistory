@@ -5,6 +5,8 @@
         <ImplicitUsings>enable</ImplicitUsings>
     </PropertyGroup>
     
+    <PropertyGroup Condition=" '$(RunConfiguration)' == 'https' " />
+    <PropertyGroup Condition=" '$(RunConfiguration)' == 'http' " />
     <ItemGroup>
         <UpToDateCheckBuilt Include="wwwroot\css\site.css" Set="Css" />
         <UpToDateCheckBuilt Include="tailwind.config.js" Set="Css" />
@@ -23,6 +25,6 @@
     </ItemGroup>
 
     <Target Name="Tailwind" BeforeTargets="Build">
-        <Exec Command="npm run css:build"/>
+        <Exec Command="npm run css:build" />
     </Target>
 </Project>

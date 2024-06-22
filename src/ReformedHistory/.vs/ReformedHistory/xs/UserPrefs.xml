@@ -1,0 +1,34 @@
+﻿<Properties StartupConfiguration="{E2A8AD75-FD63-4134-AF15-5D435DBDE10F}|https">
+  <MultiItemStartupConfigurations />
+  <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" />
+  <MonoDevelop.Ide.Workbench ActiveDocument="Controllers/HomeController.cs">
+    <Files>
+      <File FileName="appsettings.json" />
+      <File FileName="package.json" />
+      <File FileName="Program.cs" />
+      <File FileName="tailwind.config.js" />
+      <File FileName="Properties/launchSettings.json" Line="11" Column="16" />
+      <File FileName="Controllers/HomeController.cs" Line="26" Column="2" />
+    </Files>
+    <Pads>
+      <Pad Id="ProjectPad">
+        <State name="__root__">
+          <Node name="ReformedHistory">
+            <Node name="ReformedHistory" expanded="True">
+              <Node name="Controllers" expanded="True">
+                <Node name="HomeController.cs" selected="True" />
+              </Node>
+            </Node>
+          </Node>
+        </State>
+      </Pad>
+    </Pads>
+  </MonoDevelop.Ide.Workbench>
+  <MonoDevelop.Ide.DebuggingService.Breakpoints>
+    <BreakpointStore>
+      <Breakpoint file="/Users/barretglass/Projects/ReformedHistory/src/ReformedHistory/Controllers/HomeController.cs" relfile="Controllers/HomeController.cs" line="26" column="1" />
+    </BreakpointStore>
+  </MonoDevelop.Ide.DebuggingService.Breakpoints>
+  <MonoDevelop.Ide.ItemProperties.ReformedHistory PreferredExecutionTarget="/Applications/Google Chrome.app" />
+  <MonoDevelop.Ide.DebuggingService.PinnedWatches />
+</Properties>
