@@ -12,8 +12,17 @@
             <div class="list-group-item">
                 <strong class="text-dark">Councils</strong>
                 <ul class="list-group mt-2">
-                    <li class="list-group-item"><a href="#" hx-get="@Url.Action("Document", "Home", new { category = "Councils", id = "CouncilOfNicea" })" hx-target="#documentContent" class="text-dark">Council of Nicea (325)</a></li>
-                    <li class="list-group-item"><a href="#" hx-get="@Url.Action("Document", "Home", new { category = "Councils", id = "FirstCouncilOfConstantinople381" })" hx-target="#documentContent" class="text-dark">First Council of Constantinople (381)</a></li>
+                    <li class="list-group-item"><a href="#" hx-get="@Url.Action("Document", "Home", new { category = "Councils", id = "CouncilOfNicea" })" hx-target="#documentContent" class="block text-blue-600 hover:text-blue-800">Council of Nicea (325)</a></li>
+                    <li class="list-group-item"><a href="#" hx-get="@Url.Action("Document", "Home", new { category = "Councils", id = "FirstCouncilOfConstantinople381" })" hx-target="#documentContent" class="block text-blue-600 hover:text-blue-800">First Council of Constantinople (381)</a></li>
+                    <li class="list-group-item"><a href="#" hx-get="@Url.Action("Document", "Home", new { category = "Councils", id = "CouncilOfEphesus431" })" hx-target="#documentContent" class="block text-blue-600 hover:text-blue-800">Council of Ephesus (431)</a></li>
+                    <li class="list-group-item"><a href="#" hx-get="@Url.Action("Document", "Home", new { category = "Councils", id = "CouncilOfChalcedon451" })" hx-target="#documentContent" class="block text-blue-600 hover:text-blue-800">Council of Chalcedon (451)</a></li>
+                    <li class="list-group-item"><a href="#" hx-get="@Url.Action("Document", "Home", new { category = "Councils", id = "SecondCouncilOfConstantinople553" })" hx-target="#documentContent" class="block text-blue-600 hover:text-blue-800">Second Council of Constantinople (553)</a></li>
+                    <li class="list-group-item"><a href="#" hx-get="@Url.Action("Document", "Home", new { category = "Councils", id = "ThirdCouncilOfConstantinople680" })" hx-target="#documentContent" class="block text-blue-600 hover:text-blue-800">Third Council of Constantinople (680)</a></li>
+                    <li class="list-group-item"><a href="#" hx-get="@Url.Action("Document", "Home", new { category = "Councils", id = "CouncilOfFrankfurt794" })" hx-target="#documentContent" class="block text-blue-600 hover:text-blue-800">Council of Frankfurt (794)</a></li>
+                    <li class="list-group-item"><a href="#" hx-get="@Url.Action("Document", "Home", new { category = "Councils", id = "SynodOfChanforan1532" })" hx-target="#documentContent" class="block text-blue-600 hover:text-blue-800">Synod of Chanforan (1532)</a></li>
+                    <li class="list-group-item"><a href="#" hx-get="@Url.Action("Document", "Home", new { category = "Councils", id = "SynodOfDort1618" })" hx-target="#documentContent" class="block text-blue-600 hover:text-blue-800">Synod of Dort (1618)</a></li>
+                    <li class="list-group-item"><a href="#" hx-get="@Url.Action("Document", "Home", new { category = "Councils", id = "GlasgowGeneralAssembly1638" })" hx-target="#documentContent" class="block text-blue-600 hover:text-blue-800">Glasgow General Assembly (1638)</a></li>
+                    <li class="list-group-item"><a href="#" hx-get="@Url.Action("Document", "Home", new { category = "Councils", id = "WestminsterAssembly1643" })" hx-target="#documentContent" class="block text-blue-600 hover:text-blue-800">Westminster Assembly (1643)</a></li>
                     <!-- Add more councils here -->
                 </ul>
             </div>
@@ -21,8 +30,10 @@
             <div class="list-group-item">
                 <strong class="text-dark">Letters</strong>
                 <ul class="list-group mt-2">
-                    <li class="list-group-item"><a href="#" hx-get="@Url.Action("Document", "Home", new { category = "Letters", id = "EpistleOfClementtotheCorinthians" })" hx-target="#documentContent" class="text-dark">Epistle of Clement to the Corinthians</a></li>
-                    <li class="list-group-item"><a href="#" hx-get="@Url.Action("Document", "Home", new { category = "Letters", id = "EpistlesOfIgnatius" })" hx-target="#documentContent" class="text-dark">Epistles of Ignatius</a></li>
+                    <li class="list-group-item"><a href="#" hx-get="@Url.Action("Document", "Home", new { category = "Letters", id = "EpistleOfClementtotheCorinthians" })" hx-target="#documentContent" class="block text-blue-600 hover:text-blue-800">Epistle of Clement to the Corinthians</a></li>
+                    <li class="list-group-item"><a href="#" hx-get="@Url.Action("Document", "Home", new { category = "Letters", id = "EpistlesOfIgnatius" })" hx-target="#documentContent" class="block text-blue-600 hover:text-blue-800">Epistles of Ignatius</a></li>
+                    <li class="list-group-item"><a href="#" hx-get="@Url.Action("Document", "Home", new { category = "Letters", id = "EpistlesOfPolycarp" })" hx-target="#documentContent" class="block text-blue-600 hover:text-blue-800">Epistles of Polycarp</a></li>
+                    <li class="list-group-item"><a href="#" hx-get="@Url.Action("Document", "Home", new { category = "Letters", id = "EpistleOfStLeoFlavian" })" hx-target="#documentContent" class="block text-blue-600 hover:text-blue-800">Epistle of St Leo to Flavian</a></li>
                     <!-- Add more letters here -->
                 </ul>
             </div>
@@ -30,8 +41,15 @@
             <div class="list-group-item">
                 <strong class="text-dark">Documents</strong>
                 <ul class="list-group mt-2">
-                    <li class="list-group-item"><a href="#" hx-get="@Url.Action("Document", "Home", new { category = "Documents", id = "TheDidache" })" hx-target="#documentContent" class="text-dark">The Didache</a></li>
-                    <li class="list-group-item"><a href="#" hx-get="@Url.Action("Document", "Home", new { category = "Documents", id = "ApostlesCreed" })" hx-target="#documentContent" class="text-dark">Apostles Creed</a></li>
+                    <li class="list-group-item"> <a href="#" hx-get="@Url.Action("Document", "Home", new { category = "Documents", id = "TheDidache" })" hx-target="#documentContent" class="block text-blue-600 hover:text-blue-800">The Didache</a></li>
+                    <li class="list-group-item"><a href="#" hx-get="@Url.Action("Document", "Home", new { category = "Documents", id = "ApostlesCreed" })" hx-target="#documentContent" class="block text-blue-600 hover:text-blue-800">Apostles Creed</a></li>
+                    <li class="list-group-item"><a href="#" hx-get="@Url.Action("Document", "Home", new { category = "Documents", id = "NiceanCreed" })" hx-target="#documentContent" class="block text-blue-600 hover:text-blue-800">Nicean Creed</a></li>
+                    <li class="list-group-item"><a href="#" hx-get="@Url.Action("Document", "Home", new { category = "Documents", id = "ChalcedonianDefinition" })" hx-target="#documentContent" class="block text-blue-600 hover:text-blue-800">Chalcedonian Definition</a></li>
+                    <li class="list-group-item"><a href="#" hx-get="@Url.Action("Document", "Home", new { category = "Documents", id = "WestminsterConfession" })" hx-target="#documentContent" class="block text-blue-600 hover:text-blue-800">Westminster Confession</a></li>
+                    <li class="list-group-item"><a href="#" hx-get="@Url.Action("Document", "Home", new { category = "Documents", id = "ScotsConfession" })" hx-target="#documentContent" class="block text-blue-600 hover:text-blue-800">Scots Confession</a></li>
+                    <li class="list-group-item"><a href="#" hx-get="@Url.Action("Document", "Home", new { category = "Documents", id = "BelgicConfession" })" hx-target="#documentContent" class="block text-blue-600 hover:text-blue-800">Belgic Confession</a></li>
+                    <li class="list-group-item"><a href="#" hx-get="@Url.Action("Document", "Home", new { category = "Documents", id = "HeidelbergCatechism" })" hx-target="#documentContent" class="block text-blue-600 hover:text-blue-800">Heidelberg Catechism</a></li>
+                    <li class="list-group-item"><a href="#" hx-get="@Url.Action("Document", "Home", new { category = "Documents", id = "HelveticConfessions" })" hx-target="#documentContent" class="block text-blue-600 hover:text-blue-800">Helvetic Confessions</a></li>
                     <!-- Add more documents here -->
                 </ul>
             </div>
