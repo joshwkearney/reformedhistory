@@ -1,0 +1,29 @@
+﻿/* styles.css */
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* Custom utility classes */
+.header {
+    @apply text-2xl font-bold text-gray-800;
+}
+
+.subheader {
+    @apply mt-8 text-xl font-semibold text-gray-700;
+}
+
+.paragraph {
+    @apply text-base text-gray-600 leading-relaxed;
+}
+
+.table {
+    @apply w-full border-collapse border border-gray-300;
+}
+
+.table-cell {
+    @apply border border-gray-300 p-2;
+}
+
+.table-of-contents {
+    @apply text-blue-600 hover:text-blue-800 leading-relaxed ml-4;
+}

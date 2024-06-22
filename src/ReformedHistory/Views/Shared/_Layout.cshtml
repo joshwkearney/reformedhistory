@@ -5,13 +5,15 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>@ViewData["Title"] - ReformedHistory</title>
     <!-- Include Tailwind CSS -->
-    <link rel="stylesheet" href="~/css/tailwind.css" asp-append-version="true" />
+    @*<link rel="stylesheet" href="~/css/tailwind.css" asp-append-version="true" />*@
     <link rel="stylesheet" href="~/css/site.css" asp-append-version="true" />
+    <link rel ="stylesheet" href="~/css/documents.css" asp-append-version="true" />
+    <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
 </head>
 <body class="bg-gray-100">
     <header>
         <nav class="bg-white border-b shadow fixed top-0 w-full z-10">
-            <div class="container mx-auto flex items-center p-4 max-w-screen-xl">
+            <div class="container mx-auto flex items-center p-4 max-w-full">
                 <div class="flex items-center space-x-4">
                     <a class="text-xl font-bold" asp-area="" asp-controller="Home" asp-action="Index">ReformedHistory</a>
                     <a class="text-gray-700 hover:text-gray-900" asp-area="" asp-controller="Home" asp-action="Index">Home</a>
@@ -29,7 +31,7 @@
         </nav>
     </header>
     <main class="pt-20">
-        <div class="container mx-auto px-4 max-w-screen-xl">
+        <div class="container mx-auto px-4 max-w-full">
             @RenderBody()
         </div>
     </main>

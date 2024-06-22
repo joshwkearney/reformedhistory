@@ -1,13 +1,15 @@
 ﻿<Properties StartupConfiguration="{E2A8AD75-FD63-4134-AF15-5D435DBDE10F}|https">
-  <MonoDevelop.Ide.Workbench ActiveDocument="wwwroot/js/site.js">
+  <MultiItemStartupConfigurations />
+  <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" />
+  <MonoDevelop.Ide.Workbench ActiveDocument="Views/Home/Library.cshtml">
     <Files>
-      <File FileName="Views/Home/Documents.cshtml" Line="69" Column="39" />
-      <File FileName="Views/Shared/_Layout.cshtml" Line="40" Column="11" />
-      <File FileName="Views/Home/Index.cshtml" Line="15" Column="32" />
-      <File FileName="Views/Home/Documents/WestminsterConfession.cshtml" Line="426" Column="17" />
-      <File FileName="wwwroot/css/site.css" Line="39" Column="36" />
-      <File FileName="Views/Home/Document.cshtml" Line="12" Column="1" />
-      <File FileName="wwwroot/js/site.js" Line="29" Column="1" />
+      <File FileName="Views/Shared/_Layout.cshtml" Line="46" Column="1" />
+      <File FileName="Views/Home/Index.cshtml" Line="28" Column="7" />
+      <File FileName="Views/Home/Documents/WestminsterConfession.cshtml" Line="422" Column="20" />
+      <File FileName="wwwroot/css/site.css" Line="5" Column="7" />
+      <File FileName="Views/Home/Document.cshtml" />
+      <File FileName="wwwroot/js/site.js" Line="29" Column="4" />
+      <File FileName="Views/Home/Library.cshtml" Line="8" Column="77" />
     </Files>
     <Pads>
       <Pad Id="ProjectPad">
@@ -34,13 +36,11 @@
       </Pad>
     </Pads>
   </MonoDevelop.Ide.Workbench>
+  <MonoDevelop.Ide.ItemProperties.ReformedHistory PreferredExecutionTarget="/Applications/Google Chrome.app" />
   <MonoDevelop.Ide.DebuggingService.Breakpoints>
     <BreakpointStore>
       <Breakpoint file="/Users/barretglass/Projects/ReformedHistory/src/ReformedHistory/Controllers/HomeController.cs" relfile="Controllers/HomeController.cs" line="35" column="1" />
     </BreakpointStore>
   </MonoDevelop.Ide.DebuggingService.Breakpoints>
   <MonoDevelop.Ide.DebuggingService.PinnedWatches />
-  <MultiItemStartupConfigurations />
-  <MonoDevelop.Ide.ItemProperties.ReformedHistory PreferredExecutionTarget="/Applications/Google Chrome.app" />
-  <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" />
 </Properties>
