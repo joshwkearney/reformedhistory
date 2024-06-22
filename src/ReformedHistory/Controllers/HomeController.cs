@@ -5,10 +5,10 @@ using ReformedHistory.Models;
 namespace ReformedHistory.Controllers;
 
 public class HomeController : Controller {
-    private readonly ILogger<HomeController> _logger;
+    private readonly ILogger<HomeController> logger;
 
     public HomeController(ILogger<HomeController> logger) {
-        _logger = logger;
+        this.logger = logger;
     }
 
     public IActionResult Index() {
@@ -23,11 +23,11 @@ public class HomeController : Controller {
 		return View();
 	}
 
-	public IActionResult Document(string category, string id)
-	{
+	public IActionResult Document(string category, string id) {
 		if (string.IsNullOrEmpty(category) || string.IsNullOrEmpty(id)) {
 			return NotFound();
 		}
+		
 		return View($"{category}/{id}");
 	}
 

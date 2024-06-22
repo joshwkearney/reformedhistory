@@ -4,10 +4,16 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>@ViewData["Title"] - ReformedHistory</title>
+    
     <!-- Include Tailwind CSS -->
-    @*<link rel="stylesheet" href="~/css/tailwind.css" asp-append-version="true" />*@
-    <link rel="stylesheet" href="~/css/site.css" asp-append-version="true" />
-    <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="~/css/tailwind.css" asp-append-version="true" />
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=EB+Garamond:ital,wght@0,400..800;1,400..800&display=swap" rel="stylesheet">
+
+    <!-- This is at the top because it is needed for styles to load correctly -->
+    <script src="~/js/css-scope-inline.js" asp-append-version="true"></script>
 </head>
 <body class="bg-gray-100">
     <header>
@@ -44,52 +50,3 @@
     @await RenderSectionAsync("Scripts", required: false)
 </body>
 </html>
-
-
-<!--<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>@ViewData["Title"] - ReformedHistory</title>-->
-<!-- Include Tailwind CSS -->
-<!--<link rel="stylesheet" href="~/css/tailwind.css" asp-append-version="true" />
-    <link rel="stylesheet" href="~/css/site.css" asp-append-version="true" />
-</head>
-<body class="bg-gray-100">
-    <header>
-        <nav class="bg-white border-b shadow fixed top-0 w-full z-10">
-            <div class="container mx-auto flex items-center p-4 max-w-screen-xl">
-                <a class="text-xl font-bold mr-6" asp-area="" asp-controller="Home" asp-action="Index">ReformedHistory</a>
-                <button class="sm:hidden text-gray-700" type="button" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
-                    <span class="navbar-toggler-icon"></span>
-                </button>
-                <div class="hidden sm:flex flex-grow items-center">
-                    <ul class="flex space-x-4">
-                        <li>
-                            <a class="text-gray-700 hover:text-gray-900" asp-area="" asp-controller="Home" asp-action="Index">Home</a>
-                        </li>
-                        <li>
-                            <a class="text-gray-700 hover:text-gray-900" asp-area="" asp-controller="Home" asp-action="Library">Library</a>
-                        </li>
-                    </ul>
-                    <div class="ml-auto">
-                        &copy; 2024 - ReformedHistory - <a asp-area="" asp-controller="Home" asp-action="Privacy" class="text-blue-600 hover:text-blue-800">Privacy</a>
-                    </div>
-                </div>
-            </div>
-        </nav>
-    </header>
-    <main class="pt-20">
-        <div class="container mx-auto px-4 max-w-screen-xl">
-            @RenderBody()
-        </div>
-    </main>-->
-<!-- Include the site's javascript -->
-<!--<script src="~/js/site.js" asp-append-version="true"></script>-->
-<!-- Include htmx -->
-<!--<script src="~/js/htmx.js"></script>
-
-    @await RenderSectionAsync("Scripts", required: false)
-</body>
-</html>-->

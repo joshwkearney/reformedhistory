@@ -1,0 +1,142 @@
+@model TimelineEventModel
+
+<div>
+    <div class="row spacingRow">
+        <div class="left"></div>
+        <div class="middle"><div class="line"></div></div>
+        <div class="right"></div>
+    </div>
+    
+    <div class="row headerRow">
+        <div class="left">
+            <div class="date">@Model.Date</div>
+        </div>
+
+        <div class="middle">
+            <div class="line"></div>
+            <div class="circle"></div>
+        </div>
+
+        <div class="right">
+            <div class="title">@Model.Title</div>
+        </div>
+    </div>
+
+    <div class="row contentRow">
+        <div class="left"></div>
+
+        <div class="middle">
+            <div class="line"></div>
+        </div>
+
+        <div class="right">
+            <div class="content">
+                <span>@Model.Description</span>
+            </div>
+        </div>
+    </div>
+
+    <style>
+        me {
+            --line-thickness: 2px;
+            --line-color: black;
+            --circle-diameter: 1rem;
+            --vertical-margin: 1rem;
+            
+            .spacingRow {
+                .middle {
+                    height: var(--vertical-margin);
+                }
+            }
+            
+            .contentRow {
+                .content {
+                    margin-left: 1rem;
+                    margin-top: 4pt;
+                    margin-bottom: var(--vertical-margin);
+                    
+                    span {
+                        font-size: 13pt;
+                        line-height: 14pt;
+                        font-style: italic;
+                        font-family: "EB Garamond", serif;
+                    }
+                }
+            }
+            
+            .headerRow {                
+                .middle {
+                    display: flex;
+                    align-items: center;
+                }
+            
+                .date {
+                    font-size: 18pt;
+                    height: 100%;
+                    display: flex;
+                    flex-direction: row-reverse;
+                    align-items: center;
+                    text-align: right;
+                    margin-right: 1rem;
+                    letter-spacing: 4pt;
+                    font-family: "EB Garamond", serif;
+                }
+                
+                .title {
+                    font-size: 20pt;
+                    line-height: 22pt;
+                    letter-spacing: 1pt;
+                    height: 100%;
+                    display: flex;
+                    align-items: center;
+                    text-align: left;
+                    margin-left: 1rem;
+                    text-wrap: balance;
+                    font-family: "EB Garamond", serif;    
+                    font-weight: 550;                
+                }
+            }
+            
+            .row {
+                display: flex;
+                justify-content: space-between;
+                max-width: 800px;
+                margin: auto;
+                
+                .left {
+                    flex: 1;
+                    position: relative;                      
+                }
+                
+                .middle {
+                    flex: 0 0 0;
+                    position: relative;
+                    min-width: var(--circle-diameter);                   
+                }
+                
+                .right {
+                    flex: 1;
+                    position: relative;    
+                }
+            }    
+            
+            .line {
+                height: 100%;
+                width: var(--line-thickness);
+                background-color: var(--line-color);
+                position: absolute;
+                left: calc(var(--circle-diameter) / 2 - var(--line-thickness) / 2);
+            }
+            
+            .circle {
+                width: var(--circle-diameter);
+                height: var(--circle-diameter);
+                background-color: white;
+                border-radius: 50%;
+                border: var(--line-thickness) solid var(--line-color);
+                margin: auto;
+                z-index: 1000;
+            }
+        }
+    </style>
+</div>
