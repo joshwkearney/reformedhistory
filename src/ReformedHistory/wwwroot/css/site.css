@@ -16,6 +16,41 @@ html {
   box-shadow: 0 0 0 0.1rem white, 0 0 0 0.25rem #258cfb;
 }
 
+.anchor-offset {
+    position: relative;
+    top: -60px; /* 56px = height of navbar + 4 px*/
+    padding-top: 60px;
+}
+
+
+#backToTopBtn {
+    display: none; /* Hidden by default */
+    position: fixed; /* Fixed position */
+    bottom: 0px; /* Place the button 20px from the bottom */
+    right: 40px; /* Place the button 20px from the right */
+    z-index: 99; /* Ensure it is above other elements */
+    width: 100px; /* Set a fixed width */
+    height: 50px; /* Set a fixed height */
+    border: none; /* Remove borders */
+    outline: none; /* Remove outline */
+    background-color: #007bff; /* Set a background color */
+    color: white; /* Text color */
+    cursor: pointer; /* Pointer cursor on hover */
+    font-size: 18px; /* Font size for the text/icon */
+    box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1); /* Add a subtle shadow */
+    display: flex; /* Use flexbox for centering */
+    align-items: center; /* Vertically center the content */
+    justify-content: center; /* Horizontally center the content */
+    text-align: center; /* Center the text */
+    line-height: 1; /* Ensure the text is not too tall */
+    padding: 0; /* Remove any default padding */
+}
+
+#backToTopBtn:hover {
+    background-color: #0056b3; /* Darker background on hover */
+}
+
+
 html {
   position: relative;
   min-height: 100%;

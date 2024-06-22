@@ -38,9 +38,16 @@
             @RenderBody()
         </div>
     </div>
+
+    <!-- Include jquery -->
     <script src="~/lib/jquery/dist/jquery.min.js"></script>
+
+    <!-- Include bootstrap -->
     <script src="~/lib/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
+
+    <!-- Include the site's javascript '-->
     <script src="~/js/site.js" asp-append-version="true"></script>
+
     <!-- Include htmx -->
     <script src="https://unpkg.com/htmx.org@2.0.0"></script>
     @await RenderSectionAsync("Scripts", required: false)
