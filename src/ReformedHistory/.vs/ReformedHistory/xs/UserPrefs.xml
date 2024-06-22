@@ -1,22 +1,32 @@
 ﻿<Properties StartupConfiguration="{E2A8AD75-FD63-4134-AF15-5D435DBDE10F}|https">
-  <MultiItemStartupConfigurations />
-  <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" />
-  <MonoDevelop.Ide.Workbench ActiveDocument="Controllers/HomeController.cs">
+  <MonoDevelop.Ide.Workbench ActiveDocument="wwwroot/js/site.js">
     <Files>
-      <File FileName="appsettings.json" />
-      <File FileName="package.json" />
-      <File FileName="Program.cs" />
-      <File FileName="tailwind.config.js" />
-      <File FileName="Properties/launchSettings.json" Line="11" Column="16" />
-      <File FileName="Controllers/HomeController.cs" Line="26" Column="2" />
+      <File FileName="Views/Home/Documents.cshtml" Line="69" Column="39" />
+      <File FileName="Views/Shared/_Layout.cshtml" Line="40" Column="11" />
+      <File FileName="Views/Home/Index.cshtml" Line="15" Column="32" />
+      <File FileName="Views/Home/Documents/WestminsterConfession.cshtml" Line="426" Column="17" />
+      <File FileName="wwwroot/css/site.css" Line="39" Column="36" />
+      <File FileName="Views/Home/Document.cshtml" Line="12" Column="1" />
+      <File FileName="wwwroot/js/site.js" Line="29" Column="1" />
     </Files>
     <Pads>
       <Pad Id="ProjectPad">
         <State name="__root__">
           <Node name="ReformedHistory">
             <Node name="ReformedHistory" expanded="True">
-              <Node name="Controllers" expanded="True">
-                <Node name="HomeController.cs" selected="True" />
+              <Node name="Controllers" expanded="True" />
+              <Node name="Models" expanded="True" />
+              <Node name="Views" expanded="True">
+                <Node name="Home" expanded="True">
+                  <Node name="Councils" expanded="True" />
+                  <Node name="Documents" expanded="True" />
+                  <Node name="Letters" expanded="True" />
+                </Node>
+                <Node name="Shared" expanded="True" />
+              </Node>
+              <Node name="wwwroot" expanded="True">
+                <Node name="css" expanded="True" />
+                <Node name="js" expanded="True" />
               </Node>
             </Node>
           </Node>
@@ -26,9 +36,11 @@
   </MonoDevelop.Ide.Workbench>
   <MonoDevelop.Ide.DebuggingService.Breakpoints>
     <BreakpointStore>
-      <Breakpoint file="/Users/barretglass/Projects/ReformedHistory/src/ReformedHistory/Controllers/HomeController.cs" relfile="Controllers/HomeController.cs" line="26" column="1" />
+      <Breakpoint file="/Users/barretglass/Projects/ReformedHistory/src/ReformedHistory/Controllers/HomeController.cs" relfile="Controllers/HomeController.cs" line="35" column="1" />
     </BreakpointStore>
   </MonoDevelop.Ide.DebuggingService.Breakpoints>
-  <MonoDevelop.Ide.ItemProperties.ReformedHistory PreferredExecutionTarget="/Applications/Google Chrome.app" />
   <MonoDevelop.Ide.DebuggingService.PinnedWatches />
+  <MultiItemStartupConfigurations />
+  <MonoDevelop.Ide.ItemProperties.ReformedHistory PreferredExecutionTarget="/Applications/Google Chrome.app" />
+  <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" />
 </Properties>
