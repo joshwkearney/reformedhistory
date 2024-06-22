@@ -5,8 +5,9 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>@ViewData["Title"] - ReformedHistory</title>
     <link rel="stylesheet" href="~/lib/bootstrap/dist/css/bootstrap.min.css" />
+    
+    <!-- TODO: Why does switching this to tailwind.css break the styles? -->
     <link rel="stylesheet" href="~/css/site.css" asp-append-version="true" />
-    <link rel="stylesheet" href="~/ReformedHistory.styles.css" asp-append-version="true" />
 </head>
 <body>
     <header>
@@ -39,17 +40,12 @@
         </div>
     </div>
 
-    <!-- Include jquery -->
-    <script src="~/lib/jquery/dist/jquery.min.js"></script>
-
-    <!-- Include bootstrap -->
-    <script src="~/lib/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
-
     <!-- Include the site's javascript '-->
     <script src="~/js/site.js" asp-append-version="true"></script>
 
     <!-- Include htmx -->
-    <script src="https://unpkg.com/htmx.org@2.0.0"></script>
+    <script src="~/js/htmx.js"></script>
+    
     @await RenderSectionAsync("Scripts", required: false)
 </body>
 </html>
