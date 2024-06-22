@@ -19,9 +19,16 @@ public class HomeController : Controller {
         return View();
     }
 
-	public IActionResult Documents()
-	{
+	public IActionResult Library() {
 		return View();
+	}
+
+	public IActionResult Document(string category, string id)
+	{
+		if (string.IsNullOrEmpty(category) || string.IsNullOrEmpty(id)) {
+			return NotFound();
+		}
+		return View($"{category}/{id}");
 	}
 
 	[ResponseCache(Duration = 0, Location = ResponseCacheLocation.None, NoStore = true)]

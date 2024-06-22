@@ -1,0 +1,54 @@
+﻿@{
+    Layout = "_Layout";
+    ViewData["Title"] = "Library";
+}
+
+<div class="container mx-auto p-8">
+    <h1 class="text-4xl font-extrabold text-gray-800 mb-6">Historical Documents</h1>
+
+    <div class="mb-8">
+        <h2 class="text-3xl font-semibold text-gray-700 mt-8">Councils</h2>
+        <ul class="list-disc ml-8 mt-4 space-y-2">
+            <li><a asp-controller="Home" asp-action="Document" asp-route-category="Councils" asp-route-id="CouncilOfNicea" hx-get="@Url.Action("Document", "Home", new { category = "Councils", id = "CouncilOfNicea" })" hx-target="#documentContent" class="text-blue-600 hover:text-blue-800">Council of Nicea (325)</a></li>
+            <li><a asp-controller="Home" asp-action="Document" asp-route-category="Councils" asp-route-id="FirstCouncilOfConstantinople381" hx-get="@Url.Action("Document", "Home", new { category = "Councils", id = "FirstCouncilOfConstantinople381" })" hx-target="#documentContent" class="text-blue-600 hover:text-blue-800">First Council of Constantinople (381)</a></li>
+            <li><a asp-controller="Home" asp-action="Document" asp-route-category="Councils" asp-route-id="CouncilOfEphesus431" hx-get="@Url.Action("Document", "Home", new { category = "Councils", id = "CouncilOfEphesus431" })" hx-target="#documentContent" class="text-blue-600 hover:text-blue-800">Council of Ephesus (431)</a></li>
+            <li><a asp-controller="Home" asp-action="Document" asp-route-category="Councils" asp-route-id="CouncilOfChalcedon451" hx-get="@Url.Action("Document", "Home", new { category = "Councils", id = "CouncilOfChalcedon451" })" hx-target="#documentContent" class="text-blue-600 hover:text-blue-800">Council of Chalcedon (451)</a></li>
+            <li><a asp-controller="Home" asp-action="Document" asp-route-category="Councils" asp-route-id="SecondCouncilOfConstantinople553" hx-get="@Url.Action("Document", "Home", new { category = "Councils", id = "SecondCouncilOfConstantinople553" })" hx-target="#documentContent" class="text-blue-600 hover:text-blue-800">Second Council of Constantinople (553)</a></li>
+            <li><a asp-controller="Home" asp-action="Document" asp-route-category="Councils" asp-route-id="ThirdCouncilOfConstantinople680" hx-get="@Url.Action("Document", "Home", new { category = "Councils", id = "ThirdCouncilOfConstantinople680" })" hx-target="#documentContent" class="text-blue-600 hover:text-blue-800">Third Council of Constantinople (680)</a></li>
+            <li><a asp-controller="Home" asp-action="Document" asp-route-category="Councils" asp-route-id="CouncilOfFrankfurt794" hx-get="@Url.Action("Document", "Home", new { category = "Councils", id = "CouncilOfFrankfurt794" })" hx-target="#documentContent" class="text-blue-600 hover:text-blue-800">Council of Frankfurt (794)</a></li>
+            <li><a asp-controller="Home" asp-action="Document" asp-route-category="Councils" asp-route-id="SynodOfChanforan1532" hx-get="@Url.Action("Document", "Home", new { category = "Councils", id = "SynodOfChanforan1532" })" hx-target="#documentContent" class="text-blue-600 hover:text-blue-800">Synod of Chanforan (1532)</a></li>
+            <li><a asp-controller="Home" asp-action="Document" asp-route-category="Councils" asp-route-id="SynodOfDort1618" hx-get="@Url.Action("Document", "Home", new { category = "Councils", id = "SynodOfDort1618" })" hx-target="#documentContent" class="text-blue-600 hover:text-blue-800">Synod of Dort (1618)</a></li>
+            <li><a asp-controller="Home" asp-action="Document" asp-route-category="Councils" asp-route-id="GlasgowGeneralAssembly1638" hx-get="@Url.Action("Document", "Home", new { category = "Councils", id = "GlasgowGeneralAssembly1638" })" hx-target="#documentContent" class="text-blue-600 hover:text-blue-800">Glasgow General Assembly (1638)</a></li>
+            <li><a asp-controller="Home" asp-action="Document" asp-route-category="Councils" asp-route-id="WestminsterAssembly1643" hx-get="@Url.Action("Document", "Home", new { category = "Councils", id = "WestminsterAssembly1643" })" hx-target="#documentContent" class="text-blue-600 hover:text-blue-800">Westminster Assembly (1643)</a></li>
+        </ul>
+    </div>
+
+    <div class="mb-8">
+        <h2 class="text-3xl font-semibold text-gray-700 mt-8">Letters</h2>
+        <ul class="list-disc ml-8 mt-4 space-y-2">
+            <li><a asp-controller="Home" asp-action="Document" asp-route-category="Letters" asp-route-id="EpistleOfClementtotheCorinthians" hx-get="@Url.Action("Document", "Home", new { category = "Letters", id = "EpistleOfClementtotheCorinthians" })" hx-target="#documentContent" class="text-blue-600 hover:text-blue-800">Epistle of Clement to the Corinthians</a></li>
+            <li><a asp-controller="Home" asp-action="Document" asp-route-category="Letters" asp-route-id="EpistlesOfIgnatius" hx-get="@Url.Action("Document", "Home", new { category = "Letters", id = "EpistlesOfIgnatius" })" hx-target="#documentContent" class="text-blue-600 hover:text-blue-800">Epistles of Ignatius</a></li>
+            <li><a asp-controller="Home" asp-action="Document" asp-route-category="Letters" asp-route-id="EpistlesOfPolycarp" hx-get="@Url.Action("Document", "Home", new { category = "Letters", id = "EpistlesOfPolycarp" })" hx-target="#documentContent" class="text-blue-600 hover:text-blue-800">Epistles of Polycarp</a></li>
+            <li><a asp-controller="Home" asp-action="Document" asp-route-category="Letters" asp-route-id="EpistleofStLeotoFlavian" hx-get="@Url.Action("Document", "Home", new { category = "Letters", id = "EpistleofStLeotoFlavian" })" hx-target="#documentContent" class="text-blue-600 hover:text-blue-800">Epistle of St Leo to Flavian</a></li>
+        </ul>
+    </div>
+
+    <div>
+        <h2 class="text-3xl font-semibold text-gray-700 mt-8">Documents</h2>
+        <ul class="list-disc ml-8 mt-4 space-y-2">
+            <li><a asp-controller="Home" asp-action="Document" asp-route-category="Documents" asp-route-id="TheDidache" hx-get="@Url.Action("Document", "Home", new { category = "Documents", id = "TheDidache" })" hx-target="#documentContent" class="text-blue-600 hover:text-blue-800">The Didache</a></li>
+            <li><a asp-controller="Home" asp-action="Document" asp-route-category="Documents" asp-route-id="ApostlesCreed" hx-get="@Url.Action("Document", "Home", new { category = "Documents", id = "ApostlesCreed" })" hx-target="#documentContent" class="text-blue-600 hover:text-blue-800">Apostles Creed</a></li>
+            <li><a asp-controller="Home" asp-action="Document" asp-route-category="Documents" asp-route-id="NiceanCreed" hx-get="@Url.Action("Document", "Home", new { category = "Documents", id = "NiceanCreed" })" hx-target="#documentContent" class="text-blue-600 hover:text-blue-800">Nicean Creed</a></li>
+            <li><a asp-controller="Home" asp-action="Document" asp-route-category="Documents" asp-route-id="ChalcedonianDefinition" hx-get="@Url.Action("Document", "Home", new { category = "Documents", id = "ChalcedonianDefinition" })" hx-target="#documentContent" class="text-blue-600 hover:text-blue-800">Chalcedonian Definition</a></li>
+            <li><a asp-controller="Home" asp-action="Document" asp-route-category="Documents" asp-route-id="WestminsterConfession" hx-get="@Url.Action("Document", "Home", new { category = "Documents", id = "WestminsterConfession" })" hx-target="#documentContent" class="text-blue-600 hover:text-blue-800">Westminster Confession</a></li>
+            <li><a asp-controller="Home" asp-action="Document" asp-route-category="Documents" asp-route-id="ScotsConfession" hx-get="@Url.Action("Document", "Home", new { category = "Documents", id = "ScotsConfession" })" hx-target="#documentContent" class="text-blue-600 hover:text-blue-800">Scots Confession</a></li>
+            <li><a asp-controller="Home" asp-action="Document" asp-route-category="Documents" asp-route-id="BelgicConfession" hx-get="@Url.Action("Document", "Home", new { category = "Documents", id = "BelgicConfession" })" hx-target="#documentContent" class="text-blue-600 hover:text-blue-800">Belgic Confession</a></li>
+            <li><a asp-controller="Home" asp-action="Document" asp-route-category="Documents" asp-route-id="HeidelbergCatechism" hx-get="@Url.Action("Document", "Home", new { category = "Documents", id = "HeidelbergCatechism" })" hx-target="#documentContent" class="text-blue-600 hover:text-blue-800">Heidelberg Catechism</a></li>
+            <li><a asp-controller="Home" asp-action="Document" asp-route-category="Documents" asp-route-id="HelveticConfessions" hx-get="@Url.Action("Document", "Home", new { category = "Documents", id = "HelveticConfessions" })" hx-target="#documentContent" class="text-blue-600 hover:text-blue-800">Helvetic Confessions</a></li>
+        </ul>
+    </div>
+
+    <div id="documentContent" class="mt-8 p-4 bg-gray-100 rounded-lg shadow-md">
+        <!-- Content loaded by HTMX will appear here -->
+    </div>
+</div>
