@@ -6,7 +6,9 @@
     <title>@ViewData["Title"] - ReformedHistory</title>
     
     <!-- Include Tailwind CSS -->
-    <link rel="stylesheet" href="~/css/tailwind.css" asp-append-version="true" />
+    @*<link rel="stylesheet" href="~/css/tailwind.css" asp-append-version="true" />*@
+
+    <link rel="stylesheet" href="~/css/reset.css" asp-append-version="true" />
 
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -15,8 +17,8 @@
     <!-- This is at the top because it is needed for styles to load correctly -->
     <script src="~/js/css-scope-inline.js" asp-append-version="true"></script>
 </head>
-<body class="bg-gray-100">
-    <header>
+<body>
+    @*<header>
         <nav class="bg-white border-b shadow fixed top-0 w-full z-10">
             <div class="container mx-auto flex items-center p-4 max-w-full">
                 <div class="flex items-center space-x-4">
@@ -34,9 +36,9 @@
                 </div>
             </div>
         </nav>
-    </header>
-    <main class="pt-20">
-        <div class="container mx-auto px-4 max-w-full">
+    </header>*@
+    <main>
+        <div>
             @RenderBody()
         </div>
     </main>

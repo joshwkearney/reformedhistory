@@ -47,22 +47,7 @@
                 .middle {
                     height: var(--vertical-margin);
                 }
-            }
-            
-            .contentRow {
-                .content {
-                    margin-left: 1rem;
-                    margin-top: 4pt;
-                    margin-bottom: var(--vertical-margin);
-                    
-                    span {
-                        font-size: 13pt;
-                        line-height: 14pt;
-                        font-style: italic;
-                        font-family: "EB Garamond", serif;
-                    }
-                }
-            }
+            }    
             
             .headerRow {                
                 .middle {
@@ -94,6 +79,21 @@
                     text-wrap: balance;
                     font-family: "EB Garamond", serif;    
                     font-weight: 550;                
+                }
+            }
+            
+            .contentRow {
+                .content {
+                    margin-left: 1rem;
+                    margin-top: 4pt;
+                    margin-bottom: var(--vertical-margin);
+                    
+                    span {
+                        font-size: 13pt;
+                        line-height: 14pt;
+                        font-style: italic;
+                        font-family: "EB Garamond", serif;
+                    }
                 }
             }
             
@@ -129,8 +129,8 @@
             }
             
             .circle {
-                width: var(--circle-diameter);
-                height: var(--circle-diameter);
+                width: calc(var(--circle-diameter) - 2 * var(--line-thickness));
+                height: calc(var(--circle-diameter) - 2 * var(--line-thickness));
                 background-color: white;
                 border-radius: 50%;
                 border: var(--line-thickness) solid var(--line-color);
