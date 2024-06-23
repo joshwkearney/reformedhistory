@@ -118,7 +118,7 @@
       <AdditionalFiles Include="Views\Content\Documents\NiceanCreed.cshtml" />
       <AdditionalFiles Include="Views\Content\Documents\ScotsConfession.cshtml" />
       <AdditionalFiles Include="Views\Content\Documents\TheDidache.cshtml" />
-      <AdditionalFiles Include="Views\Content\Documents\WestminsterConfession.cshtml" />
+      <AdditionalFiles Include="Views\Content\Documents\WestminsterConfessionOld.cshtml" />
       <AdditionalFiles Include="Views\Content\Letters\EpistleofClementtotheCorinthians.cshtml" />
       <AdditionalFiles Include="Views\Content\Letters\EpistleofStLeotoFlavian.cshtml" />
       <AdditionalFiles Include="Views\Content\Letters\EpistlesofIgnatius.cshtml" />
