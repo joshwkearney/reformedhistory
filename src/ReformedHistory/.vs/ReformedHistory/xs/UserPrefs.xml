@@ -1,35 +1,28 @@
 ﻿<Properties StartupConfiguration="{E2A8AD75-FD63-4134-AF15-5D435DBDE10F}|https">
-  <MonoDevelop.Ide.Workbench ActiveDocument="wwwroot/css/site.css">
+  <MonoDevelop.Ide.Workbench ActiveDocument="appsettings.json">
     <Files>
-      <File FileName="Views/Shared/_Layout.cshtml" Line="10" Column="38" />
-      <File FileName="wwwroot/css/site.css" Line="59" Column="12" />
-      <File FileName="Views/Home/Document.cshtml" Line="5" Column="2" />
-      <File FileName="Views/Home/Library.cshtml" Line="9" Column="79" />
-      <File FileName="Views/Home/Documents/TheDidache.cshtml" Line="1" Column="1" />
-      <File FileName="Views/Home/Documents/ScotsConfession.cshtml" Line="1" Column="1" />
-      <File FileName="Views/Home/Documents/HelveticConfessions.cshtml" Line="1" Column="1" />
-      <File FileName="Views/Home/Documents/WestminsterConfession.cshtml" Line="7" Column="20" />
-      <File FileName="Views/Home/Index.cshtml" Line="7" Column="25" />
+      <File FileName="Views/Home/Documents/WestminsterConfession.cshtml" Line="10" Column="35" />
+      <File FileName="wwwroot/css/site.css" Line="69" Column="1" />
+      <File FileName="Views/Home/Index.cshtml" Line="18" Column="32" />
+      <File FileName="postcss.config.js" Line="1" Column="1" />
+      <File FileName="package.json" Line="1" Column="1" />
+      <File FileName="tailwind.config.js" Line="1" Column="1" />
+      <File FileName="Program.cs" Line="1" Column="1" />
+      <File FileName="appsettings.json" Line="1" Column="1" />
     </Files>
     <Pads>
       <Pad Id="ProjectPad">
         <State name="__root__">
           <Node name="ReformedHistory">
-            <Node name="ReformedHistory">
-              <Node name="Controllers" expanded="True" />
-              <Node name="Models" expanded="True" />
-              <Node name="Views" expanded="True">
-                <Node name="Home" expanded="True">
-                  <Node name="Councils" expanded="True" />
+            <Node name="ReformedHistory" selected="True">
+              <Node name="Views">
+                <Node name="Home">
                   <Node name="Documents" expanded="True" />
-                  <Node name="Letters" expanded="True" />
                 </Node>
                 <Node name="Shared" expanded="True" />
               </Node>
               <Node name="wwwroot" expanded="True">
-                <Node name="css" expanded="True">
-                  <Node name="site.css" selected="True" />
-                </Node>
+                <Node name="css" expanded="True" />
                 <Node name="js" expanded="True" />
               </Node>
             </Node>
