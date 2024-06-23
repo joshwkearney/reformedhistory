@@ -129,8 +129,8 @@
             }
             
             .circle {
-                width: var(--circle-diameter);
-                height: var(--circle-diameter);
+                width: calc(var(--circle-diameter) - 2 * var(--line-thickness));
+                height: calc(var(--circle-diameter) - 2 * var(--line-thickness));
                 background-color: white;
                 border-radius: 50%;
                 border: var(--line-thickness) solid var(--line-color);
