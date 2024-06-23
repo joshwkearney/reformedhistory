@@ -78,10 +78,51 @@
       <_ContentIncludedByDefault Remove="wwwroot\lib\bootstrap\dist\js\bootstrap.min.js" />
       <_ContentIncludedByDefault Remove="wwwroot\lib\bootstrap\dist\js\bootstrap.min.js.map" />
       <_ContentIncludedByDefault Remove="wwwroot\lib\bootstrap\LICENSE" />
+      <_ContentIncludedByDefault Remove="Views\Home\Documents\ApostlesCreed.cshtml" />
+      <_ContentIncludedByDefault Remove="Views\Home\Documents\BelgicConfession.cshtml" />
+      <_ContentIncludedByDefault Remove="Views\Home\Documents\ChalcedonianDefinition.cshtml" />
+      <_ContentIncludedByDefault Remove="Views\Home\Documents\HeidelbergCatechism.cshtml" />
+      <_ContentIncludedByDefault Remove="Views\Home\Documents\HelveticConfessions.cshtml" />
+      <_ContentIncludedByDefault Remove="Views\Home\Documents\NiceanCreed.cshtml" />
+      <_ContentIncludedByDefault Remove="Views\Home\Documents\ScotsConfession.cshtml" />
+      <_ContentIncludedByDefault Remove="Views\Home\Documents\TheDidache.cshtml" />
+      <_ContentIncludedByDefault Remove="Views\Home\Documents\WestminsterConfession.cshtml" />
+      <_ContentIncludedByDefault Remove="Views\Home\Letters\EpistleofClementtotheCorinthians.cshtml" />
+      <_ContentIncludedByDefault Remove="Views\Home\Letters\EpistleofStLeotoFlavian.cshtml" />
+      <_ContentIncludedByDefault Remove="Views\Home\Letters\EpistlesofIgnatius.cshtml" />
+      <_ContentIncludedByDefault Remove="Views\Home\Letters\EpistlesofPolycarp.cshtml" />
     </ItemGroup>
 
     <ItemGroup>
       <None Remove="tailwind %28copy%29.config.js" />
+    </ItemGroup>
+
+    <ItemGroup>
+      <AdditionalFiles Include="Views\Content\Councils\CouncilofChalcedon451.cshtml" />
+      <AdditionalFiles Include="Views\Content\Councils\CouncilofEphesus431.cshtml" />
+      <AdditionalFiles Include="Views\Content\Councils\CouncilofFrankfurt794.cshtml" />
+      <AdditionalFiles Include="Views\Content\Councils\CouncilOfNicea.cshtml" />
+      <AdditionalFiles Include="Views\Content\Councils\CouncilofNicea325.cshtml" />
+      <AdditionalFiles Include="Views\Content\Councils\FirstCouncilofConstantinople381.cshtml" />
+      <AdditionalFiles Include="Views\Content\Councils\GlasgowGeneralAssembly1638.cshtml" />
+      <AdditionalFiles Include="Views\Content\Councils\SecondCouncilofConstantinople553.cshtml" />
+      <AdditionalFiles Include="Views\Content\Councils\SynodofChanforan1532.cshtml" />
+      <AdditionalFiles Include="Views\Content\Councils\SynodofDort1618.cshtml" />
+      <AdditionalFiles Include="Views\Content\Councils\ThirdCouncilofConstantinople680.cshtml" />
+      <AdditionalFiles Include="Views\Content\Councils\WestminsterAssembly1643.cshtml" />
+      <AdditionalFiles Include="Views\Content\Documents\ApostlesCreed.cshtml" />
+      <AdditionalFiles Include="Views\Content\Documents\BelgicConfession.cshtml" />
+      <AdditionalFiles Include="Views\Content\Documents\ChalcedonianDefinition.cshtml" />
+      <AdditionalFiles Include="Views\Content\Documents\HeidelbergCatechism.cshtml" />
+      <AdditionalFiles Include="Views\Content\Documents\HelveticConfessions.cshtml" />
+      <AdditionalFiles Include="Views\Content\Documents\NiceanCreed.cshtml" />
+      <AdditionalFiles Include="Views\Content\Documents\ScotsConfession.cshtml" />
+      <AdditionalFiles Include="Views\Content\Documents\TheDidache.cshtml" />
+      <AdditionalFiles Include="Views\Content\Documents\WestminsterConfession.cshtml" />
+      <AdditionalFiles Include="Views\Content\Letters\EpistleofClementtotheCorinthians.cshtml" />
+      <AdditionalFiles Include="Views\Content\Letters\EpistleofStLeotoFlavian.cshtml" />
+      <AdditionalFiles Include="Views\Content\Letters\EpistlesofIgnatius.cshtml" />
+      <AdditionalFiles Include="Views\Content\Letters\EpistlesofPolycarp.cshtml" />
     </ItemGroup>
     <Target Name="Tailwind" BeforeTargets="Build">
         <Exec Command="npm run css:build" />
