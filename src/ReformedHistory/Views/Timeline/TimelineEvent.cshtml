@@ -9,7 +9,12 @@
     
     <div class="row headerRow">
         <div class="left">
-            <div class="date">@Model.Date</div>
+            @if (Model.DateStart == Model.DateEnd) {
+                <div class="date">@Model.DateStart</div>
+            }
+            else {
+                <div class="date">@(Model.DateStart)—@(Model.DateEnd)</div>
+            }
         </div>
 
         <div class="middle">
@@ -18,7 +23,12 @@
         </div>
 
         <div class="right">
-            <div class="title">@Model.Title</div>
+            @if (string.IsNullOrWhiteSpace(this.Model.Url)) {
+                <div class="title">@Model.Title</div>
+            }
+            else {
+                <div class="title"><a href="@Url.Content(Model.Url)">@Model.Title</a></div>
+            }
         </div>
     </div>
 
@@ -94,6 +104,15 @@
                     text-wrap: balance;
                     font-family: "EB Garamond", serif;    
                     font-weight: 550;                
+                }
+                
+                a {
+                    color: black;
+                    text-decoration: none;
+                }                    
+            
+                a:hover {
+                    text-decoration: underline;
                 }
             }
             
