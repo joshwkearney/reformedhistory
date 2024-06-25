@@ -115,12 +115,10 @@
       <AdditionalFiles Include="Views\Content\Documents\ChalcedonianDefinition.cshtml" />
       <AdditionalFiles Include="Views\Content\Documents\HeidelbergCatechism.cshtml" />
       <AdditionalFiles Include="Views\Content\Documents\HelveticConfessions.cshtml" />
-      <AdditionalFiles Include="Views\Content\Documents\NiceanCreed.cshtml" />
       <AdditionalFiles Include="Views\Content\Documents\ScotsConfession.cshtml" />
       <AdditionalFiles Include="Views\Content\Documents\TheDidache.cshtml" />
       <AdditionalFiles Include="Views\Content\Documents\WestminsterConfessionOld.cshtml" />
       <AdditionalFiles Include="Views\Content\Letters\EpistleofClementtotheCorinthians.cshtml" />
-      <AdditionalFiles Include="Views\Content\Letters\EpistleofStLeotoFlavian.cshtml" />
       <AdditionalFiles Include="Views\Content\Letters\EpistlesofIgnatius.cshtml" />
       <AdditionalFiles Include="Views\Content\Letters\EpistlesofPolycarp.cshtml" />
     </ItemGroup>
