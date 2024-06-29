@@ -14,6 +14,22 @@ public class ContentIndex {
                           "presbyterians, Dutch Reformed, and others."
         },
         new TimelineEventModel() {
+            Title = "The Five Articles of Remonstrance",
+            DateStart = 1610,
+            DateEnd = 1610,
+            Url = "~/Content/Documents/ArticlesOfRemonstrance",
+            Description = "Written 43 dutch reformed pastors after the death of Jacob Arminius in 1609, the articles of " +
+                          "remonstrance articulated five points of concern with reformed theology."
+        },
+        new TimelineEventModel() {
+            Title = "The Second Council of Orange",
+            DateStart = 529,
+            DateEnd = 529,
+            Url = "~/Content/Councils/Orange2",
+            Description = "Convened to address semi-Pelagianism, the second council of Orange emphasized the necessity " +
+                          "of grace and the inability of man to seek God without grace"
+        },
+        new TimelineEventModel() {
             Title = "The Epistle of Leo to Flavian",
             DateStart = 449,
             DateEnd = 449,

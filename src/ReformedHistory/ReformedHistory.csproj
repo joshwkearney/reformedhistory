@@ -110,17 +110,7 @@
       <AdditionalFiles Include="Views\Content\Councils\SynodofDort1618.cshtml" />
       <AdditionalFiles Include="Views\Content\Councils\ThirdCouncilofConstantinople680.cshtml" />
       <AdditionalFiles Include="Views\Content\Councils\WestminsterAssembly1643.cshtml" />
-      <AdditionalFiles Include="Views\Content\Documents\ApostlesCreed.cshtml" />
-      <AdditionalFiles Include="Views\Content\Documents\BelgicConfession.cshtml" />
-      <AdditionalFiles Include="Views\Content\Documents\ChalcedonianDefinition.cshtml" />
       <AdditionalFiles Include="Views\Content\Documents\HeidelbergCatechism.cshtml" />
-      <AdditionalFiles Include="Views\Content\Documents\HelveticConfessions.cshtml" />
-      <AdditionalFiles Include="Views\Content\Documents\ScotsConfession.cshtml" />
-      <AdditionalFiles Include="Views\Content\Documents\TheDidache.cshtml" />
-      <AdditionalFiles Include="Views\Content\Documents\WestminsterConfessionOld.cshtml" />
-      <AdditionalFiles Include="Views\Content\Letters\EpistleofClementtotheCorinthians.cshtml" />
-      <AdditionalFiles Include="Views\Content\Letters\EpistlesofIgnatius.cshtml" />
-      <AdditionalFiles Include="Views\Content\Letters\EpistlesofPolycarp.cshtml" />
     </ItemGroup>
     <Target Name="Tailwind" BeforeTargets="Build">
         <Exec Command="npm run css:build" />
