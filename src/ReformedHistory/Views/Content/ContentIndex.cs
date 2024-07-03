@@ -22,6 +22,15 @@ public class ContentIndex {
                           "remonstrance articulated five points of concern with reformed theology."
         },
         new TimelineEventModel() {
+            Title = "Second Helvetic Confession",
+            DateStart = 1562,
+            DateEnd = 1562,
+            Url = "~/Content/Documents/SecondHelveticConfession",
+            Description = "Originally written by Heinrich Bullinger as a private exercise, the Second Helvetic " +
+                          "Confession was translated into German at the request of Frederick III. It came to be a " +
+                          "popular confession among the Swiss reformed churches."
+        },
+        new TimelineEventModel() {
             Title = "The Second Council of Orange",
             DateStart = 529,
             DateEnd = 529,
