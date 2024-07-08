@@ -1,0 +1,126 @@
+@model TimelineInfo.Era
+
+<div>
+    <div class="row spacingRow">
+        <div class="left"></div>
+        <div class="middle"><div class="line"></div></div>
+        <div class="right"></div>
+    </div>
+
+    <div class="row titleRow">
+        <div class="left">
+            <div class="date">@Model.Date</div>
+        </div>
+
+        <div class="middle">
+            <div class="line"></div>
+        </div>
+
+        <div class="right">
+            <div class="title">@Model.Title</div>
+        </div>
+    </div>
+
+    <div class="row">
+        <div class="left">
+            <div class="dashes"></div>
+        </div>
+
+        <div class="middle">
+            <div class="line"></div>
+        </div>
+
+        <div class="right">
+            <div class="dashes"></div>
+        </div>
+    </div>
+
+    <div class="row spacingRow">
+        <div class="left"></div>
+        <div class="middle"><div class="line"></div></div>
+        <div class="right"></div>
+    </div>
+
+    <style>
+        me {
+            --line-thickness: 2px;
+            --line-color: black;
+            --circle-diameter: 1rem;
+            --vertical-margin: 1rem;
+           
+            .row {
+                display: flex;
+                justify-content: space-between;
+                max-width: 800px;
+                margin: auto;
+                
+                .left {
+                    flex: 1;
+                    position: relative;                      
+                }
+                
+                .middle {
+                    flex: 0 0 0;
+                    position: relative;
+                    min-width: var(--circle-diameter);                   
+                }
+                
+                .right {
+                    flex: 1;
+                    position: relative;    
+                }
+            }
+
+            .spacingRow {
+                .middle {
+                    height: var(--vertical-margin);
+                }
+            }
+
+            .title {
+                font-size: 20pt;
+                line-height: 22pt;
+                letter-spacing: 1pt;
+                height: 100%;
+                display: flex;
+                align-items: center;
+                text-align: left;
+                margin-left: 1rem;
+                text-wrap: balance;
+                font-family: "EB Garamond", serif;
+                font-weight: 550;
+                font-style: italic;
+                color: red;
+            }
+
+            .date {
+                font-size: 18pt;
+                height: 100%;
+                display: flex;
+                flex-direction: row-reverse;
+                align-items: center;
+                text-align: right;
+                margin-right: 1rem;
+                letter-spacing: 4pt;
+                font-family: "EB Garamond", serif;
+                color: red;
+                font-style: italic;
+            }
+
+            .line {
+                height: 100%;
+                width: var(--line-thickness);
+                background-color: var(--line-color);
+                position: absolute;
+                left: calc(var(--circle-diameter) / 2 - var(--line-thickness) / 2);
+            }
+
+            .dashes {
+                width: 100%;
+                color: red;
+                border-top: 2px dashed red;
+                margin-top: 4pt;
+            }
+        }
+    </style>
+</div>

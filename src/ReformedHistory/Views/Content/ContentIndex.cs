@@ -3,8 +3,8 @@ using ReformedHistory.Models;
 namespace ReformedHistory.Views.Content;
 
 public class ContentIndex {
-    private static IReadOnlyList<TimelineEventModel> Timelime { get; } = [
-        new TimelineEventModel() {
+    private static IReadOnlyList<TimelineInfo> Timelime { get; } = [
+        new TimelineInfo.Event() {
             Title = "Westminster Confession of Faith",
             DateStart = 1646,
             DateEnd = 1646,
@@ -13,7 +13,7 @@ public class ContentIndex {
                           "adopted reformed confession in the world. It is used for doctrinal standards of " +
                           "presbyterians, Dutch Reformed, and others."
         },
-        new TimelineEventModel() {
+        new TimelineInfo.Event() {
             Title = "The Five Articles of Remonstrance",
             DateStart = 1610,
             DateEnd = 1610,
@@ -21,7 +21,7 @@ public class ContentIndex {
             Description = "Written 43 dutch reformed pastors after the death of Jacob Arminius in 1609, the articles of " +
                           "remonstrance articulated five points of concern with reformed theology."
         },
-        new TimelineEventModel() {
+        new TimelineInfo.Event() {
             Title = "Second Helvetic Confession",
             DateStart = 1562,
             DateEnd = 1562,
@@ -30,7 +30,11 @@ public class ContentIndex {
                           "Confession was translated into German at the request of Frederick III. It came to be a " +
                           "popular confession among the Swiss reformed churches."
         },
-        new TimelineEventModel() {
+        new TimelineInfo.Era() {
+            Title = "The Protestant Reformation",
+            Date = 1517
+        },
+        new TimelineInfo.Event() {
             Title = "The Second Council of Orange",
             DateStart = 529,
             DateEnd = 529,
@@ -38,7 +42,7 @@ public class ContentIndex {
             Description = "Convened to address semi-Pelagianism, the second council of Orange emphasized the necessity " +
                           "of grace and the inability of man to seek God without grace"
         },
-        new TimelineEventModel() {
+        new TimelineInfo.Event() {
             Title = "The Epistle of Leo to Flavian",
             DateStart = 449,
             DateEnd = 449,
@@ -47,14 +51,14 @@ public class ContentIndex {
                           "an orthodox explanation of Christ's two natures. This letter was accepted by the Council of " +
                           "Chalcedon as orthodox Christology."
         },
-        new TimelineEventModel() {
+        new TimelineInfo.Event() {
             Title = "The Second Letter of Jerome to Evangelus",
             DateStart = 342,
             DateEnd = 420,
             Url = "~/Content/Letters/JeromeToEvangelus2",
             Description = "Jerome proves from the scriptures that presbyters are the same as bishops, and over deacons."
         },
-        new TimelineEventModel() {
+        new TimelineInfo.Event() {
             Title = "The Nicean Creed",
             DateStart = 325,
             DateEnd = 381,
@@ -64,7 +68,7 @@ public class ContentIndex {
         }
     ];
 
-    public IReadOnlyList<TimelineEventModel> GetTimeline() {
+    public IReadOnlyList<TimelineInfo> GetTimeline() {
         return Timelime;
     }
 }

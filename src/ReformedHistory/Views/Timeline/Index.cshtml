@@ -7,5 +7,10 @@
 }
 
 @foreach (var item in content.GetTimeline()) {
-    <partial name="TimelineEvent" model="item" />
+    if (item is TimelineInfo.Event e) {
+        <partial name="TimelineEvent" model="e" />
+    }
+    else if (item is TimelineInfo.Era era) {
+        <partial name="TimelineEra" model="era" />
+    }
 }
