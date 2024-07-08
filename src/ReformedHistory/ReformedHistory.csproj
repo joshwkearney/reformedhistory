@@ -109,6 +109,6 @@
       <AdditionalFiles Include="Views\Content\Documents\HeidelbergCatechism.cshtml" />
     </ItemGroup>
     <Target Name="Tailwind" BeforeTargets="Build">
-        <Exec Command="npm run css:build" />
+        <!--<Exec Command="npm run css:build" />-->
     </Target>
 </Project>
