@@ -32,6 +32,7 @@
                 flex-grow: 20;
                 flex-shrink: 20;
                 flex-basis: 20%;
+                max-width: 350px;
 
                 .NavigationPadding {
                     padding: 1rem;
@@ -44,10 +45,11 @@
                     overflow-y: auto;
                     top: 4.5rem;
                     left: 0;
-                    right: calc(80% + 1.5rem);
                     bottom: 0;
                     padding: 0;
                     margin: 0;
+                    width: calc(min(350px, 20% + 1rem));
+                    max-width: 350px;
                     
                     h1 {
                         font-size: 20pt;
@@ -86,6 +88,8 @@
                 flex-grow: 20;
                 flex-shrink: 20;
                 flex-basis: 20%;
+                max-width: 300px;
+                padding-right: 1rem;
                 
                 h1 {
                     font-size: 20pt;
@@ -124,6 +128,7 @@
                 flex-basis: 60%;
                 padding-left: 64pt;
                 padding-right: 32pt;
+                max-width: 850px;
 
                 br {
                     height: 1rem;

@@ -34,6 +34,10 @@ public class ContentIndex {
             Title = "The Protestant Reformation",
             Date = 1517
         },
+        //new TimelineInfo.Era() {
+        //    Title = "The Great East-West Schism",
+        //    Date = 1054
+        //},
         new TimelineInfo.Event() {
             Title = "The Second Council of Orange",
             DateStart = 529,
