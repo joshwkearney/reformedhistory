@@ -34,10 +34,26 @@ public class ContentIndex {
             Title = "The Protestant Reformation",
             Date = 1517
         },
-        //new TimelineInfo.Era() {
-        //    Title = "The Great East-West Schism",
-        //    Date = 1054
-        //},
+        new TimelineInfo.Event() {
+            Title = "The Four Articles of Prague",
+            DateStart = 1420,
+            DateEnd = 1420,
+            Url = "~/Content/Documents/ArticlesOfPrague",
+            Description = "Written by the followers of John Hus after his execution, the articles outline four reforms " +
+                          "wanted by the proto-protestant Bohemian reformers."
+        },
+        new TimelineInfo.Event() {
+            Title = "The Waldensian Confession",
+            DateStart = 1180,
+            DateEnd = 1180,
+            Url = "~/Content/Documents/WaldensianConfession",
+            Description = "Written by Peter Waldo, this confession outlined the faith of the proto-protestant " +
+                          "Waldensians, who would later join the reformed churches."
+        },
+        new TimelineInfo.Era() {
+            Title = "The Great East-West Schism",
+            Date = 1054
+        },
         new TimelineInfo.Event() {
             Title = "The Second Council of Orange",
             DateStart = 529,
@@ -61,6 +77,14 @@ public class ContentIndex {
             DateEnd = 420,
             Url = "~/Content/Letters/JeromeToEvangelus2",
             Description = "Jerome proves from the scriptures that presbyters are the same as bishops, and over deacons."
+        },
+        new TimelineInfo.Event() {
+            Title = "Augustine's Sermon on the Eucharist",
+            DateStart = 407,
+            DateEnd = 411,
+            Url = "~/Content/Documents/AugustineOnTheEucharist",
+            Description = "Augustine explains that the Eucharist is the body of Christ, that it is grapsed by faith, " +
+                          "and that it is composed of believers"
         },
         new TimelineInfo.Event() {
             Title = "The Nicean Creed",
