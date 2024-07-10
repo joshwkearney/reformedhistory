@@ -30,6 +30,14 @@ public class ContentIndex {
                           "Confession was translated into German at the request of Frederick III. It came to be a " +
                           "popular confession among the Swiss reformed churches."
         },
+        new TimelineInfo.Event() {
+            Title = "Zwingli's 67 Articles",
+            DateStart = 1523,
+            DateEnd = 1523,
+            Url = "~/Content/Documents/ArticlesOfZwingli",
+            Description = "Written by Ulrich Zwingli in 1523 as a defense of his protestant theology, these articles " +
+                          "would begin the Swiss Reformation."
+        },
         new TimelineInfo.Era() {
             Title = "The Protestant Reformation",
             Date = 1517
