@@ -94,18 +94,6 @@
     </ItemGroup>
 
     <ItemGroup>
-      <AdditionalFiles Include="Views\Content\Councils\CouncilofChalcedon451.cshtml" />
-      <AdditionalFiles Include="Views\Content\Councils\CouncilofEphesus431.cshtml" />
-      <AdditionalFiles Include="Views\Content\Councils\CouncilofFrankfurt794.cshtml" />
-      <AdditionalFiles Include="Views\Content\Councils\CouncilOfNicea.cshtml" />
-      <AdditionalFiles Include="Views\Content\Councils\CouncilofNicea325.cshtml" />
-      <AdditionalFiles Include="Views\Content\Councils\FirstCouncilofConstantinople381.cshtml" />
-      <AdditionalFiles Include="Views\Content\Councils\GlasgowGeneralAssembly1638.cshtml" />
-      <AdditionalFiles Include="Views\Content\Councils\SecondCouncilofConstantinople553.cshtml" />
-      <AdditionalFiles Include="Views\Content\Councils\SynodofChanforan1532.cshtml" />
-      <AdditionalFiles Include="Views\Content\Councils\SynodofDort1618.cshtml" />
-      <AdditionalFiles Include="Views\Content\Councils\ThirdCouncilofConstantinople680.cshtml" />
-      <AdditionalFiles Include="Views\Content\Councils\WestminsterAssembly1643.cshtml" />
       <AdditionalFiles Include="Views\Content\Documents\HeidelbergCatechism.cshtml" />
     </ItemGroup>
     <Target Name="Tailwind" BeforeTargets="Build">

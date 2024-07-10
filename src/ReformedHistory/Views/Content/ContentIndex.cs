@@ -14,6 +14,14 @@ public class ContentIndex {
                           "presbyterians, Dutch Reformed, and others."
         },
         new TimelineInfo.Event() {
+            Title = "The Synod of Dort",
+            DateStart = 1618,
+            DateEnd = 1618,
+            Url = "~/Content/Councils/Dort",
+            Description = "Dort was a council of nine reformed countries convened to repudiate the teachings of Jacob " +
+                          "Arminius outlined in the Articles of Remonstrance"
+        },
+        new TimelineInfo.Event() {
             Title = "The Five Articles of Remonstrance",
             DateStart = 1610,
             DateEnd = 1610,
