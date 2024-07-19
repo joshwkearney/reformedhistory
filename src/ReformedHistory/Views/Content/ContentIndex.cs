@@ -26,8 +26,16 @@ public class ContentIndex {
             DateStart = 1610,
             DateEnd = 1610,
             Url = "~/Content/Documents/ArticlesOfRemonstrance",
-            Description = "Written 43 dutch reformed pastors after the death of Jacob Arminius in 1609, the articles of " +
+            Description = "Written by 43 dutch reformed pastors after the death of Jacob Arminius in 1609, the articles of " +
                           "remonstrance articulated five points of concern with reformed theology."
+        },
+        new TimelineInfo.Event() {
+            Title = "The Saxon Visitation Articles",
+            DateStart = 1592,
+            DateEnd = 1592,
+            Url = "~/Content/Documents/ArticlesOfSaxony",
+            Description = "Commissioned by Frederick William against crypto-calvinism, the Saxon Visitation Aritcles " +
+                          "describe four points where lutherans reject reformed doctrine."
         },
         new TimelineInfo.Event() {
             Title = "Second Helvetic Confession",
@@ -37,6 +45,23 @@ public class ContentIndex {
             Description = "Originally written by Heinrich Bullinger as a private exercise, the Second Helvetic " +
                           "Confession was translated into German at the request of Frederick III. It came to be a " +
                           "popular confession among the Swiss reformed churches."
+        },
+        new TimelineInfo.Event() {
+            Title = "The Smalcald Articles",
+            DateStart = 1537,
+            DateEnd = 1537,
+            Url = "~/Content/Documents/SmalcaldArticles",
+            Description = "The Smaldald Articles were written by Martin Luther to summarize lutheran doctrine for the " +
+                          "Schmalkaldic League. They were adopted into the book of concord in 1580"
+        },
+        new TimelineInfo.Event() {
+            Title = "The Augsburg Confession",
+            DateStart = 1530,
+            DateEnd = 1530,
+            Url = "~/Content/Documents/AugsburgConfession",
+            Description = "One of the most important reformation confessions, the Augsburg Confession was presented " +
+                          "to Holy Roman Emperor Charles V after the Lutherans were summoned to explain their " +
+                          "theological convictions"
         },
         new TimelineInfo.Event() {
             Title = "Zwingli's 67 Articles",
