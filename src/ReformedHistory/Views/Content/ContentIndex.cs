@@ -50,6 +50,17 @@ public class ContentIndex {
             Era = TimelineEventEra.Reformation
         },
         new TimelineInfo.Event() {
+            Title = "39 Articles of Religion",
+            DateStart = 1571,
+            DateEnd = 1571,
+            Url = "~/Content/Documents/ThirtyNineArticles",
+            Description = "Written after Henry VIII broke with the Roman church, the 39 articles created a via media " +
+                          "between catholic and protestant doctrine, and would be the standard for the Church of England",
+            Type = TimelineEventType.Document,
+            Tradition = TimelineEventTradition.Calvinist,
+            Era = TimelineEventEra.Reformation
+        },
+        new TimelineInfo.Event() {
             Title = "Second Helvetic Confession",
             DateStart = 1562,
             DateEnd = 1562,
