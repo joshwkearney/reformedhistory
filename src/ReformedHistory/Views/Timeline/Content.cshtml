@@ -4,45 +4,39 @@
 @model TimelineFilters
 
 @{
-    bool IsGenesisEvent(TimelineInfo.EraBoundary e)
-    {
-        return e.Date <= -1000000000;
-    }
-
-    bool CanShowEvent(TimelineInfo.Event e)
-    {
-        if (this.Model is null)
-        {
+    bool CanShowEvent(TimelineInfo.Event e) {
+        if (this.Model is null) {
             return true;
         }
 
-        if ((e.Tradition & this.Model.Tradition) == TimelineEventTradition.None)
-        {
+        if ((e.Tradition & this.Model.Tradition) == TimelineEventTradition.None) {
             return false;
         }
 
-        if ((e.Type & this.Model.Type) == TimelineEventType.None)
-        {
+        if ((e.Type & this.Model.Type) == TimelineEventType.None) {
             return false;
         }
 
-        if ((e.Era & this.Model.Era) == TimelineEventEra.None)
-        {
+        if ((e.Era & this.Model.Era) == TimelineEventEra.None) {
             return false;
         }
 
-        return true;
+        if (string.IsNullOrWhiteSpace(this.Model.TextSearch)) {
+            return true;
+        }
+        
+        var isMatch = e.Title.Contains(this.Model.TextSearch, StringComparison.InvariantCultureIgnoreCase)
+                      || e.Description.Contains(this.Model.TextSearch, StringComparison.InvariantCultureIgnoreCase);
+
+        return isMatch;
     }
 
-    bool CanShowEra(TimelineInfo.EraBoundary e)
-    {
-        if (this.Model is null)
-        {
+    bool CanShowEra(TimelineInfo.EraBoundary e) {
+        if (this.Model is null) {
             return true;
         }
 
-        if ((e.Era & this.Model.Era) == TimelineEventEra.None)
-        {
+        if ((e.Era & this.Model.Era) == TimelineEventEra.None) {
             return false;
         }
 
@@ -50,27 +44,19 @@
     }
 }
 
-@foreach (var item in content.GetTimeline())
-{
-    if (item is TimelineInfo.Event e)
-    {
-        if (CanShowEvent(e))
-        {
+<partial name="TimelineStart" />
+
+@foreach (var item in content.GetTimeline()) {
+    if (item is TimelineInfo.Event e) {
+        if (CanShowEvent(e)) {
             <partial name="TimelineEvent" model="e" />
         }
     }
-    else if (item is TimelineInfo.EraBoundary era)
-    {
-        if (CanShowEra(era))
-        {
-            if (IsGenesisEvent(era))
-            {
-                <partial name="TimelineGenesis" model="era" />
-            }
-            else
-            {
-                <partial name="TimelineEra" model="era" />
-            }
+    else if (item is TimelineInfo.EraBoundary era) {
+        if (CanShowEra(era)) {
+            <partial name="TimelineEra" model="era" />
         }
     }
 }
+
+<partial name="TimelineEnd" />

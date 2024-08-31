@@ -68,7 +68,10 @@ public class TimelineController : Controller {
             era |= TimelineEventEra.Ancient;
         }
 
+        var textSearch = request.TextSearch?.Trim() ?? string.Empty;
+
         var model = new TimelineFilters() {
+            TextSearch = textSearch,
             Tradition = tradition,
             Type = type,
             Era = era
@@ -79,6 +82,8 @@ public class TimelineController : Controller {
 }
 
 public record TimelineContentRequest {
+    public string TextSearch { get; init; } = string.Empty;
+    
     public string ReformedCheckbox { get; init; } = string.Empty;
     public string LutheranCheckbox { get; init; } = string.Empty;
     
@@ -86,10 +91,9 @@ public record TimelineContentRequest {
     public string DocumentCheckbox { get; init; } = string.Empty;
     public string LetterCheckbox { get; init; } = string.Empty;
     public string CouncilCheckbox { get; init; } = string.Empty;
-    
     public string CatechismCheckbox { get; init; } = string.Empty;
-    
     public string SermonCheckbox { get; init; } = string.Empty;
+    
     public string ReformationCheckbox { get; init; } = string.Empty;
     public string MedievalCheckbox { get; init; } = string.Empty;
     public string AncientCheckbox { get; init; } = string.Empty;

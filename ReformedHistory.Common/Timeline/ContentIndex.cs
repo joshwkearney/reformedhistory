@@ -4,11 +4,6 @@ namespace ReformedHistory.Views.Content;
 
 public class ContentIndex {
     private static IReadOnlyList<TimelineInfo> Timelime { get; } = [
-		new TimelineInfo.EraBoundary() {
-			Title = "Present Day",
-			Date = DateTime.Now.Year,
-			Era = TimelineEventEra.Reformation
-		},
 		new TimelineInfo.Event() {
 			Title = "Westminster Shorter Catechism",
 			DateStart = 1647,
@@ -265,12 +260,7 @@ public class ContentIndex {
             Type = TimelineEventType.Council,
             Tradition = TimelineEventTradition.Reformed | TimelineEventTradition.Lutheran  | TimelineEventTradition.Anglican,
             Era = TimelineEventEra.Ancient
-        },
-		new TimelineInfo.EraBoundary() {
-			Title = "The Very Foundations of the World",
-			Date = -1000000000,
-			Era = TimelineEventEra.Ancient
-		}
+        }
 	];
 
     public IReadOnlyList<TimelineInfo> GetTimeline() {

@@ -1,0 +1,116 @@
+<div>
+    <div class="row spacingRow">
+        <div class="left"></div>
+        <div class="middle"><div class="line"></div></div>
+        <div class="right"></div>
+    </div>
+    
+    <div class="row headerRow">
+        <div class="left"></div>
+
+        <div class="middle">
+            <div class="line"></div>
+            <div class="circle"></div>
+        </div>
+
+        <div class="right">
+            <div class="title">The Very Foundations of the World</div>
+        </div>
+    </div>
+
+    <style>
+        me {
+            --line-thickness: 2px;
+            --line-color: black;
+            --circle-diameter: 0.5rem;
+            --vertical-margin: 1rem;
+            
+            .spacingRow {
+                .middle {
+                    height: var(--vertical-margin);
+                }
+            }
+            
+            .headerRow {                
+                .middle {
+                    display: flex;
+                    align-items: center;
+                    position: relative;
+                    
+                    .line {
+                        position: absolute;
+                        top: 0;
+                        height: 50%;
+                    }
+                }
+                
+                .title {
+                    font-size: 20pt;
+                    line-height: 22pt;
+                    letter-spacing: 1pt;
+                    height: 100%;
+                    display: flex;
+                    align-items: center;
+                    text-align: left;
+                    margin-left: 1rem;
+                    text-wrap: balance;
+                    font-family: "EB Garamond", serif;    
+                    font-style: italic;                
+                }
+                
+                a {
+                    color: black;
+                    text-decoration: none;
+                }                    
+            
+                a:hover {
+                    text-decoration: underline;
+                }
+            }
+            
+            .row {
+                display: flex;
+                justify-content: space-between;
+                max-width: 800px;
+                margin: auto;
+                
+                .left {
+                    flex: 1;
+                    position: relative;
+                    max-width: 150pt;                      
+                }
+                
+                .middle {
+                    flex: 0 0 0;
+                    position: relative;
+                    min-width: calc(1rem);
+                    width: calc(1rem);         
+                    position: relative;        
+                }
+                
+                .right {
+                    flex: 1;
+                    position: relative;    
+                }
+            }    
+            
+            .line {
+                height: 100%;
+                width: var(--line-thickness);
+                background-color: var(--line-color);
+                position: absolute;
+                left: calc(1rem / 2 - var(--line-thickness) / 2);
+            }
+            
+            .circle {
+                width: calc(var(--circle-diameter) - 2 * var(--line-thickness));
+                height: calc(var(--circle-diameter) - 2 * var(--line-thickness));
+                background-color: var(--line-color);
+                border-radius: 50%;
+                border: var(--line-thickness) solid var(--line-color);
+                margin: auto;
+                z-index: 5;
+            }
+        }
+    </style>
+</div>
