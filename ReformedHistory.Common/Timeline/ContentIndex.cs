@@ -9,8 +9,22 @@ public class ContentIndex {
 			DateStart = 1647,
 			DateEnd = 1647,
 			Url = "~/Content/Catechisms/WestminsterShorter",
-			Description = "The Westminster Shorter Catechism was based on the larger of the same name, the Heidelberg " +
-                          "Catechism, and Calvin's Geneva Catechism to instruct children on the reformed faith.",
+			Description = "The Westminster Shorter Catechism, written alongside the longer, was based upon the Heidelberg " +
+                          "Catechism and Calvin's Geneva Catechism to instruct children and families on the Christian faith. " +
+                          "It provides a concise summary of Reformed doctrine and is capable of being memorized at any age.",
+			Type = TimelineEventType.Catechism,
+			Tradition = TimelineEventTradition.Reformed,
+			Era = TimelineEventEra.Reformation
+		},
+		new TimelineInfo.Event() {
+			Title = "Westminster Larger Catechism",
+			DateStart = 1647,
+			DateEnd = 1647,
+			Url = "~/Content/Catechisms/WestminsterLarger",
+			Description = "The Westminster Larger Catechism, written alongside the shorter, " +
+                          "was designed to supplement and expand upon the contents of the Shorter. It presents " +
+                          "a full and balanced summary of the Christian faith and is more suitable for those who " +
+                          "have attained some level of spiritual maturity",
 			Type = TimelineEventType.Catechism,
 			Tradition = TimelineEventTradition.Reformed,
 			Era = TimelineEventEra.Reformation
