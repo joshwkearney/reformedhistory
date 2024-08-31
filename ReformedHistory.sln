@@ -2,7 +2,7 @@
 Microsoft Visual Studio Solution File, Format Version 12.00
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ReformedHistory", "src\ReformedHistory\ReformedHistory.csproj", "{92D7FAEC-EE91-40CE-8640-35CA54DADB25}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ReformedHistory.Common", "ReformedHistory.Common\ReformedHistory.Common.csproj", "{A1325C98-B056-45A2-BA4E-5F6D637FCE46}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ReformedHistory.Common", "src\ReformedHistory.Common\ReformedHistory.Common.csproj", "{A1325C98-B056-45A2-BA4E-5F6D637FCE46}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution

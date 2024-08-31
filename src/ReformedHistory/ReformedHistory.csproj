@@ -95,7 +95,7 @@
     </ItemGroup>
 
     <ItemGroup>
-      <ProjectReference Include="..\..\ReformedHistory.Common\ReformedHistory.Common.csproj" />
+      <ProjectReference Include="..\ReformedHistory.Common\ReformedHistory.Common.csproj" />
     </ItemGroup>
     <Target Name="Tailwind" BeforeTargets="Build">
         <!--<Exec Command="npm run css:build" />-->
