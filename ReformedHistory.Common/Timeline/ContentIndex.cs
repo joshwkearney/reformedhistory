@@ -109,7 +109,17 @@ public class ContentIndex {
             Tradition = TimelineEventTradition.Reformed,
             Era = TimelineEventEra.Reformation
         },
-        new TimelineInfo.Event() {
+		new TimelineInfo.Event() {
+			Title = "Belgic Confession",
+			DateStart = 1561,
+			DateEnd = 1561,
+			Url = "~/Content/Confessions/BelgicConfession",
+			Description = "",
+			Type = TimelineEventType.Confession,
+			Tradition = TimelineEventTradition.Reformed,
+			Era = TimelineEventEra.Reformation
+		},
+		new TimelineInfo.Event() {
             Title = "The Scots Confession",
             DateStart = 1560,
             DateEnd = 1560,
