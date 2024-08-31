@@ -2,27 +2,79 @@
     ViewData["Title"] = "Home Page";
 }
 
-<div class="container mx-auto mt-12">
-    <div class="text-center mb-12">
-        <h1 class="test text-5xl font-extrabold">Welcome to ReformedHistory</h1>
-        <p class="text-lg text-gray-500">Providing high-quality, free access to important church documents.</p>
-    </div>
-    <div class="flex justify-center">
-        <div class="w-full max-w-2xl">
-            <div class="bg-white shadow-lg rounded-lg">
-                <div class="p-8">
-                    <h2 class="text-3xl text-center mb-6">Our Mission</h2>
-                    <p class="text-justify mb-4">
-                        At ReformedHistory, we believe in making historical church documents readily available to scholars, researchers, and the general public. Our mission is to preserve and share the rich heritage of the Christian faith by providing free access to a vast collection of important texts.
-                    </p>
-                    <p class="text-justify mb-4">
-                        Our collection includes councils, letters, confessions, and other significant texts that have shaped the history of the church. We are committed to ensuring that these documents are easily accessible and well-preserved for future generations.
-                    </p>
-                    <div class="text-center mt-8">
-                        <a class="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded" href="~/Home/Library" role="button">Explore the Library</a>
-                    </div>
-                </div>
-            </div>
-        </div>
+<div class="container">
+    <h1 class="main-heading">Welcome to ReformedHistory.com</h1>
+    <p class="sub-heading">Providing high-quality, free access to important church documents.</p>
+
+    <div class="mission-section">
+        <h2>Our Mission</h2>
+        <p>
+            At ReformedHistory, we believe in making historical church documents readily available to scholars, researchers, and the general public. Our mission is to preserve and share the rich heritage of the Christian faith by providing free access to a vast collection of important texts.
+        </p>
+        <p>
+            Our collection includes councils, letters, confessions, and other significant texts that have shaped the history of the church. We are committed to ensuring that these documents are easily accessible and well-preserved for future generations.
+        </p>
+        <a href="~/Timeline" role="button" class="explore-button">Explore the Timeline</a>
     </div>
 </div>
+
+<style>
+    .container {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        height: 60vh;
+        padding: 20px;
+        text-align: center;
+        font-family: Arial, sans-serif;
+    }
+
+    .main-heading {
+        font-weight: bold;
+        font-size: 2.5em;
+        color: #333;
+        margin-bottom: 10px;
+    }
+
+    .sub-heading {
+        font-size: 1.2em;
+        color: #666;
+        margin-bottom: 40px;
+    }
+
+    .mission-section {
+        max-width: 800px;
+        margin: 0 auto;
+        text-align: center;
+    }
+
+        .mission-section h2 {
+            font-size: 2em;
+            color: #444;
+            margin-bottom: 20px;
+        }
+
+        .mission-section p {
+            font-size: 1.1em;
+            color: #555;
+            line-height: 1.6;
+            margin-bottom: 20px;
+        }
+
+    .explore-button {
+        display: inline-block;
+        padding: 10px 20px;
+        font-size: 1em;
+        color: white;
+        background-color: #007bff;
+        border: none;
+        border-radius: 5px;
+        text-decoration: none;
+        transition: background-color 0.3s ease;
+    }
+
+        .explore-button:hover {
+            background-color: #0056b3;
+        }
+</style>
