@@ -21,9 +21,10 @@ public enum TimelineEventType {
 [Flags]
 public enum TimelineEventEra {
     None        = 0,
-    Reformation = 0b001, 
-    Medieval    = 0b010, 
-    Ancient     = 0b100
+    Reformation = 0b0001, 
+    Medieval    = 0b0010, 
+    Ancient     = 0b0100,
+    Genesis     = 0b1000
 }
 
 public abstract record TimelineInfo {

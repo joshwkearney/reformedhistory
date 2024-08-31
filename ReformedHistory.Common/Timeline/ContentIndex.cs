@@ -260,8 +260,13 @@ public class ContentIndex {
             Type = TimelineEventType.Council,
             Tradition = TimelineEventTradition.Reformed | TimelineEventTradition.Lutheran  | TimelineEventTradition.Anglican,
             Era = TimelineEventEra.Ancient
-        }
-    ];
+        },
+		new TimelineInfo.EraBoundary() {
+			Title = "The Very Foundations of the World",
+			Date = -1000000000,
+			Era = TimelineEventEra.Genesis
+		}
+	];
 
     public IReadOnlyList<TimelineInfo> GetTimeline() {
         return Timelime;
