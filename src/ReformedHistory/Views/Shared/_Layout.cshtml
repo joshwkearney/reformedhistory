@@ -24,7 +24,7 @@
             <div class="bar"></div>
             <a href="~/Home">Home</a>
             <a href="~/Timeline/">Timeline</a>
-            
+
             <style>
                 me {
                     width: 100%;
@@ -64,13 +64,13 @@
                         width: 1px;
                         background-color: black;
                     }
-                }
+                }            
             </style>
-        </header>
-        <main>
-            @RenderBody()
-        </main>
-        <style>
+    </header>
+    <main>
+        @RenderBody()
+    </main>
+    <style>
             me {
                 width: 100vw;
                 height: 100vh;
@@ -81,14 +81,14 @@
                 scroll-padding-top: 4.5rem;
             }
         </style>
-    </div>
+</div>
 
-    <!-- Include the site's javascript -->
-    <script src="~/js/site.js" asp-append-version="true"></script>
+<!-- Include the site's javascript -->
+<script src="~/js/site.js" asp-append-version="true"></script>
 
-    <!-- Include htmx -->
-    <script src="~/js/htmx.js"></script>
+<!-- Include htmx -->
+<script src="~/js/htmx.js"></script>
 
-    @await RenderSectionAsync("Scripts", required: false)
+@await RenderSectionAsync("Scripts", required: false)
 </body>
 </html>

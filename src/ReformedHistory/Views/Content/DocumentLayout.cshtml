@@ -24,212 +24,200 @@
             width: 100%;
             display: flex;
             flex-direction: row;
-            .NavigationPanel
+            
+            .NavigationPanel {
+                font-family: "EB Garamond", serif;
+                text-wrap: balance;
+                position: relative;
+                flex-grow: 20;
+                flex-shrink: 20;
+                flex-basis: 20%;
+                max-width: 350px;
+            
+                .NavigationPadding {
+                    padding: 1rem;
+                    padding-top: 0;
+                    width: auto;
+                }
 
-        {
-            font-family: "EB Garamond", serif;
-            text-wrap: balance;
-            position: relative;
-            flex-grow: 20;
-            flex-shrink: 20;
-            flex-basis: 20%;
-            max-width: 350px;
-            .NavigationPadding
+                nav {
+                    position: fixed;
+                    overflow-y: auto;
+                    top: 4.5rem;
+                    left: 0;
+                    bottom: 0;
+                    padding: 0;
+                    margin: 0;
+                    width: calc(min(350px, 20% + 1rem));
+                    max-width: 350px;
+                    
+                    h1 {
+                        font-size: 20pt;
+                        margin-bottom: 1rem;
+                    }
 
-        {
-            padding: 1rem;
-            padding-top: 0;
-            width: auto;
-        }
+                    h2 {
+                        font-size: 13pt;
+                        line-height: 15pt;
+                        font-weight: bold;
+                        margin-bottom: 3pt;
+                        margin-left: 3pt;
+                    }
 
-        nav {
-            position: fixed;
-            overflow-y: auto;
-            top: 4.5rem;
-            left: 0;
-            bottom: 0;
-            padding: 0;
-            margin: 0;
-            width: calc(min(350px, 20% + 1rem));
-            max-width: 350px;
-            h1
+                    ol, ul {
+                        list-style-position: outside;
+                        list-style-type: decimal;
+                        margin-left: 2rem;
+                        font-size: 13pt;
+                        line-height: 15pt;
+                        
+                        li {
+                            margin-bottom: 5pt;
+                            padding-left: 3pt;
+                        }
+                    }
 
-        {
-            font-size: 20pt;
-            margin-bottom: 1rem;
-        }
+                    a {
+                        color: black;
+                        text-decoration: none;
+                    }
 
-        h2 {
-            font-size: 13pt;
-            line-height: 15pt;
-            font-weight: bold;
-            margin-bottom: 3pt;
-            margin-left: 3pt;
-        }
-
-        ol, ul {
-            list-style-position: outside;
-            list-style-type: decimal;
-            margin-left: 2rem;
-            font-size: 13pt;
-            line-height: 15pt;
-            li
-
-        {
-            margin-bottom: 5pt;
-            padding-left: 3pt;
-        }
-
-        }
-
-        a {
-            color: black;
-            text-decoration: none;
-        }
-
-            a:hover {
-                text-decoration: underline;
+                    a:hover {
+                        text-decoration: underline;
+                    }
+                }
             }
 
-        }
-        }
+            .DetailsPanel {
+                font-size: 13pt;
+                line-height: 15pt;
+                font-family: "EB Garamond", serif;
+                text-wrap: balance;
+                flex-grow: 20;
+                flex-shrink: 20;
+                flex-basis: 20%;
+                max-width: 300px;
+                padding-right: 1rem;
+                
+                h1 {
+                    font-size: 20pt;
+                    line-height: 22pt;
+                    padding-bottom: 1rem;
+                    width: calc(100% - 2rem);
+                    text-align: left;
+                }
 
-        .DetailsPanel {
-            font-size: 13pt;
-            line-height: 15pt;
-            font-family: "EB Garamond", serif;
-            text-wrap: balance;
-            flex-grow: 20;
-            flex-shrink: 20;
-            flex-basis: 20%;
-            max-width: 300px;
-            padding-right: 1rem;
-            h1
+                img {
+                    width: 100%;
+                    margin-bottom: 1rem;
+                }
 
-        {
-            font-size: 20pt;
-            line-height: 22pt;
-            padding-bottom: 1rem;
-            width: calc(100% - 2rem);
-            text-align: left;
-        }
+                table {
+                    margin-bottom: 1rem;
+                    table-layout: fixed;
+                    width: calc(100% - 2rem);
+                    
+                    tr > td {
+                        padding-bottom: 1rem;
+                    }
 
-        img {
-            width: 100%;
-            margin-bottom: 1rem;
-        }
-
-        table {
-            margin-bottom: 1rem;
-            table-layout: fixed;
-            width: calc(100% - 2rem);
-            tr > td
-
-        {
-            padding-bottom: 1rem;
-        }
-
-        tr > td:first-child {
-            font-weight: bold;
-        }
-
-        }
-        }
-
-        .ContentPanel {
-            font-size: 16pt;
-            line-height: 1.25;
-            font-family: "EB Garamond", serif;
-            flex-grow: 60;
-            flex-shrink: 60;
-            flex-basis: 60%;
-            padding-left: 70pt;
-            padding-right: 32pt;
-            padding-bottom: 2rem;
-            max-width: 850px;
-            br
-
-        {
-            height: 1rem;
-        }
-
-        h1 {
-            text-wrap: balance;
-            font-size: 25pt;
-            line-height: 27pt;
-            font-weight: 550;
-            margin-bottom: 2pt;
-        }
-
-        h2 {
-            text-wrap: balance;
-            font-size: 20pt;
-            line-height: 22pt;
-            font-weight: 550;
-            margin-bottom: 2pt;
-        }
-
-        h3 {
-            text-wrap: balance;
-            font-size: 16pt;
-            line-height: 18pt;
-            font-style: italic;
-        }
-
-        h4 {
-            font-weight: bold;
-            margin-bottom: 5pt;
-        }
-
-        h5 {
-            text-align: center;
-            font-weight: bold;
-            margin-bottom: 5pt;
-        }
-
-        ul, ol {
-            list-style-position: outside;
-            list-style-type: lower-roman;
-            margin-left: -5pt;
-            li
-
-        {
-            padding-left: 5pt;
-            margin-bottom: 1rem;
-        }
-
-        li::marker {
-            font-weight: bold;
-        }
-
-        }
-
-        ul.decimal, ol.decimal {
-            list-style-type: decimal;
-        }
-
-        table {
-            width: 100%;
-            text-align: center;
-            font-style: italic;
-            table-layout: fixed;
-        }
-
-        i {
-            font-style: italic;
-        }
-
-        a {
-            color: black;
-            text-decoration: none;
-            outline: none
-        }
-
-            a:hover {
-                text-decoration: underline;
+                    tr > td:first-child {
+                        font-weight: bold;
+                    }
+                }
             }
 
-        }
+            .ContentPanel {
+                font-size: 16pt;
+                line-height: 1.25;
+                font-family: "EB Garamond", serif;
+                flex-grow: 60;
+                flex-shrink: 60;
+                flex-basis: 60%;
+                padding-left: 70pt;
+                padding-right: 32pt;
+                padding-bottom: 2rem;
+                max-width: 850px;
+                
+                br {
+                    height: 1rem;
+                }
+
+                h1 {
+                    text-wrap: balance;
+                    font-size: 25pt;
+                    line-height: 27pt;
+                    font-weight: 550;
+                    margin-bottom: 2pt;
+                }
+
+                h2 {
+                    text-wrap: balance;
+                    font-size: 20pt;
+                    line-height: 22pt;
+                    font-weight: 550;
+                    margin-bottom: 2pt;
+                }
+
+                h3 {
+                    text-wrap: balance;
+                    font-size: 16pt;
+                    line-height: 18pt;
+                    font-style: italic;
+                }
+
+                h4 {
+                    font-weight: bold;
+                    margin-bottom: 5pt;
+                }
+
+                h5 {
+                    text-align: center;
+                    font-weight: bold;
+                    margin-bottom: 5pt;
+                }
+
+                ul, ol {
+                    list-style-position: outside;
+                    list-style-type: lower-roman;
+                    margin-left: -5pt;
+                    
+                    li  {
+                        padding-left: 5pt;
+                        margin-bottom: 1rem;
+                    }
+
+                    li::marker {
+                        font-weight: bold;
+                    }
+                }
+
+                ul.decimal, ol.decimal {
+                    list-style-type: decimal;
+                }
+
+                table {
+                    width: 100%;
+                    text-align: center;
+                    font-style: italic;
+                    table-layout: fixed;
+                }
+
+                i {
+                    font-style: italic;
+                }
+
+                a {
+                    color: black;
+                    text-decoration: none;
+                    outline: none
+                }
+
+                a:hover {
+                    text-decoration: underline;
+                }
+
+            }
         }
     </style>
 
