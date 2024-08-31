@@ -4,7 +4,17 @@ namespace ReformedHistory.Views.Content;
 
 public class ContentIndex {
     private static IReadOnlyList<TimelineInfo> Timelime { get; } = [
-        new TimelineInfo.Event() {
+		new TimelineInfo.Event() {
+			Title = "Westminster Shorter Catechism",
+			DateStart = 1647,
+			DateEnd = 1647,
+			Url = "~/Content/Catechisms/WestminsterShorter",
+			Description = "bleh.",
+			Type = TimelineEventType.Catechism,
+			Tradition = TimelineEventTradition.Reformed,
+			Era = TimelineEventEra.Reformation
+		},
+		new TimelineInfo.Event() {
             Title = "Westminster Confession of Faith",
             DateStart = 1646,
             DateEnd = 1646,
