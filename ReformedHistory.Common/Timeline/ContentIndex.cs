@@ -4,6 +4,11 @@ namespace ReformedHistory.Views.Content;
 
 public class ContentIndex {
     private static IReadOnlyList<TimelineInfo> Timelime { get; } = [
+		new TimelineInfo.EraBoundary() {
+			Title = "Present Day",
+			Date = DateTime.Now.Year,
+			Era = TimelineEventEra.Reformation
+		},
 		new TimelineInfo.Event() {
 			Title = "Westminster Shorter Catechism",
 			DateStart = 1647,
@@ -143,7 +148,7 @@ public class ContentIndex {
         new TimelineInfo.EraBoundary() {
             Title = "The Protestant Reformation",
             Date = 1517,
-            Era = TimelineEventEra.Reformation
+            Era = TimelineEventEra.Reformation | TimelineEventEra.Medieval
         },
         new TimelineInfo.Event() {
             Title = "The Four Articles of Prague",
@@ -170,7 +175,7 @@ public class ContentIndex {
         new TimelineInfo.EraBoundary() {
             Title = "The Great East-West Schism",
             Date = 1054,
-            Era = TimelineEventEra.Ancient
+            Era = TimelineEventEra.Ancient | TimelineEventEra.Medieval
         },
         new TimelineInfo.Event() {
             Title = "The Second Council of Orange",
@@ -264,7 +269,7 @@ public class ContentIndex {
 		new TimelineInfo.EraBoundary() {
 			Title = "The Very Foundations of the World",
 			Date = -1000000000,
-			Era = TimelineEventEra.Genesis
+			Era = TimelineEventEra.Ancient
 		}
 	];
 
