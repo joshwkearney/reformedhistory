@@ -12,8 +12,8 @@ public class ContentController : Controller {
         this.logger = logger;
     }
 
-    public IActionResult Documents(string id) {
-        return View("Documents/" + id);
+    public IActionResult Confessions(string id) {
+        return View("Confessions/" + id);
     }
     
     public IActionResult Councils(string id) {
@@ -21,5 +21,9 @@ public class ContentController : Controller {
     }
     public IActionResult Letters(string id) {
         return View("Letters/" + id);
+    }
+    
+    public IActionResult Catechisms(string id) {
+        return View("Catechisms/" + id);
     }
 }

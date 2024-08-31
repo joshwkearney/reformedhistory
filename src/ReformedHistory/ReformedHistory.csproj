@@ -9,10 +9,6 @@
     <PropertyGroup Condition=" '$(RunConfiguration)' == 'http' " />
     <ItemGroup>
         <UpToDateCheckBuilt Include="wwwroot\css\site.css" Set="Css" />
-        <UpToDateCheckBuilt Include="tailwind.config.js" Set="Css" />
-        <UpToDateCheckBuilt Include="postcss.config.js">
-          <Set>Css</Set>
-        </UpToDateCheckBuilt>
     </ItemGroup>
     
     <ItemGroup>
@@ -94,7 +90,11 @@
     </ItemGroup>
 
     <ItemGroup>
-      <AdditionalFiles Include="Views\Content\Documents\HeidelbergCatechism.cshtml" />
+      <AdditionalFiles Include="Views\Content\Confessions\HeidelbergCatechism.cshtml" />
+    </ItemGroup>
+
+    <ItemGroup>
+      <ProjectReference Include="..\..\ReformedHistory.Common\ReformedHistory.Common.csproj" />
     </ItemGroup>
     <Target Name="Tailwind" BeforeTargets="Build">
         <!--<Exec Command="npm run css:build" />-->

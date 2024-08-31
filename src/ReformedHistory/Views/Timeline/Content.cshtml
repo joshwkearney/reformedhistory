@@ -23,6 +23,18 @@
 
         return true;
     }
+    
+    bool CanShowEra(TimelineInfo.EraBoundary e) {
+        if (this.Model is null) {
+            return true;
+        }
+        
+        if ((e.Era & this.Model.Era) == TimelineEventEra.None) {
+            return false;
+        }
+
+        return true;
+    }
 }
 
 @foreach (var item in content.GetTimeline()) {
@@ -31,7 +43,9 @@
             <partial name="TimelineEvent" model="e"/>
         }
     }
-    else if (item is TimelineInfo.Era era) {
-        <partial name="TimelineEra" model="era" />
+    else if (item is TimelineInfo.EraBoundary era) {
+        if (CanShowEra(era)) {
+            <partial name="TimelineEra" model="era" />
+        }
     }
 }

@@ -28,12 +28,16 @@ public class TimelineController : Controller {
             tradition |= TimelineEventTradition.Lutheran;
         }
         
-        if (!string.IsNullOrWhiteSpace(request.CalvinistCheckbox)) {
-            tradition |= TimelineEventTradition.Calvinist;
+        if (!string.IsNullOrWhiteSpace(request.ReformedCheckbox)) {
+            tradition |= TimelineEventTradition.Reformed;
+        }
+        
+        if (!string.IsNullOrWhiteSpace(request.AnglicanCheckbox)) {
+            tradition |= TimelineEventTradition.Anglican;
         }
         
         if (!string.IsNullOrWhiteSpace(request.DocumentCheckbox)) {
-            type |= TimelineEventType.Document;
+            type |= TimelineEventType.Confession;
         }
         
         if (!string.IsNullOrWhiteSpace(request.LetterCheckbox)) {
@@ -44,6 +48,14 @@ public class TimelineController : Controller {
             type |= TimelineEventType.Council;
         }
         
+        if (!string.IsNullOrWhiteSpace(request.SermonCheckbox)) {
+            type |= TimelineEventType.Sermon;
+        }
+        
+        if (!string.IsNullOrWhiteSpace(request.CatechismCheckbox)) {
+            type |= TimelineEventType.Catechism;
+        }
+        
         if (!string.IsNullOrWhiteSpace(request.ReformationCheckbox)) {
             era |= TimelineEventEra.Reformation;
         }
@@ -51,6 +63,7 @@ public class TimelineController : Controller {
         if (!string.IsNullOrWhiteSpace(request.MedievalCheckbox)) {
             era |= TimelineEventEra.Medieval;
         }
+        
         if (!string.IsNullOrWhiteSpace(request.AncientCheckbox)) {
             era |= TimelineEventEra.Ancient;
         }
@@ -66,11 +79,17 @@ public class TimelineController : Controller {
 }
 
 public record TimelineContentRequest {
-    public string CalvinistCheckbox { get; init; } = string.Empty;
+    public string ReformedCheckbox { get; init; } = string.Empty;
     public string LutheranCheckbox { get; init; } = string.Empty;
+    
+    public string AnglicanCheckbox { get; init; } = string.Empty;
     public string DocumentCheckbox { get; init; } = string.Empty;
     public string LetterCheckbox { get; init; } = string.Empty;
     public string CouncilCheckbox { get; init; } = string.Empty;
+    
+    public string CatechismCheckbox { get; init; } = string.Empty;
+    
+    public string SermonCheckbox { get; init; } = string.Empty;
     public string ReformationCheckbox { get; init; } = string.Empty;
     public string MedievalCheckbox { get; init; } = string.Empty;
     public string AncientCheckbox { get; init; } = string.Empty;

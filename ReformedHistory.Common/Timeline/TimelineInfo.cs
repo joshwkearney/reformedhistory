@@ -3,16 +3,19 @@ namespace ReformedHistory.Models;
 [Flags]
 public enum TimelineEventTradition {
     None      = 0,
-    Lutheran  = 0b01, 
-    Calvinist = 0b10
+    Lutheran  = 0b001, 
+    Reformed = 0b010,
+    Anglican  = 0b100
 }
 
 [Flags]
 public enum TimelineEventType {
-    None     = 0,
-    Document = 0b001, 
-    Council  = 0b010, 
-    Letter   = 0b100
+    None       = 0,
+    Confession = 0b00001, 
+    Council    = 0b00010, 
+    Letter     = 0b00100,
+    Sermon     = 0b01000,
+    Catechism  = 0b10000
 }
 
 [Flags]
@@ -44,9 +47,11 @@ public abstract record TimelineInfo {
         public required TimelineEventEra Era { get; init; }
     }
 
-    public record Era : TimelineInfo {
+    public record EraBoundary : TimelineInfo {
         public required string Title { get; init; }
 
         public required int Date { get; init; }
+        
+        public required TimelineEventEra Era { get; init; }
     }
 }
