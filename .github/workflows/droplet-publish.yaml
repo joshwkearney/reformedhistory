@@ -31,6 +31,10 @@
                 {
                     "name": "Copy files to droplet",
                     "run": "scp -o StrictHostKeyChecking=no -r ./publish/* ${{ secrets.DROPLET_USERNAME }}@${{ secrets.DROPLET_IP }}:/root/reformedhistory/staging/"
+                },
+                {
+                    "name": "Deploy files on droplet",
+                    "run": "ssh -o StrictHostKeyChecking=no ${{ secrets.DROPLET_USERNAME }}@${{ secrets.DROPLET_IP }} 'powershell /root/reformedhistory/deploy.ps1'"
                 }
             ]
         }
