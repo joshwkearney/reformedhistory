@@ -14,7 +14,7 @@
         if (document.body.scrollTop > 20 || document.documentElement.scrollTop > 20) {
             backToTopBtn.style.display = "flex"; // Show the button as a flex element
         } 
-        else {
+        else {  
             backToTopBtn.style.display = "none"; // Hide the button
         }
     }
