@@ -24,7 +24,7 @@
             width: 100%;
             font-family: "EB Garamond", serif;
             padding-bottom: 0.25in;
-            gap: 20px;
+            gap: 0px;
             flex-wrap: nowrap;
         }
 
@@ -32,6 +32,10 @@
             flex: 1 1 150px; /* Flex-grow: 1, flex-shrink: 1, base width: 250px */
             max-width: 150px;
             min-width: 100px;
+            position: sticky;
+            top: 10px; /* Adjust as needed for spacing from the top */
+            align-self: flex-start; /* Ensures it stays at the top */   
+            padding-top:3.5rem;
         }
 
         .ContentPanel {
@@ -45,18 +49,9 @@
             .container {
                 flex-direction: column;
             }
-
-/*            .NavigationPanel {
-                max-width: 100%;
-                width: 100%;
-                flex-basis: auto;
+            .NavigationPanel {
+                position: relative;
             }
-
-            .ContentPanel {
-                max-width: 100%;
-                width: 100%;
-                flex-basis: auto;
-            }*/
         }
     </style>
 </div>
