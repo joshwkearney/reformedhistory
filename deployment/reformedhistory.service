@@ -1,0 +1,16 @@
+[Unit]
+Description=Reformed History .NET Web App Service
+
+[Service]
+WorkingDirectory=/root/reformedhistory/deploy
+ExecStart=/usr/bin/dotnet /root/reformedhistory/deploy/ReformedHistory.dll
+Restart=always
+RestartSec=10
+KillSignal=SIGINT
+SyslogIdentifier=dotnet-reformedhistory
+User=root
+Environment=ASPNETCORE_ENVIRONMENT=Production
+
+[Install]
+WantedBy=multi-user.target
+
