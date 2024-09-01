@@ -5,17 +5,33 @@
     "jobs": {
         "Explore-GitHub-Actions": {
             "runs-on": "ubuntu-latest",
-            "steps": [
-                { "run": "echo 'Publishing to digital ocean droplet'" },
-                { "uses": "actions/checkout@v4" },
+            "steps": [                         
                 { 
+                    "name": "Checkout repo",
+                    "uses": "actions/checkout@v4" 
+                },                         
+                { 
+                    "name": "Setup .NET SDK",
                     "uses": "actions/setup-dotnet@v4",
                     "with": {
                         "dotnet-version": "8"
                     }
                 },
-                { "run": "dotnet --version" },
-                { "run": "dotnet publish --output ./publish --configuration Release --runtime linux-x64" }
+                {
+                    "name": "Setup SSH keys",
+                    "uses": "webfactory/ssh-agent@v0.5.5",
+                    "with": {
+                        "ssh-private-key": "${{ secrets.DROPLET_SSH_KEY }}"
+                    }
+                },                         
+                { 
+                    "name": "Publish .NET project",
+                    "run": "dotnet publish --output ./publish --configuration Release --runtime linux-x64" 
+                },
+                {
+                    "name": "Copy files to droplet",
+                    "run": "scp -o StrictHostKeyChecking=no -r ./publish/ ${{ secrets.DROPLET_USERNAME }}@${{ secrets.DROPLET_IP }}:/root/reformedhistory/staging/"
+                }
             ]
         }
     }
