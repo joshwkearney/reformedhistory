@@ -3,94 +3,60 @@
 
 @{
     Layout = "_Layout";
-    var model = Model ?? TimelineFilters.Default;
+
+    var model = this.Model;
+    if (this.Model is null) {
+        model = TimelineFilters.Default;
+    }
 }
 
-<div>
+<div class="container">
     <partial name="NavigationPanel" model="model" />
 
     <div class="ContentPanel">
         <partial name="Content" model="model" />
     </div>
-
+    
     <style>
-        me {
-            width: 100%;
+        .container {
             display: flex;
             flex-direction: row;
+            width: 100%;
             font-family: "EB Garamond", serif;
-            text-wrap: balance;
             padding-bottom: 0.25in;
+            gap: 20px;
+            flex-wrap: wrap;
         }
 
         .NavigationPanel {
-            position: relative;
-            flex-grow: 20;
-            flex-shrink: 20;
-            flex-basis: 20%;
+            flex: 1 1 250px; /* Flex-grow: 1, flex-shrink: 1, base width: 250px */
             max-width: 250px;
-        }
-
-            .NavigationPanel form {
-                position: fixed;
-                overflow-y: auto;
-                top: 4.5rem;
-                left: 0;
-                bottom: 0;
-                padding: 0;
-                margin: 0;
-                width: 100%;
-            }
-
-        .NavigationPadding {
-            padding: 1rem;
-            padding-top: 0;
-            width: auto;
-        }
-
-        .NavigationPanel h1 {
-            font-size: 20pt;
-            margin-bottom: 1rem;
-        }
-
-        .NavigationPanel h2 {
-            font-size: 13pt;
-            line-height: 15pt;
-            font-weight: bold;
-            margin-bottom: 3pt;
-            margin-left: 3pt;
-        }
-
-        .NavigationPanel .checkbox {
-            margin-left: 16pt;
-            margin-bottom: 4pt;
-            font-size: 13pt;
-            line-height: 15pt;
-        }
-
-            .NavigationPanel .checkbox input[type="checkbox"] {
-                margin-right: 4pt;
-            }
-
-        .NavigationPanel label {
-            user-select: none;
-        }
-
-        .NavigationPanel input[type="text"] {
-            font-size: 10pt;
-            border: 1px solid #555;
-            border-radius: 6px;
-            height: 25px;
-            width: calc(250px - 1rem);
-            padding-left: 4px;
+            min-width: 200px;
         }
 
         .ContentPanel {
-            flex-grow: 60;
-            flex-shrink: 60;
-            flex-basis: 60%;
-            padding-left: 70pt;
+            flex: 3 1 60%; /* Flex-grow: 3, flex-shrink: 1, base width: 60% */
             max-width: 850px;
+            min-width: 300px;
+        }
+
+        /* Responsive adjustments */
+        @@media (max-width: 1024px) {
+            .container {
+                flex-direction: column;
+            }
+
+            .NavigationPanel {
+                max-width: 100%;
+                width: 100%;
+                flex-basis: auto;
+            }
+
+            .ContentPanel {
+                max-width: 100%;
+                width: 100%;
+                flex-basis: auto;
+            }
         }
     </style>
 </div>

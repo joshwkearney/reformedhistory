@@ -15,3 +15,8 @@ https://pcaga.org/wp-content/uploads/2020/05/AIC-Report-to-48th-GA-5-28-20-1.pdf
 - 5 ecumenical councils
 - council of frankfurt
 - council of chanforan
+
+
+
+hey if you wanna look at the systemd service on the droplet:
+sudo systemctl status reformedhistory.service
