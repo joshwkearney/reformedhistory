@@ -1,0 +1,22 @@
+{
+    "name": "GitHub Actions Demo 2",
+    "run-name": "${{ github.actor }} is testing out GitHub Actions 🚀",
+    "on": [ "push" ],
+    "jobs": {
+        "Explore-GitHub-Actions": {
+            "runs-on": "ubuntu-latest",
+            "steps": [
+                { "run": "echo 'Publishing to digital ocean droplet'" },
+                { "uses": "actions/checkout@v4" },
+                { 
+                    "uses": "actions/setup-dotnet@v4",
+                    "with": {
+                        "dotnet-version": "8"
+                    }
+                },
+                { "run": "dotnet --version" }
+                { "run": "dotnet publish --output ./publish --configuration Release --runtime linux-x64" }
+            ]
+        }
+    }
+}
