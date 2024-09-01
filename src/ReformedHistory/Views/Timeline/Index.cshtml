@@ -3,12 +3,7 @@
 
 @{
     Layout = "_Layout";
-
-    var model = this.Model;
-    if (this.Model is null)
-    {
-        model = TimelineFilters.Default;
-    }
+    var model = Model ?? TimelineFilters.Default;
 }
 
 <div>
@@ -26,26 +21,26 @@
             font-family: "EB Garamond", serif;
             text-wrap: balance;
             padding-bottom: 0.25in;
-            .NavigationPanel
+        }
 
-        {
+        .NavigationPanel {
             position: relative;
             flex-grow: 20;
             flex-shrink: 20;
             flex-basis: 20%;
             max-width: 250px;
-            form
-
-        {
-            position: fixed;
-            overflow-y: auto;
-            top: 4.5rem;
-            left: 0;
-            bottom: 0;
-            padding: 0;
-            margin: 0;
-            width: 100%;
         }
+
+            .NavigationPanel form {
+                position: fixed;
+                overflow-y: auto;
+                top: 4.5rem;
+                left: 0;
+                bottom: 0;
+                padding: 0;
+                margin: 0;
+                width: 100%;
+            }
 
         .NavigationPadding {
             padding: 1rem;
@@ -53,12 +48,12 @@
             width: auto;
         }
 
-        h1 {
+        .NavigationPanel h1 {
             font-size: 20pt;
             margin-bottom: 1rem;
         }
 
-        h2 {
+        .NavigationPanel h2 {
             font-size: 13pt;
             line-height: 15pt;
             font-weight: bold;
@@ -66,24 +61,22 @@
             margin-left: 3pt;
         }
 
-        .checkbox {
+        .NavigationPanel .checkbox {
             margin-left: 16pt;
             margin-bottom: 4pt;
             font-size: 13pt;
             line-height: 15pt;
-            input [type=checkbox]
-
-        {
-            margin-right: 4pt;
         }
 
-        label {
+            .NavigationPanel .checkbox input[type="checkbox"] {
+                margin-right: 4pt;
+            }
+
+        .NavigationPanel label {
             user-select: none;
         }
 
-        }
-
-        input[type=text] {
+        .NavigationPanel input[type="text"] {
             font-size: 10pt;
             border: 1px solid #555;
             border-radius: 6px;
@@ -92,15 +85,12 @@
             padding-left: 4px;
         }
 
-        }
-
         .ContentPanel {
             flex-grow: 60;
             flex-shrink: 60;
             flex-basis: 60%;
             padding-left: 70pt;
             max-width: 850px;
-        }
         }
     </style>
 </div>
