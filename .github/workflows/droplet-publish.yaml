@@ -30,7 +30,7 @@
                 },
                 {
                     "name": "Copy files to droplet",
-                    "run": "scp -o StrictHostKeyChecking=no -r ./publish/ ${{ secrets.DROPLET_USERNAME }}@${{ secrets.DROPLET_IP }}:/root/reformedhistory/staging/"
+                    "run": "scp -o StrictHostKeyChecking=no -r ./publish/* ${{ secrets.DROPLET_USERNAME }}@${{ secrets.DROPLET_IP }}:/root/reformedhistory/staging/"
                 }
             ]
         }
