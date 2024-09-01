@@ -7,3 +7,4 @@ obj
 ./dotnet/
 ./dotnet-install.sh
 ./publish/
+/publish

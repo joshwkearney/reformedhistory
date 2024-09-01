@@ -5,144 +5,19 @@
     Layout = "_Layout";
 
     var model = this.Model;
-    if (this.Model is null) {
+    if (this.Model is null)
+    {
         model = TimelineFilters.Default;
     }
 }
 
 <div>
-    <div class="NavigationPanel">
-        <form hx-post="/Timeline/Content"
-              hx-trigger="change, keyup"
-              hx-target=".ContentPanel"
-              hx-swap="innerHTML">
-            
-            <div class="NavigationPadding">
-                <h1>Filters</h1>
-
-                <h2>Text</h2>
-                <input id="TextSearch" 
-                       name="TextSearch" 
-                       type="text" 
-                       value="" />
-                
-                <br /><br />
-                
-                <h2>Tradition</h2>
-                <div class="checkbox">
-                    <input id="ReformedCheckbox" 
-                           name="ReformedCheckbox" 
-                           type="checkbox" 
-                           value="true"
-                           @(model.Tradition.HasFlag(TimelineEventTradition.Reformed) ? "checked" : "")>
-
-                    <label for="ReformedCheckbox">Reformed</label>
-                </div>
-                <div class="checkbox">
-                    <input id="LutheranCheckbox" 
-                           name="LutheranCheckbox" 
-                           type="checkbox" 
-                           value="true"
-                           @(model.Tradition.HasFlag(TimelineEventTradition.Lutheran) ? "checked" : "")>
-                    
-                    <label for="LutheranCheckbox">Lutheran</label>
-                </div>
-                <div class="checkbox">
-                    <input id="AnglicanCheckbox" 
-                           name="AnglicanCheckbox" 
-                           type="checkbox"
-                           value="true"
-                           @(model.Tradition.HasFlag(TimelineEventTradition.Anglican) ? "checked" : "")>
-                    
-                    <label for="AnglicanCheckbox">Anglican</label>
-                </div>
-                <br/>
-
-                <h2>Type</h2>
-                <div class="checkbox">
-                    <input id="DocumentCheckbox" 
-                           name="DocumentCheckbox" 
-                           type="checkbox"
-                           value="true"
-                           @(model.Type.HasFlag(TimelineEventType.Confession) ? "checked" : "")>
-                    
-                    <label for="DocumentCheckbox">Confessions</label>
-                </div>
-                <div class="checkbox">
-                    <input id="LetterCheckbox" 
-                           name="LetterCheckbox" 
-                           type="checkbox"
-                           value="true"
-                           @(model.Type.HasFlag(TimelineEventType.Letter) ? "checked" : "")>
-                    
-                    <label for="LetterCheckbox">Letters</label>
-                </div>
-                <div class="checkbox">
-                    <input id="CouncilCheckbox" 
-                           name="CouncilCheckbox" 
-                           type="checkbox"
-                           value="true"
-                           @(model.Type.HasFlag(TimelineEventType.Council) ? "checked" : "")>
-                    
-                    <label for="CouncilCheckbox">Councils</label>
-                </div>
-                <div class="checkbox">
-                    <input id="SermonCheckbox"
-                           name="SermonCheckbox" 
-                           type="checkbox"
-                           value="true"
-                           @(model.Type.HasFlag(TimelineEventType.Sermon) ? "checked" : "")>
-                    
-                    <label for="SermonCheckbox">Sermons</label>
-                </div>
-                <div class="checkbox">
-                    <input id="CatechismCheckbox"
-                           name="CatechismCheckbox"
-                           type="checkbox"
-                           value="true"
-                           @(model.Type.HasFlag(TimelineEventType.Catechism) ? "checked" : "")>
-                    
-                    <label for="CatechismCheckbox">Catechisms</label>
-                </div>
-                <br/>
-
-                <h2>Era</h2>
-                <div class="checkbox">
-                    <input id="ReformationCheckbox" 
-                           name="ReformationCheckbox" 
-                           type="checkbox"
-                           value="true"
-                           @(model.Era.HasFlag(TimelineEventEra.Reformation) ? "checked" : "")>
-                    
-                    <label for="ReformationCheckbox">Reformation</label>
-                </div>
-                <div class="checkbox">
-                    <input id="MedievalCheckbox" 
-                           name="MedievalCheckbox"
-                           type="checkbox"
-                           value="true"
-                           @(model.Era.HasFlag(TimelineEventEra.Medieval) ? "checked" : "")>
-                    
-                    <label for="MedievalCheckbox">Medieval</label>
-                </div>
-                <div class="checkbox">
-                    <input id="AncientCheckbox" 
-                           name="AncientCheckbox" 
-                           type="checkbox"
-                           value="true"
-                           @(model.Era.HasFlag(TimelineEventEra.Ancient) ? "checked" : "")>
-                    
-                    <label for="AncientCheckbox">Ancient</label>
-                </div>
-                <br/>
-            </div>
-        </form>
-    </div>
+    <partial name="NavigationPanel" model="model" />
 
     <div class="ContentPanel">
         <partial name="Content" model="model" />
     </div>
-    
+
     <style>
         me {
             width: 100%;
@@ -151,76 +26,81 @@
             font-family: "EB Garamond", serif;
             text-wrap: balance;
             padding-bottom: 0.25in;
+            .NavigationPanel
 
-            .NavigationPanel {
-                position: relative;
-                flex-grow: 20;
-                flex-shrink: 20;
-                flex-basis: 20%;
-                max-width: 250px;
-                
-                form {
-                    position: fixed;
-                    overflow-y: auto;
-                    top: 4.5rem;
-                    left: 0;
-                    bottom: 0;
-                    padding: 0;
-                    margin: 0;
-                    width: 100%;
-                }
+        {
+            position: relative;
+            flex-grow: 20;
+            flex-shrink: 20;
+            flex-basis: 20%;
+            max-width: 250px;
+            form
 
-                .NavigationPadding {
-                    padding: 1rem;
-                    padding-top: 0;
-                    width: auto;
-                }
-                
-                h1 {
-                    font-size: 20pt;
-                    margin-bottom: 1rem;
-                }
-                
-                h2 {
-                    font-size: 13pt;
-                    line-height: 15pt;
-                    font-weight: bold;
-                    margin-bottom: 3pt;
-                    margin-left: 3pt;
-                }
-                
-                .checkbox {
-                    margin-left: 16pt;
-                    margin-bottom: 4pt;
-                    font-size: 13pt;
-                    line-height: 15pt;
-                    
-                    input[type=checkbox] {
-                        margin-right: 4pt;
-                    }
-                    
-                    label {
-                        user-select: none;
-                    }
-                }
-                
-                input[type=text] {
-                    font-size: 10pt;
-                    border: 1px solid #555;
-                    border-radius: 6px;
-                    height: 25px;
-                    width: calc(250px - 1rem);
-                    padding-left: 4px;
-                }
-            }           
+        {
+            position: fixed;
+            overflow-y: auto;
+            top: 4.5rem;
+            left: 0;
+            bottom: 0;
+            padding: 0;
+            margin: 0;
+            width: 100%;
+        }
 
-            .ContentPanel {
-                flex-grow: 60;
-                flex-shrink: 60;
-                flex-basis: 60%;
-                padding-left: 70pt;
-                max-width: 850px;            
-            }
+        .NavigationPadding {
+            padding: 1rem;
+            padding-top: 0;
+            width: auto;
+        }
+
+        h1 {
+            font-size: 20pt;
+            margin-bottom: 1rem;
+        }
+
+        h2 {
+            font-size: 13pt;
+            line-height: 15pt;
+            font-weight: bold;
+            margin-bottom: 3pt;
+            margin-left: 3pt;
+        }
+
+        .checkbox {
+            margin-left: 16pt;
+            margin-bottom: 4pt;
+            font-size: 13pt;
+            line-height: 15pt;
+            input [type=checkbox]
+
+        {
+            margin-right: 4pt;
+        }
+
+        label {
+            user-select: none;
+        }
+
+        }
+
+        input[type=text] {
+            font-size: 10pt;
+            border: 1px solid #555;
+            border-radius: 6px;
+            height: 25px;
+            width: calc(250px - 1rem);
+            padding-left: 4px;
+        }
+
+        }
+
+        .ContentPanel {
+            flex-grow: 60;
+            flex-shrink: 60;
+            flex-basis: 60%;
+            padding-left: 70pt;
+            max-width: 850px;
+        }
         }
     </style>
 </div>
