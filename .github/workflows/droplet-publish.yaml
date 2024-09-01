@@ -19,7 +19,7 @@
                 },
                 {
                     "name": "Setup SSH keys",
-                    "uses": "webfactory/ssh-agent@v0.5.5",
+                    "uses": "webfactory/ssh-agent@v0.9.0",
                     "with": {
                         "ssh-private-key": "${{ secrets.DROPLET_SSH_KEY }}"
                     }
