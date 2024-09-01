@@ -25,28 +25,28 @@
             font-family: "EB Garamond", serif;
             padding-bottom: 0.25in;
             gap: 20px;
-            flex-wrap: wrap;
+            flex-wrap: nowrap;
         }
 
         .NavigationPanel {
-            flex: 1 1 250px; /* Flex-grow: 1, flex-shrink: 1, base width: 250px */
-            max-width: 250px;
-            min-width: 200px;
+            flex: 1 1 150px; /* Flex-grow: 1, flex-shrink: 1, base width: 250px */
+            max-width: 150px;
+            min-width: 100px;
         }
 
         .ContentPanel {
-            flex: 3 1 60%; /* Flex-grow: 3, flex-shrink: 1, base width: 60% */
+            flex: 3 1 350px; /* Flex-grow: 3, flex-shrink: 1, base width: 60% */
             max-width: 850px;
-            min-width: 300px;
+            min-width: 350px;
         }
 
         /* Responsive adjustments */
-        @@media (max-width: 1024px) {
+        @@media (max-width: 600px) {
             .container {
                 flex-direction: column;
             }
 
-            .NavigationPanel {
+/*            .NavigationPanel {
                 max-width: 100%;
                 width: 100%;
                 flex-basis: auto;
@@ -56,7 +56,7 @@
                 max-width: 100%;
                 width: 100%;
                 flex-basis: auto;
-            }
+            }*/
         }
     </style>
 </div>
