@@ -114,7 +114,8 @@ public class ContentIndex {
 			DateStart = 1561,
 			DateEnd = 1561,
 			Url = "~/Content/Confessions/BelgicConfession",
-			Description = "",
+			Description = "Written by Guido de Brès before his martyrdom, the Belgic confession is the primary " +
+                          "confession of the Dutch reformed church, and also one of the Three Forms of Unity.",
 			Type = TimelineEventType.Confession,
 			Tradition = TimelineEventTradition.Reformed,
 			Era = TimelineEventEra.Reformation
