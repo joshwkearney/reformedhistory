@@ -32,16 +32,17 @@
             flex: 1 1 150px; /* Flex-grow: 1, flex-shrink: 1, base width: 250px */
             max-width: 150px;
             min-width: 100px;
-            position: sticky;
+            position: fixed;
             top: 10px; /* Adjust as needed for spacing from the top */
-            align-self: flex-start; /* Ensures it stays at the top */   
-            padding-top:3.5rem;
+            align-self: flex-start; /* Ensures it stays at the top */
+            padding-top: 3.5rem;
         }
 
         .ContentPanel {
             flex: 3 1 350px; /* Flex-grow: 3, flex-shrink: 1, base width: 60% */
             max-width: 850px;
             min-width: 350px;
+            padding-left: 250px;
         }
 
         /* Responsive adjustments */
@@ -51,6 +52,9 @@
             }
             .NavigationPanel {
                 position: relative;
+            }
+            .ContentPanel {
+                padding-left: 0px;
             }
         }
     </style>
