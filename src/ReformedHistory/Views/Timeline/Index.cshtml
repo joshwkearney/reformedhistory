@@ -1,61 +1,228 @@
-@using Microsoft.AspNetCore.Mvc.TagHelpers
-@model TimelineFilters
-
 @{
-    Layout = "_Layout";
+    ViewData["Title"] = "Privacy Policy";
+    Layout = "TripleColumnLayout";
 
-    var model = this.Model;
-    if (this.Model is null) {
-        model = TimelineFilters.Default;
-    }
+    var model = TimelineFilters.Default;
 }
 
-<div class="container">
-    <partial name="NavigationPanel" model="model" />
+@section Sidebar1 {
+    <div class="NavigationPanel">
+        <form hx-post="/Timeline/Content"
+              hx-trigger="change, keyup"
+              hx-target=".ContentPanel"
+              hx-swap="innerHTML">
 
-    <div class="ContentPanel">
-        <partial name="Content" model="model" />
+            <h1>Filter Timeline</h1>
+
+            <h2>Search</h2>
+            <input id="TextSearch"
+                   name="TextSearch"
+                   type="text"
+                   value=""/>
+
+            <div class="CheckboxContainer">
+                <div class="CheckboxGroup">
+                    <h2>Tradition</h2>
+                    <div class="checkbox">
+                        <input id="ReformedCheckbox"
+                               name="ReformedCheckbox"
+                               type="checkbox"
+                               value="true"
+                               @(model.Tradition.HasFlag(TimelineEventTradition.Reformed) ? "checked" : "")>
+
+                        <label for="ReformedCheckbox">Reformed</label>
+                    </div>
+                    <div class="checkbox">
+                        <input id="LutheranCheckbox"
+                               name="LutheranCheckbox"
+                               type="checkbox"
+                               value="true"
+                               @(model.Tradition.HasFlag(TimelineEventTradition.Lutheran) ? "checked" : "")>
+
+                        <label for="LutheranCheckbox">Lutheran</label>
+                    </div>
+                    <div class="checkbox">
+                        <input id="AnglicanCheckbox"
+                               name="AnglicanCheckbox"
+                               type="checkbox"
+                               value="true"
+                               @(model.Tradition.HasFlag(TimelineEventTradition.Anglican) ? "checked" : "")>
+
+                        <label for="AnglicanCheckbox">Anglican</label>
+                    </div>
+                </div>
+
+                <div class="CheckboxGroup">
+                    <h2>Era</h2>
+                    <div class="checkbox">
+                        <input id="ReformationCheckbox"
+                               name="ReformationCheckbox"
+                               type="checkbox"
+                               value="true"
+                               @(model.Era.HasFlag(TimelineEventEra.Reformation) ? "checked" : "")>
+
+                        <label for="ReformationCheckbox">Reformation</label>
+                    </div>
+                    <div class="checkbox">
+                        <input id="MedievalCheckbox"
+                               name="MedievalCheckbox"
+                               type="checkbox"
+                               value="true"
+                               @(model.Era.HasFlag(TimelineEventEra.Medieval) ? "checked" : "")>
+
+                        <label for="MedievalCheckbox">Medieval</label>
+                    </div>
+                    <div class="checkbox">
+                        <input id="AncientCheckbox"
+                               name="AncientCheckbox"
+                               type="checkbox"
+                               value="true"
+                               @(model.Era.HasFlag(TimelineEventEra.Ancient) ? "checked" : "")>
+
+                        <label for="AncientCheckbox">Ancient</label>
+                    </div>
+                </div>
+
+                <div class="CheckboxGroup">
+                    <h2>Type</h2>
+                    <div class="checkbox">
+                        <input id="DocumentCheckbox"
+                               name="DocumentCheckbox"
+                               type="checkbox"
+                               value="true"
+                               @(model.Type.HasFlag(TimelineEventType.Confession) ? "checked" : "")>
+
+                        <label for="DocumentCheckbox">Confessions</label>
+                    </div>
+                    <div class="checkbox">
+                        <input id="LetterCheckbox"
+                               name="LetterCheckbox"
+                               type="checkbox"
+                               value="true"
+                               @(model.Type.HasFlag(TimelineEventType.Letter) ? "checked" : "")>
+
+                        <label for="LetterCheckbox">Letters</label>
+                    </div>
+                    <div class="checkbox">
+                        <input id="CouncilCheckbox"
+                               name="CouncilCheckbox"
+                               type="checkbox"
+                               value="true"
+                               @(model.Type.HasFlag(TimelineEventType.Council) ? "checked" : "")>
+
+                        <label for="CouncilCheckbox">Councils</label>
+                    </div>
+                    <div class="checkbox">
+                        <input id="SermonCheckbox"
+                               name="SermonCheckbox"
+                               type="checkbox"
+                               value="true"
+                               @(model.Type.HasFlag(TimelineEventType.Sermon) ? "checked" : "")>
+
+                        <label for="SermonCheckbox">Sermons</label>
+                    </div>
+                    <div class="checkbox">
+                        <input id="CatechismCheckbox"
+                               name="CatechismCheckbox"
+                               type="checkbox"
+                               value="true"
+                               @(model.Type.HasFlag(TimelineEventType.Catechism) ? "checked" : "")>
+
+                        <label for="CatechismCheckbox">Catechisms</label>
+                    </div>
+                </div>
+            </div>
+        </form>
+
+        <style>
+            me {
+                font-family: @Html.Raw(CssConstants.DocumentFont);        
+            
+                .CheckboxContainer {
+                    display: flex;
+                    flex-wrap: wrap;
+                }
+                
+                .CheckboxGroup {
+                    margin-bottom: 1rem;
+                    margin-right: 2rem;
+                }
+            
+                h1 {
+                    font-size: 20pt;
+                    margin-bottom: 1rem;
+                    text-align: center;
+                }
+            
+                h2 {
+                    font-size: 13pt;
+                    line-height: 15pt;
+                    font-weight: bold;
+                    margin-bottom: 6pt;
+                }
+            
+                .checkbox {
+                    margin-bottom: 4pt;
+                    font-size: 12pt;
+                    line-height: 1.1;
+                    display: grid;
+                    grid-template-columns: 1em auto;
+                    gap: 0.5em;                    
+                    
+                    input[type=checkbox] {
+                        --border-width: 1px;
+                    
+                        appearance: none;                        
+                        background-color: white;
+                        margin: 0;
+                        font: inherit;
+                        color: currentcolor;
+                        width: 1.15em;
+                        height: 1.15em;
+                        border: var(--border-width) solid @CssConstants.HeaderColor;
+                        border-radius: 3px;
+                        transform: translateY(calc(-1 * var(--border-width) / 2));
+                        
+                        display: grid;
+                        place-content: center;                      
+                    }
+                    
+                    input[type=checkbox]::before {
+                        content: "";
+                        width: 0.65em;
+                        height: 0.65em;
+                        transform: scale(0);
+                        box-shadow: inset 1em 1em @CssConstants.HeaderColor;
+                        transform-origin: bottom left;
+                        clip-path: polygon(14% 44%, 0 65%, 50% 100%, 100% 16%, 80% 0%, 43% 62%);
+                    }
+                        
+                    input[type=checkbox]:checked::before {
+                        transform: scale(1);
+                    }
+                    
+                    label {
+                        user-select: none;
+                    }
+                }                     
+            
+                input[type=text] {
+                    font-size: 12pt;
+                    font-family: "Arial";
+                    border: 1px solid @CssConstants.HeaderColor;
+                    border-radius: 3px;
+                    height: 25px;
+                    width: calc(100% - 1rem);
+                    padding-left: 4px;
+                    background-color: white;
+                    margin-bottom: 1rem;
+                }
+            }        
+        </style>
     </div>
-    
-    <style>
-        .container {
-            display: flex;
-            flex-direction: row;
-            width: 100%;
-            font-family: "EB Garamond", serif;
-            padding-bottom: 0.25in;
-            gap: 0px;
-            flex-wrap: nowrap;
-        }
+}
 
-        .NavigationPanel {
-            flex: 1 1 150px; /* Flex-grow: 1, flex-shrink: 1, base width: 250px */
-            max-width: 150px;
-            min-width: 100px;
-            position: fixed;
-            top: 10px; /* Adjust as needed for spacing from the top */
-            align-self: flex-start; /* Ensures it stays at the top */
-            padding-top: 3.5rem;
-        }
-
-        .ContentPanel {
-            flex: 3 1 350px; /* Flex-grow: 3, flex-shrink: 1, base width: 60% */
-            max-width: 850px;
-            min-width: 350px;
-            padding-left: 250px;
-        }
-
-        /* Responsive adjustments */
-        @@media (max-width: 600px) {
-            .container {
-                flex-direction: column;
-            }
-            .NavigationPanel {
-                position: relative;
-            }
-            .ContentPanel {
-                padding-left: 0px;
-            }
-        }
-    </style>
+<div class="ContentPanel">
+    <partial name="Content" model="model" />
 </div>
+

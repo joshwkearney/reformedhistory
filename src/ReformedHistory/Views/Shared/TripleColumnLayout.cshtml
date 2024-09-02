@@ -1,0 +1,101 @@
+@{
+    Layout = "_Layout";
+}
+
+<div class="ColumnContainer1">
+    <div class="LeftSidebar">
+        @await RenderSectionAsync("Sidebar1", false)
+    </div>
+    
+    <div class="ColumnContainer2">
+        <div class="MainColumn">
+            @RenderBody()
+        </div>
+        <div class="RightSidebar">
+            @await RenderSectionAsync("Sidebar2", false)
+        </div>
+    </div>
+
+    <style>
+        me {
+            display: flex;
+            flex-wrap: wrap;
+            max-width: 100%;
+            justify-content: center;
+            align-items: flex-start;
+            position: relative;
+            padding-top: 1rem;
+            
+            .ColumnContainer2 {
+                display: flex;
+                flex-wrap: wrap;
+                justify-content: left;
+                align-items: flex-start;
+                position: relative;
+            }
+        
+            .LeftSidebar {
+                width: calc(@CssConstants.MainContentWidth / 2);
+                max-height: calc(100vh - @CssConstants.HeaderHeight - 2rem);
+                overflow-y: auto;
+                position: sticky;
+                top: calc(@CssConstants.HeaderHeight + 1rem);
+                margin-right: @CssConstants.ColumnSpacing;
+                margin-bottom: @CssConstants.ColumnSpacing;
+            }
+            
+            .MainColumn {
+                width: calc(@CssConstants.MainContentWidth);
+                margin-right: @CssConstants.ColumnSpacing;
+                margin-bottom: @CssConstants.ColumnSpacing;
+            }
+            
+            .RightSidebar {
+                width: calc(@CssConstants.MainContentWidth / 2);
+                margin-bottom: @CssConstants.ColumnSpacing;
+            }
+            
+            /* State 1: The right column snaps above the content */
+            @@media (@Html.Raw(CssConstants.TwoColumnsMediaQuery)) {     
+                .ColumnContainer1 {
+                    flex-wrap: wrap;
+                }
+                 
+                .ColumnContainer2 {
+                    width: @CssConstants.MainContentWidth;
+                    justify-content: right;
+                }
+                
+                .RightSidebar {
+                    order: 1;
+                    width: 100%;
+                }
+                
+                .MainColumn {
+                    margin-right: 0;
+                    order: 2;
+                    width: 100%;
+                }
+            }
+            
+            /* State 2: The left column snaps above both columns */
+            @@media (@Html.Raw(CssConstants.OneColumnMediaQuery)) {  
+                .ColumnContainer2 {
+                    width: 100%;
+                    justify-content: center;
+                }
+                               
+                .LeftSidebar {
+                    position: static;
+                    margin-right: 0;
+                    max-height: unset;
+                    overflow-y: unset;
+                }            
+                
+                .LeftSidebar, .RightSidebar, .MainColumn {
+                    width: calc(min(@CssConstants.MainContentWidth, 100% - 2rem));
+                }   
+            }
+        }
+    </style>
+</div>
