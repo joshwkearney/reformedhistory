@@ -1,0 +1,42 @@
+{
+    "name": "Publish to Digital Ocean Droplet",
+    "run-name": "Publishing commit by ${{ github.actor }} 🚀",
+    "on": [ "push" ],
+    "jobs": {
+        "Explore-GitHub-Actions": {
+            "runs-on": "ubuntu-latest",
+            "steps": [
+                {
+                    "name": "Checkout repo",
+                    "uses": "actions/checkout@v4"
+                },
+                {
+                    "name": "Setup .NET SDK",
+                    "uses": "actions/setup-dotnet@v4",
+                    "with": {
+                        "dotnet-version": "8"
+                    }
+                },
+                {
+                    "name": "Setup SSH keys",
+                    "uses": "webfactory/ssh-agent@v0.9.0",
+                    "with": {
+                        "ssh-private-key": "${{ secrets.DROPLET_SSH_KEY }}"
+                    }
+                },
+                {
+                    "name": "Publish .NET project",
+                    "run": "dotnet publish --output ./publish --configuration Release --runtime linux-x64"
+                },
+                {
+                    "name": "Copy files to droplet",
+                    "run": "scp -o StrictHostKeyChecking=no -r ./publish/* ${{ secrets.DROPLET_USERNAME }}@${{ secrets.DROPLET_IP }}:/root/reformedhistory/staging/"
+                },
+                {
+                    "name": "Deploy files on droplet",
+                    "run": "ssh -o StrictHostKeyChecking=no ${{ secrets.DROPLET_USERNAME }}@${{ secrets.DROPLET_IP }} 'powershell /root/reformedhistory/deploy.ps1'"
+                }
+            ]
+        }
+    }
+}
