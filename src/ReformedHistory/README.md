@@ -20,3 +20,10 @@ https://pcaga.org/wp-content/uploads/2020/05/AIC-Report-to-48th-GA-5-28-20-1.pdf
 
 hey if you wanna look at the systemd service on the droplet:
 sudo systemctl status reformedhistory.service
+
+
+Things to fix
+second helvetic confession
+cyril to nestorius 2
+cyril to nestorius 1
+augustine on the eucharist

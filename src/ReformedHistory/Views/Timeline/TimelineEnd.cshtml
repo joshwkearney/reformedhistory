@@ -20,8 +20,6 @@
 
     <style>
         me {
-            --line-thickness: 2px;
-            --line-color: black;
             --circle-diameter: 0.5rem;
             --vertical-margin: 1rem;
             
@@ -56,58 +54,15 @@
                     text-wrap: balance;
                     font-family: "EB Garamond", serif;    
                     font-style: italic;                
-                }
-                
-                a {
-                    color: black;
-                    text-decoration: none;
-                }                    
-            
-                a:hover {
-                    text-decoration: underline;
-                }
-            }
-            
-            .row {
-                display: flex;
-                justify-content: space-between;
-                max-width: 800px;
-                margin: auto;
-                
-                .left {
-                    flex: 1;
-                    position: relative;
-                    max-width: 150pt;                      
-                }
-                
-                .middle {
-                    flex: 0 0 0;
-                    position: relative;
-                    min-width: calc(1rem);
-                    width: calc(1rem);         
-                    position: relative;        
-                }
-                
-                .right {
-                    flex: 1;
-                    position: relative;    
-                }
-            }    
-            
-            .line {
-                height: 100%;
-                width: var(--line-thickness);
-                background-color: var(--line-color);
-                position: absolute;
-                left: calc(1rem / 2 - var(--line-thickness) / 2);
+                }                
             }
             
             .circle {
-                width: calc(var(--circle-diameter) - 2 * var(--line-thickness));
-                height: calc(var(--circle-diameter) - 2 * var(--line-thickness));
-                background-color: var(--line-color);
+                width: calc(var(--circle-diameter) - 2 * @TimelineCss.LineThickness);
+                height: calc(var(--circle-diameter) - 2 * @TimelineCss.LineThickness);
+                background-color: @TimelineCss.LineColor;
                 border-radius: 50%;
-                border: var(--line-thickness) solid var(--line-color);
+                border: @TimelineCss.LineThickness solid @TimelineCss.LineColor;
                 margin: auto;
                 z-index: 5;
             }

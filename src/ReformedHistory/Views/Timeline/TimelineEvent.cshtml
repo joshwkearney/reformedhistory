@@ -48,9 +48,7 @@
 
     <style>
         me {
-            --line-thickness: 2px;
-            --line-color: black;
-            --circle-diameter: 1rem;
+            --circle-diameter: @TimelineCss.MiddleWidth;
             --vertical-margin: 1rem;
             
             .spacingRow {
@@ -69,7 +67,7 @@
                         font-size: 13pt;
                         line-height: 14pt;
                         font-style: italic;
-                        font-family: "EB Garamond", serif;
+                        font-family: @Html.Raw(CssConstants.DocumentFont);
                     }
                 }
             }
@@ -86,10 +84,10 @@
                     display: flex;
                     flex-direction: row-reverse;
                     align-items: center;
-                    text-align: right;
+                    text-align: center;
                     margin-right: 1rem;
                     letter-spacing: 4pt;
-                    font-family: "EB Garamond", serif;
+                    font-family: @Html.Raw(CssConstants.DocumentFont);
                 }
                 
                 .title {
@@ -102,7 +100,7 @@
                     text-align: left;
                     margin-left: 1rem;
                     text-wrap: balance;
-                    font-family: "EB Garamond", serif;    
+                    font-family: @Html.Raw(CssConstants.DocumentFont);    
                     font-weight: 550;                
                 }
                 
@@ -114,46 +112,14 @@
                 a:hover {
                     text-decoration: underline;
                 }
-            }
-            
-            .row {
-                display: flex;
-                justify-content: space-between;
-                max-width: 800px;
-                margin: auto;
-                
-                .left {
-                    flex: 1;
-                    position: relative;
-                    max-width: 150pt;                      
-                }
-                
-                .middle {
-                    flex: 0 0 0;
-                    position: relative;
-                    min-width: var(--circle-diameter);                   
-                }
-                
-                .right {
-                    flex: 1;
-                    position: relative;    
-                }
-            }    
-            
-            .line {
-                height: 100%;
-                width: var(--line-thickness);
-                background-color: var(--line-color);
-                position: absolute;
-                left: calc(var(--circle-diameter) / 2 - var(--line-thickness) / 2);
-            }
+            }           
             
             .circle {
-                width: calc(var(--circle-diameter) - 2 * var(--line-thickness));
-                height: calc(var(--circle-diameter) - 2 * var(--line-thickness));
+                width: calc(var(--circle-diameter) - 2 * @TimelineCss.LineThickness);
+                height: calc(var(--circle-diameter) - 2 * @TimelineCss.LineThickness);
                 background-color: white;
                 border-radius: 50%;
-                border: var(--line-thickness) solid var(--line-color);
+                border: @TimelineCss.LineThickness solid @TimelineCss.LineColor;
                 margin: auto;
                 z-index: 5;
             }

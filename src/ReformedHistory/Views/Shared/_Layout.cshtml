@@ -1,12 +1,9 @@
 ﻿<!DOCTYPE html>
-<html lang="en">
+<html lang="en" style="scroll-padding-top: calc(@CssConstants.HeaderHeight + 1rem);">
 <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>@ViewData["Title"] - ReformedHistory</title>
-    
-    <!-- Include Tailwind CSS -->
-    @*<link rel="stylesheet" href="~/css/tailwind.css" asp-append-version="true" />*@
 
     <link rel="stylesheet" href="~/css/reset.css" asp-append-version="true" />
 
@@ -18,75 +15,105 @@
     <script src="~/js/css-scope-inline.js" asp-append-version="true"></script>
 </head>
 <body>
-    <div>
-        <header>
-            <a href="~/">ReformedHistory.com</a>
-            <div class="bar"></div>
-            <a href="~/Home">Home</a>
-            <a href="~/Timeline/">Timeline</a>
 
-            <style>
-                me {
-                    width: 100%;
-                    height: 3.5rem;
-                    position: fixed;
-                    top: 0;
-                    margin-bottom: 1rem;
-                    box-shadow: 0px 1px 14px 0px rgba(0,0,0,0.38);
-                    display: flex;
-                    flex-direction: row;
-                    align-items: center;
-                    background-color: white;
-                    z-index: 1000;
-                    
-                    a {
-                        font-size: 16pt;
-                        line-height: 18pt;
-                        font-family: "EB Garamond", serif;   
-                        color: black;
-                        text-decoration: none;
-                        margin-left: 1.5rem;
-                    }                    
-                
-                    a:hover {
-                        text-decoration: underline;
-                    }
-                    
-                    a:first-child {
-                        margin-left: 2rem;
-                    }
-                    
-                    .bar {
-                        height: calc(100% - 2rem);
-                        margin-left: 1.5rem;
-                        margin-top: 1rem;
-                        margin-bottom: 1rem;
-                        width: 1px;
-                        background-color: black;
-                    }
-                }            
-            </style>
-    </header>
-    <main>
-        @RenderBody()
-        <style>
-            me {
-                padding-top: 4.5rem;
+<header>
+    <nav class="TopNavigation">
+        <img class="LeftFlourish" src="~/img/LeftFlourish.svg">
+        <a class="SiteLink" href="~/">ReformedHistory.com</a>
+        <div class="Expander"></div>
+        <a href="~/Home">Home</a>
+        <a href="~/Timeline/">Timeline</a>
+        <img class="RightFlourish" src="~/img/RightFlourish.svg">
+    </nav>
+</header>
+
+<main>
+    @RenderBody()
+</main>
+
+<style>
+    me {
+        width: 100vw;
+        height: 100vh;
+        max-width: 100vw;
+        max-height: 100vh;
+        overflow-y: auto;
+        position: relative;
+        background-color: @CssConstants.BodyBackgroundColor;   
+        padding-top: @CssConstants.HeaderHeight;
+    
+        main {
+        }    
+    
+        header {
+            width: 100%;
+            height: @CssConstants.HeaderHeight;
+            position: fixed;
+            top: 0;            
+            background-color: @CssConstants.HeaderColor;
+            z-index: 1000;          
+        }
+        
+        .TopNavigation {
+            max-width: @CssConstants.MainContentWidth;
+            margin-left: auto;
+            margin-right: auto;
+            padding-left: 1rem;
+            padding-right: 1rem;
+            height: 100%;
+            display: flex;
+            flex-direction: row;
+            align-items: center;
+            position: relative;     
+        
+            .LeftFlourish, .RightFlourish {
+                position: absolute;
+                height: 1.25rem;
+                width: auto;
             }
-        </style>
-    </main>
-    <style>
-            me {
-                width: 100vw;
-                height: 100vh;
-                max-width: 100vw;
-                max-height: 100vh;
-                overflow-y: auto;
-                position: relative;
-                scroll-padding-top: 4.5rem;
+            
+            .LeftFlourish {
+                right: calc(100% + 1.5rem);
             }
-        </style>
-</div>
+            
+            .RightFlourish {
+                left: calc(100% + 1.5rem);
+            }
+            
+            @@media (max-width: calc(@CssConstants.MainContentWidth + 350px)) {
+                .LeftFlourish, .RightFlourish {
+                    display: none;
+                }
+            }
+            
+            a {
+                font-size: 16pt;
+                line-height: 18pt;
+                font-family: @Html.Raw(CssConstants.DocumentFont);   
+                text-decoration: none;
+                color: @CssConstants.HighlightColor;
+                margin-right: 1.5rem;
+                flex-grow: 0;
+            }              
+            
+            a:last-of-type {
+                margin-right: 0;
+            }      
+        
+            a:hover {
+                text-decoration: underline;
+            }
+            
+            a.SiteLink {
+                font-style: italic;
+            }
+            
+            .Expander {
+                flex-grow: 1;
+            }    
+        }                    
+    }
+</style>
 
 <!-- Include the site's javascript -->
 <script src="~/js/site.js" asp-append-version="true"></script>
@@ -95,5 +122,6 @@
 <script src="~/js/htmx.js"></script>
 
 @await RenderSectionAsync("Scripts", required: false)
+
 </body>
 </html>

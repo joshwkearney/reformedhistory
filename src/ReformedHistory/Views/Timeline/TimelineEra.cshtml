@@ -43,34 +43,7 @@
 
     <style>
         me {
-            --line-thickness: 2px;
-            --line-color: black;
-            --circle-diameter: 1rem;
-            --vertical-margin: 1rem;
-           
-            .row {
-                display: flex;
-                justify-content: space-between;
-                max-width: 800px;
-                margin: auto;
-                
-                .left {
-                    flex: 1;
-                    position: relative;   
-                    max-width: 150pt;                   
-                }
-                
-                .middle {
-                    flex: 0 0 0;
-                    position: relative;
-                    min-width: var(--circle-diameter);                   
-                }
-                
-                .right {
-                    flex: 1;
-                    position: relative;    
-                }
-            }
+            --vertical-margin: 1rem;          
 
             .spacingRow {
                 .middle {
@@ -88,10 +61,10 @@
                 text-align: left;
                 margin-left: 1rem;
                 text-wrap: balance;
-                font-family: "EB Garamond", serif;
+                font-family: @Html.Raw(CssConstants.DocumentFont);
                 font-weight: 550;
                 font-style: italic;
-                color: red;
+                color: #7b0000;
             }
 
             .date {
@@ -103,23 +76,15 @@
                 text-align: right;
                 margin-right: 1rem;
                 letter-spacing: 4pt;
-                font-family: "EB Garamond", serif;
-                color: red;
+                font-family: @Html.Raw(CssConstants.DocumentFont);
+                color: #7b0000;
                 font-style: italic;
-            }
-
-            .line {
-                height: 100%;
-                width: var(--line-thickness);
-                background-color: var(--line-color);
-                position: absolute;
-                left: calc(var(--circle-diameter) / 2 - var(--line-thickness) / 2);
             }
 
             .dashes {
                 width: 100%;
                 color: red;
-                border-top: 2px dashed red;
+                border-top: 2px dashed #7b0000;
                 margin-top: 4pt;
             }
         }

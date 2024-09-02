@@ -2,95 +2,110 @@
     ViewData["Title"] = "Home Page";
 }
 
-<div class="container">
-    <div class="heading">
-        <h1>Welcome to <b>ReformedHistory.com</b></h1>
-        <p>Providing high-quality, free access to the reformed tradition</p>
+<div class="Banner">
+    <div class="Content">
+        <h1>Welcome to Reformed History</h1>
+        <p>Providing high-quality access to the reformed tradition</p>
     </div>
+</div>
 
-    <div class="mission-section">
+<div class="Intro">
+    <div class="Content">
         <h2>Our Mission</h2>
         <p>
-            At ReformedHistory, we aim to make the primary sources from the reformed tradition more widely 
-            accessible for study and devotion. Our mission is to preserve the rich heritage of the reformed faith,
+            This site is dedicated to making the primary sources from the reformed tradition more widely
+            accessible for study and devotion. We hope to help preserve the rich heritage of the reformed faith,
             from the ancient ecumenical councils of the early church to the many confessions of the reformation.
         </p>
         <p>
-            Our collection includes councils, letters, confessions, catechisms, and other significant texts that have 
-            shaped the history and theology of the church. We hope for Christians today to rediscover the rich 
-            tradition of their forefathers.
+            Below you can explore our timeline of significant confessions, councils, and other documents from
+            church history, organized by type, time period, and tradition. 
         </p>
-        <a href="~/Timeline" role="button" class="explore-button">Explore the Timeline</a>
+        <br />
+        <div class="ExploreContainer">
+            <a class="Button" href="~/Timeline" role="button">Explore the Timeline</a>
+            <!--<img class="Flourish" src="~/img/DividerFlourish.svg">-->
+        </div>
     </div>
-
-    <style>
-        me {        
-            .heading {
-                font-family: "EB Garamond", serif;
-            
-                h1 {
-                    font-size: 3em;
-                    color: #222;
-                    margin-bottom: 10px;
-                }
-                
-                p {
-                    font-size: 1.3em;
-                    color: #444;
-                    margin-bottom: 40px;
-                    font-style: italic;
-                }
-            }            
-            
-            .mission-section {
-                max-width: 800px;
-                margin: 0 auto;
-                text-align: center;
-                
-                h2 {
-                    font-family: "EB Garamond", serif;            
-                    font-size: 2.2em;
-                    color: #222;
-                    margin-bottom: 20px;
-                }
-                
-                p {                
-                    font-family: "EB Garamond", serif;
-                    font-size: 1.2em;
-                    color: #444;
-                    line-height: 1.6;
-                    margin-bottom: 20px;
-                }
-            }
-        }
-    </style>
 </div>
 
 <style>
-    .container {
-        display: flex;
-        flex-direction: column;
-        align-items: center;
-        justify-content: center;
-        height: 60vh;
-        padding: 20px;
-        text-align: center;
-        font-family: Arial, sans-serif;
+    me {        
+        .Content {
+            max-width: @CssConstants.MainContentWidth;                  
+            padding: 1rem;
+            font-family: @Html.Raw(CssConstants.DocumentFont);
+            margin-left: auto;
+            margin-right: auto;
+        }
+        
+        .Banner {
+            width: 100%;
+            background-color: @CssConstants.GoldColor;
+            padding-top: 2rem;
+            padding-bottom: 2rem;
+            
+            h1 {
+                font-size: 3em;
+                color: #222;
+                margin-bottom: 10px;
+            }
+            
+            p {
+                font-size: 1.3em;
+                color: #444;
+                font-style: italic;
+            }
+        }
+        
+        .Intro {
+            padding-top: 1rem;
+        
+            h2 {
+                font-family: @Html.Raw(CssConstants.DocumentFont);            
+                font-size: 2.2em;
+                color: #222;
+                margin-bottom: 20px;
+                text-align: center;
+            }
+            
+            p {                
+                font-family: @Html.Raw(CssConstants.DocumentFont);
+                font-size: 1.2em;
+                color: #444;
+                line-height: 1.6;
+                margin-bottom: 20px;
+                text-align: justify;
+            }
+            
+            .ExploreContainer {
+                display: flex;
+                flex-direction: column;
+                align-items: center;
+            }
+            
+            .Flourish {
+                width: 200px;
+                margin-top: 8rem;
+            }
+        }
     }
 
-    .explore-button {
+    .Button {
         display: inline-block;
         padding: 10px 20px;
-        font-size: 1em;
+        font-size: 12pt;
+        font-family: "Arial";
         color: white;
-        background-color: #007bff;
+        background-color: @CssConstants.HeaderColor;
         border: none;
-        border-radius: 5px;
+        border-radius: 3px;
         text-decoration: none;
         transition: background-color 0.3s ease;
     }
 
-    .explore-button:hover {
-        background-color: #0056b3;
+    .Button:hover {
+        background-color: #343866;
+        text-decoration: none !important;
     }
 </style>

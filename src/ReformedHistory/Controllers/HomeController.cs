@@ -22,6 +22,10 @@ public class HomeController : Controller {
 	public IActionResult Library() {
 		return View();
 	}
+    
+    public IActionResult About() {
+        return View("../Timeline/About");
+    }
 
 	[ResponseCache(Duration = 0, Location = ResponseCacheLocation.None, NoStore = true)]
     public IActionResult Error() {
