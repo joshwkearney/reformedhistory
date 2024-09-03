@@ -12,6 +12,9 @@
                 text-wrap: balance;
                 width: auto;        
                 color: black;
+                max-width: calc(@CssConstants.MainContentWidth / 2);
+                margin-left: auto;
+                margin-right: auto;
 
                 h1 {
                     font-size: 20pt;
@@ -69,7 +72,7 @@
                 width: auto;
                 max-width: calc(@CssConstants.MainContentWidth / 2);
                 margin-left: auto;
-                margin-right: 0;
+                margin-right: auto;
                 
                 h1 {
                     font-size: 20pt;
@@ -96,13 +99,6 @@
                     tr > td:first-child {
                         font-weight: bold;
                     }
-                }
-            }
-
-            /* Center details when we're down to one column */
-            @@media (@Html.Raw(CssConstants.OneColumnMediaQuery)) {  
-                me {
-                    margin-right: auto;
                 }
             }
         </style>

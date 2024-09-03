@@ -14,10 +14,12 @@ public static class CssConstants {
     public static string HeaderHeight { get; } = "3.5rem";
 
     public static string DocumentFont { get; } = "'EB Garamond', serif";
+    
+    public static string SidebarSize => $"400px";
 
-    public static string ColumnSpacing { get; } = "2rem";
+    public static string TwoColumnsMediaQuery => $"max-width: calc(2 * {MainContentWidth})";
 
-    public static string TwoColumnsMediaQuery => $"max-width: calc({MainContentWidth} * 2 + {ColumnSpacing} * 2)";
-
-    public static string OneColumnMediaQuery => $"max-width: calc({MainContentWidth} * 1.5 + {ColumnSpacing})";
+    public static string OneColumnMediaQuery => $"max-width: calc(1.5 * {MainContentWidth})";
+    
+    public static string SubOneColumnMediaQuery => $"max-width: {MainContentWidth}";
 }

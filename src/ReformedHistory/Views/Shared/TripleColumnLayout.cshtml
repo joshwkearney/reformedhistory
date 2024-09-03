@@ -2,100 +2,115 @@
     Layout = "_Layout";
 }
 
-<div class="ColumnContainer1">
-    <div class="LeftSidebar">
-        @await RenderSectionAsync("Sidebar1", false)
-    </div>
-    
-    <div class="ColumnContainer2">
-        <div class="MainColumn">
-            @RenderBody()
+<div>
+    <div class="GridContainer1">
+        <div class="LeftSidebar">
+            <div>
+                @await RenderSectionAsync("Sidebar1", false)
+            </div>
         </div>
         <div class="RightSidebar">
-            @await RenderSectionAsync("Sidebar2", false)
+            <div>
+                @await RenderSectionAsync("Sidebar2", false)
+            </div>
         </div>
     </div>
-
-    <style>
+    
+    <div class="GridContainer2">
+        <div class="MainColumn">
+            <div>
+                @RenderBody()
+            </div>
+        </div>
+    </div>
+    
+    <style>              
         me {
-            display: flex;
-            flex-wrap: wrap;
-            max-width: 100%;
-            justify-content: center;
-            align-items: flex-start;
+            margin-left: auto;
+            margin-right: auto;         
             position: relative;
-            padding-top: 1rem;
+            max-width: calc(@CssConstants.MainContentWidth * 2);
             
-            .ColumnContainer2 {
-                display: flex;
-                flex-wrap: wrap;
-                justify-content: left;
-                align-items: flex-start;
-                position: relative;
-            }
-        
+            .GridContainer1, .GridContainer2 {
+                position: absolute;
+                top: 0;
+                left: 0;
+                right: 0;
+                bottom: 0;
+                background-color: transparent;   
+                display: grid;         
+                grid-template-columns: @CssConstants.SidebarSize @CssConstants.MainContentWidth @CssConstants.SidebarSize;
+                justify-items: center;
+            }            
+
             .LeftSidebar {
-                width: calc(@CssConstants.MainContentWidth / 2);
-                max-height: calc(100vh - @CssConstants.HeaderHeight - 2rem);
-                overflow-y: auto;
+                padding: 1rem;
+                grid-column: 1;                
                 position: sticky;
                 top: calc(@CssConstants.HeaderHeight + 1rem);
-                margin-right: @CssConstants.ColumnSpacing;
-                margin-bottom: @CssConstants.ColumnSpacing;
-            }
-            
-            .MainColumn {
-                width: calc(@CssConstants.MainContentWidth);
-                margin-right: @CssConstants.ColumnSpacing;
-                margin-bottom: @CssConstants.ColumnSpacing;
             }
             
             .RightSidebar {
-                width: calc(@CssConstants.MainContentWidth / 2);
-                margin-bottom: @CssConstants.ColumnSpacing;
+                padding: 1rem;
+                grid-column: 3;
             }
             
-            /* State 1: The right column snaps above the content */
-            @@media (@Html.Raw(CssConstants.TwoColumnsMediaQuery)) {     
-                .ColumnContainer1 {
-                    flex-wrap: wrap;
+            .MainColumn {
+                padding: 1rem;
+                grid-column: 2;
+            }           
+        }
+
+        @@media (@Html.Raw(CssConstants.TwoColumnsMediaQuery)) {
+            me {                
+                max-width: calc(1.5 * @CssConstants.MainContentWidth);
+            
+                .GridContainer1, .GridContainer2 {
+                    grid-template-columns: @CssConstants.SidebarSize @CssConstants.MainContentWidth;
                 }
-                 
-                .ColumnContainer2 {
-                    width: @CssConstants.MainContentWidth;
-                    justify-content: right;
+            
+                .RightSidebar {
+                    grid-column: 1;
+                }    
+            }           
+        }
+
+        @@media (@Html.Raw(CssConstants.OneColumnMediaQuery)) {
+            me {                
+                max-width: calc(min(100%, @CssConstants.MainContentWidth));
+            
+                .GridContainer1, .GridContainer2 {
+                    position: static;
+                }
+                
+                .GridContainer1 {
+                    grid-template-columns: @CssConstants.SidebarSize @CssConstants.SidebarSize;
+                }
+                
+                .GridContainer2 {
+                    grid-template-columns: @CssConstants.MainContentWidth;
                 }
                 
                 .RightSidebar {
-                    order: 1;
-                    width: 100%;
+                    grid-column: 2;
                 }
                 
                 .MainColumn {
-                    margin-right: 0;
-                    order: 2;
-                    width: 100%;
+                    grid-column: 1;
+                }    
+            }           
+        }
+
+        @@media (@Html.Raw(CssConstants.SubOneColumnMediaQuery)) {
+            me {                
+                .GridContainer1, .GridContainer2 {
+                    grid-template-columns: calc(min(100%, @CssConstants.MainContentWidth));
                 }
-            }
-            
-            /* State 2: The left column snaps above both columns */
-            @@media (@Html.Raw(CssConstants.OneColumnMediaQuery)) {  
-                .ColumnContainer2 {
-                    width: 100%;
-                    justify-content: center;
-                }
-                               
-                .LeftSidebar {
-                    position: static;
-                    margin-right: 0;
-                    max-height: unset;
-                    overflow-y: unset;
-                }            
                 
-                .LeftSidebar, .RightSidebar, .MainColumn {
-                    width: calc(min(@CssConstants.MainContentWidth, 100% - 2rem));
-                }   
-            }
+                .RightSidebar {
+                    grid-column: 1;
+                }
+            }           
         }
     </style>
 </div>
