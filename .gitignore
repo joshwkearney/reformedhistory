@@ -8,3 +8,4 @@ obj
 ./dotnet-install.sh
 ./publish/
 /publish
+.github/workflows/droplet-publish.yaml

@@ -5,7 +5,7 @@
 <div>
     <div class="GridContainer1">
         <div class="LeftSidebar">
-            <div>
+            <div class="LeftWrapper">
                 @await RenderSectionAsync("Sidebar1", false)
             </div>
         </div>
@@ -45,7 +45,16 @@
 
             .LeftSidebar {
                 padding: 1rem;
-                grid-column: 1;                
+                grid-column: 1;         
+                
+                position: fixed;
+                top: @CssConstants.HeaderHeight;
+                left: calc((100vw - @CssConstants.MainContentWidth * 2) / 2 - 1rem);       
+            }
+            
+            .LeftWrapper {
+                overflow-y: scroll;
+                max-height: calc(100vh - @CssConstants.HeaderHeight - 1rem);
             }
             
             .RightSidebar {
@@ -65,6 +74,17 @@
             
                 .GridContainer1, .GridContainer2 {
                     grid-template-columns: @CssConstants.SidebarSize @CssConstants.MainContentWidth;
+                }
+                
+                .LeftSidebar {
+                    position: static;
+                    top: unset;
+                    left: unset;                   
+                }
+                
+                .LeftWrapper {
+                    overflow-y: unset;
+                    max-height: unset;
                 }
             
                 .RightSidebar {
