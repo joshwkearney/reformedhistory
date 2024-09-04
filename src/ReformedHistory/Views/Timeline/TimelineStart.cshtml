@@ -1,4 +1,11 @@
-<div>
+@using ReformedHistory.Common.Services
+@inject IdService ids
+
+@{
+    var id = ids.GetUniqueId();
+}
+
+<div id="@id">
     <div class="row headerRow">
         <div class="left">
             <div class="date">@(DateTime.UtcNow.ToString("yyyy"))</div>
@@ -21,7 +28,7 @@
     </div>
     
     <style>
-        me {
+        #@id {
             --line-thickness: 2px;
             --line-color: black;
             --circle-diameter: 0.5rem;

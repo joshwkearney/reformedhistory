@@ -1,12 +1,17 @@
+@using ReformedHistory.Common.Services
+@model TimelineFilters
+@inject IdService ids
+
 @{
     ViewData["Title"] = "Privacy Policy";
     Layout = "TripleColumnLayout";
 
-    var model = TimelineFilters.Default;
+    var model = this.Model ?? TimelineFilters.Default;
+    var id = ids.GetUniqueId();
 }
 
 @section Sidebar1 {
-    <div class="NavigationPanel">
+    <div id="@id">
         <form hx-post="/Timeline/Content"
               hx-trigger="change, keyup"
               hx-target=".ContentPanel"
@@ -135,7 +140,7 @@
         </form>
 
         <style>
-            me {
+            #@id {
                 font-family: @Html.Raw(CssConstants.DocumentFont);        
             
                 .CheckboxContainer {

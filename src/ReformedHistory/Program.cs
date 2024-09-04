@@ -1,3 +1,4 @@
+using ReformedHistory.Common.Services;
 using ReformedHistory.Views.Content;
 
 var builder = WebApplication.CreateBuilder(args);
@@ -5,6 +6,7 @@ var builder = WebApplication.CreateBuilder(args);
 // Add services to the container.
 builder.Services.AddControllersWithViews();
 builder.Services.AddScoped<ContentIndex>();
+builder.Services.AddScoped<IdService>();
 
 var app = builder.Build();
 

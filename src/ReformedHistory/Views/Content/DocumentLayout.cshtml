@@ -1,13 +1,19 @@
+@using ReformedHistory.Common.Services
+@inject IdService ids
 @{
     Layout = "TripleColumnLayout";
+
+    var tableOfContentsId = ids.GetUniqueId();
+    var detailsId = ids.GetUniqueId();
+    var contentId = ids.GetUniqueId();
 }
 
 @section Sidebar1 {
-    <nav>
+    <nav id="@tableOfContentsId">
         @await RenderSectionAsync("DocumentNavigation", false)
 
         <style>
-            me {
+            #@tableOfContentsId {
                 font-family: "EB Garamond", serif;
                 text-wrap: balance;
                 width: auto;        
@@ -60,11 +66,11 @@
 }
 
 @section Sidebar2 {
-    <div class="DetailsPanel">
+    <div id="@detailsId">
         @await RenderSectionAsync("DocumentDetails", false)
 
         <style>
-            me {
+            #@detailsId {
                 font-size: 13pt;
                 line-height: 15pt;
                 font-family: "EB Garamond", serif;
@@ -105,11 +111,11 @@
     </div>
 }
 
-<div class="ContentPanel">
+<div id="@contentId">
     @await RenderSectionAsync("DocumentContent", true)
 
     <style>
-        me {
+        #@contentId {
             font-size: 16pt;
             line-height: 1.25;
             font-family: "EB Garamond", serif;

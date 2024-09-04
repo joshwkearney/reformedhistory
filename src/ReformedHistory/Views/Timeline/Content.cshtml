@@ -1,9 +1,13 @@
 @using Microsoft.AspNetCore.Mvc.TagHelpers
+@using ReformedHistory.Common.Services
 @using ReformedHistory.Views.Content
 @inject ContentIndex content;
+@inject IdService ids;
 @model TimelineFilters
 
 @{
+    var id = ids.GetUniqueId();
+    
     bool CanShowEvent(TimelineInfo.Event e) {
         if (this.Model is null) {
             return true;
@@ -44,7 +48,7 @@
     }
 }
 
-<div>
+<div id="@id">
     <partial name="TimelineStart" />
 
     @foreach (var item in content.GetTimeline()) {
@@ -63,7 +67,7 @@
     <partial name="TimelineEnd" />
     
     <style>
-        me {        
+        #@id {        
             .row {
                 display: flex;
                 justify-content: space-between;

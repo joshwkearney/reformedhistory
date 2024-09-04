@@ -1,8 +1,13 @@
+@using ReformedHistory.Common.Services
+@inject IdService ids
+
 @{
     Layout = "_Layout";
+
+    var id = ids.GetUniqueId();
 }
 
-<div>
+<div id="@id">
     <div class="GridContainer1">
         <div class="LeftSidebar">
             <div class="LeftWrapper">
@@ -25,7 +30,7 @@
     </div>
     
     <style>              
-        me {
+        #@id {
             margin-left: auto;
             margin-right: auto;         
             position: relative;
@@ -78,7 +83,7 @@
         }
 
         @@media (@Html.Raw(CssConstants.TwoColumnsMediaQuery)) {
-            me {                
+            #@id {                
                 max-width: calc(1.5 * @CssConstants.MainContentWidth);
             
                 .GridContainer1, .GridContainer2 {
@@ -103,7 +108,7 @@
         }
 
         @@media (@Html.Raw(CssConstants.OneColumnMediaQuery)) {
-            me {                
+            #@id {                
                 max-width: calc(min(100%, @CssConstants.MainContentWidth));
             
                 .GridContainer1, .GridContainer2 {
@@ -129,7 +134,7 @@
         }
 
         @@media (@Html.Raw(CssConstants.SubOneColumnMediaQuery)) {
-            me {                
+            #@id {                
                 .GridContainer1, .GridContainer2 {
                     grid-template-columns: calc(min(100%, @CssConstants.MainContentWidth));
                 }
