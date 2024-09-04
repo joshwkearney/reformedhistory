@@ -10,7 +10,7 @@
             </div>
         </div>
         <div class="RightSidebar">
-            <div>
+            <div class="LeftWrapper">
                 @await RenderSectionAsync("Sidebar2", false)
             </div>
         </div>
@@ -18,7 +18,7 @@
     
     <div class="GridContainer2">
         <div class="MainColumn">
-            <div>
+            <div class="MainWrapper">
                 @RenderBody()
             </div>
         </div>
@@ -44,8 +44,8 @@
             }            
 
             .LeftSidebar {
-                padding: 1rem;
-                grid-column: 1;         
+                grid-column: 1;     
+                width: calc(@CssConstants.MainContentWidth / 2);    
                 
                 position: fixed;
                 top: @CssConstants.HeaderHeight;
@@ -53,19 +53,28 @@
             }
             
             .LeftWrapper {
+                margin: 1rem;
                 overflow-y: scroll;
                 max-height: calc(100vh - @CssConstants.HeaderHeight - 1rem);
             }
             
             .RightSidebar {
-                padding: 1rem;
                 grid-column: 3;
+                width: 100%;
+            }
+            
+            .RightWrapper {
+                margin: 1rem;
             }
             
             .MainColumn {
-                padding: 1rem;
                 grid-column: 2;
+                width: 100%;
             }           
+            
+            .MainWrapper {
+                margin: 1rem;
+            }
         }
 
         @@media (@Html.Raw(CssConstants.TwoColumnsMediaQuery)) {
