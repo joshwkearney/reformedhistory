@@ -15,7 +15,7 @@
             </div>
         </div>
         <div class="RightSidebar">
-            <div class="LeftWrapper">
+            <div class="RightWrapper">
                 @await RenderSectionAsync("Sidebar2", false)
             </div>
         </div>
@@ -54,22 +54,18 @@
                 
                 position: fixed;
                 top: @CssConstants.HeaderHeight;
-                left: calc((100vw - @CssConstants.MainContentWidth * 2) / 2 - 1rem);       
+                left: calc((100vw - @CssConstants.MainContentWidth * 2) / 2);       
             }
             
-            .LeftWrapper {
+            .LeftWrapper, .RightWrapper {
                 margin: 1rem;
-                overflow-y: scroll;
+                overflow-y: auto;
                 max-height: calc(100vh - @CssConstants.HeaderHeight - 1rem);
             }
             
             .RightSidebar {
                 grid-column: 3;
                 width: 100%;
-            }
-            
-            .RightWrapper {
-                margin: 1rem;
             }
             
             .MainColumn {
@@ -91,6 +87,7 @@
                 }
                 
                 .LeftSidebar {
+                    width: calc(@CssConstants.MainContentWidth / 2);
                     position: static;
                     top: unset;
                     left: unset;                   
