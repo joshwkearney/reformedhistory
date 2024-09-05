@@ -1,8 +1,13 @@
+@using ReformedHistory.Common.Services
+@inject IdService ids
+
 @{
     Layout = "_Layout";
+
+    var id = ids.GetUniqueId();
 }
 
-<div>
+<div id="@id">
     <div class="GridContainer1">
         <div class="LeftSidebar">
             <div class="LeftWrapper">
@@ -10,7 +15,7 @@
             </div>
         </div>
         <div class="RightSidebar">
-            <div>
+            <div class="RightWrapper">
                 @await RenderSectionAsync("Sidebar2", false)
             </div>
         </div>
@@ -18,14 +23,14 @@
     
     <div class="GridContainer2">
         <div class="MainColumn">
-            <div>
+            <div class="MainWrapper">
                 @RenderBody()
             </div>
         </div>
     </div>
     
     <style>              
-        me {
+        #@id {
             margin-left: auto;
             margin-right: auto;         
             position: relative;
@@ -44,32 +49,36 @@
             }            
 
             .LeftSidebar {
-                padding: 1rem;
-                grid-column: 1;         
-                
+                grid-column: 1;     
+                width: calc(min(100%, @CssConstants.MainContentWidth / 2));                 
                 position: fixed;
                 top: @CssConstants.HeaderHeight;
-                left: calc((100vw - @CssConstants.MainContentWidth * 2) / 2 - 1rem);       
+                left: calc((100vw - @CssConstants.MainContentWidth * 2) / 2);       
             }
             
-            .LeftWrapper {
-                overflow-y: scroll;
+            .LeftWrapper, .RightWrapper {
+                margin: 1rem;
+                overflow-y: auto;
                 max-height: calc(100vh - @CssConstants.HeaderHeight - 1rem);
             }
             
             .RightSidebar {
-                padding: 1rem;
                 grid-column: 3;
+                width: calc(min(100%, @CssConstants.MainContentWidth / 2));    
             }
             
             .MainColumn {
-                padding: 1rem;
                 grid-column: 2;
+                width: 100%;
             }           
+            
+            .MainWrapper {
+                margin: 1rem;
+            }
         }
 
         @@media (@Html.Raw(CssConstants.TwoColumnsMediaQuery)) {
-            me {                
+            #@id {                
                 max-width: calc(1.5 * @CssConstants.MainContentWidth);
             
                 .GridContainer1, .GridContainer2 {
@@ -94,7 +103,7 @@
         }
 
         @@media (@Html.Raw(CssConstants.OneColumnMediaQuery)) {
-            me {                
+            #@id {                
                 max-width: calc(min(100%, @CssConstants.MainContentWidth));
             
                 .GridContainer1, .GridContainer2 {
@@ -120,7 +129,7 @@
         }
 
         @@media (@Html.Raw(CssConstants.SubOneColumnMediaQuery)) {
-            me {                
+            #@id {                
                 .GridContainer1, .GridContainer2 {
                     grid-template-columns: calc(min(100%, @CssConstants.MainContentWidth));
                 }

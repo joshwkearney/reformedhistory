@@ -1,6 +1,12 @@
+@using ReformedHistory.Common.Services
 @model TimelineInfo.Event
+@inject IdService ids
 
-<div>
+@{
+    var id = ids.GetUniqueId();
+}
+
+<div id="@id">
     <div class="row spacingRow">
         <div class="left"></div>
         <div class="middle"><div class="line"></div></div>
@@ -47,7 +53,7 @@
     </div>
 
     <style>
-        me {
+        #@id {
             --circle-diameter: @TimelineCss.MiddleWidth;
             --vertical-margin: 1rem;
             
