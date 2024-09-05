@@ -6,6 +6,13 @@
     var tableOfContentsId = ids.GetUniqueId();
     var detailsId = ids.GetUniqueId();
     var contentId = ids.GetUniqueId();
+    var titleId = ids.GetUniqueId();
+}
+
+@section Title {
+    <div id="@titleId">
+        @await RenderSectionAsync("Title", false)
+    </div>
 }
 
 @section Sidebar1 {
@@ -114,7 +121,7 @@
     @await RenderSectionAsync("DocumentContent", true)
 
     <style>
-        #@contentId {
+        #@contentId, #@titleId {
             font-size: 16pt;
             line-height: 1.25;
             font-family: "EB Garamond", serif;
@@ -166,7 +173,6 @@
                 list-style-type: lower-roman;
                 
                 li  {
-                    padding-left: 5pt;
                     margin-bottom: 1rem;
                     text-align: justify;
                     

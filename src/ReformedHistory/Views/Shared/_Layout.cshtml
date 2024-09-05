@@ -36,17 +36,12 @@
 
 <style>
     #@bodyId {
-        height: 100vh;
-        max-height: 100vh;
-        overflow-y: auto;
+        max-height: calc(100vh - @CssConstants.HeaderHeight);
+        overflow-y: scroll;
         overflow-x: clip;
         position: relative;
         background-color: @CssConstants.BodyBackgroundColor;   
         padding-top: @CssConstants.HeaderHeight;
-    
-        main {
-            
-        }    
     
         header {
             width: 100%;

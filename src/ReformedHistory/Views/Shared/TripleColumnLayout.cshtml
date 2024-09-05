@@ -8,45 +8,73 @@
 }
 
 <div id="@id">
-    <div class="GridContainer1">
-        <div class="LeftSidebar">
-            <div class="LeftWrapper">
-                @await RenderSectionAsync("Sidebar1", false)
+    <div class="GridContainerContainer">
+        <div class="TitleContainer">
+            <div class="TitleWrapper">
+                @await RenderSectionAsync("Title", false)
             </div>
         </div>
-        <div class="RightSidebar">
-            <div class="RightWrapper">
-                @await RenderSectionAsync("Sidebar2", false)
+        
+        <div class="GridContainer1">
+            <div class="LeftSidebar">
+                <div class="LeftWrapper">
+                    @await RenderSectionAsync("Sidebar1", false)
+                </div>
+            </div>
+            <div class="RightSidebar">
+                <div class="RightWrapper">
+                    @await RenderSectionAsync("Sidebar2", false)
+                </div>
+            </div>
+        </div>
+
+        <div class="GridContainer2">
+            <div class="MainColumn">
+                <div class="MainWrapper">
+                    @RenderBody()
+                </div>
             </div>
         </div>
     </div>
-    
-    <div class="GridContainer2">
-        <div class="MainColumn">
-            <div class="MainWrapper">
-                @RenderBody()
-            </div>
-        </div>
-    </div>
-    
+
     <style>              
         #@id {
             margin-left: auto;
-            margin-right: auto;         
-            position: relative;
+            margin-right: auto;        
             max-width: calc(@CssConstants.MainContentWidth * 2);
             
-            .GridContainer1, .GridContainer2 {
-                position: absolute;
-                top: 0;
-                left: 0;
-                right: 0;
-                bottom: 0;
+            .TitleContainer {
+                width: 100%;
+                display: grid;
+                grid-template-columns: @CssConstants.SidebarSize @CssConstants.MainContentWidth;              
+            }
+            
+            .TitleWrapper {
+                margin: 1rem;
+                grid-column: 2;
+            }
+            
+            .GridContainerContainer {
+                position: relative;
+                width: 100%;
+                height: 100%;
+            }
+            
+            .GridContainer1, .GridContainer2 {                
                 background-color: transparent;   
                 display: grid;         
                 grid-template-columns: @CssConstants.SidebarSize @CssConstants.MainContentWidth @CssConstants.SidebarSize;
                 justify-items: center;
             }            
+
+            .GridContainer1 {
+                position: absolute;
+                top: 0;
+                left: 0;
+                right: 0;
+                bottom: 0;
+                align-content: flex-start;
+            }
 
             .LeftSidebar {
                 grid-column: 1;     
@@ -91,14 +119,14 @@
                     left: unset;                   
                 }
                 
-                .LeftWrapper {
+                .LeftWrapper, .RightWrapper {
                     overflow-y: unset;
                     max-height: unset;
                 }
             
                 .RightSidebar {
                     grid-column: 1;
-                }    
+                }                
             }           
         }
 
@@ -114,7 +142,7 @@
                     grid-template-columns: @CssConstants.SidebarSize @CssConstants.SidebarSize;
                 }
                 
-                .GridContainer2 {
+                .GridContainer2, .TitleContainer {
                     grid-template-columns: @CssConstants.MainContentWidth;
                 }
                 
@@ -125,12 +153,17 @@
                 .MainColumn {
                     grid-column: 1;
                 }    
+                
+                .TitleWrapper {
+                    grid-column: 1;
+                    text-align: center;
+                }
             }           
         }
 
         @@media (@Html.Raw(CssConstants.SubOneColumnMediaQuery)) {
             #@id {                
-                .GridContainer1, .GridContainer2 {
+                .GridContainer1, .GridContainer2, .TitleContainer {
                     grid-template-columns: calc(min(100%, @CssConstants.MainContentWidth));
                 }
                 
