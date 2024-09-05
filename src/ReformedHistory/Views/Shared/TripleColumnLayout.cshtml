@@ -50,8 +50,7 @@
 
             .LeftSidebar {
                 grid-column: 1;     
-                width: calc(@CssConstants.MainContentWidth / 2);    
-                
+                width: calc(min(100%, @CssConstants.MainContentWidth / 2));                 
                 position: fixed;
                 top: @CssConstants.HeaderHeight;
                 left: calc((100vw - @CssConstants.MainContentWidth * 2) / 2);       
@@ -65,7 +64,7 @@
             
             .RightSidebar {
                 grid-column: 3;
-                width: 100%;
+                width: calc(min(100%, @CssConstants.MainContentWidth / 2));    
             }
             
             .MainColumn {
@@ -87,7 +86,6 @@
                 }
                 
                 .LeftSidebar {
-                    width: calc(@CssConstants.MainContentWidth / 2);
                     position: static;
                     top: unset;
                     left: unset;                   
