@@ -15,15 +15,17 @@
             </div>
         </div>
         
-        <div class="GridContainer1">
-            <div class="LeftSidebar">
-                <div class="LeftWrapper">
-                    @await RenderSectionAsync("Sidebar1", false)
+        <div class="GridContainer1Wrapper">
+            <div class="GridContainer1">
+                <div class="LeftSidebar">
+                    <div class="LeftWrapper">
+                        @await RenderSectionAsync("Sidebar1", false)
+                    </div>
                 </div>
-            </div>
-            <div class="RightSidebar">
-                <div class="RightWrapper">
-                    @await RenderSectionAsync("Sidebar2", false)
+                <div class="RightSidebar">
+                    <div class="RightWrapper">
+                        @await RenderSectionAsync("Sidebar2", false)
+                    </div>
                 </div>
             </div>
         </div>
@@ -67,12 +69,15 @@
                 justify-items: center;
             }            
 
-            .GridContainer1 {
+            .GridContainer1Wrapper {
                 position: absolute;
                 top: 0;
                 left: 0;
                 right: 0;
                 bottom: 0;
+            }
+
+            .GridContainer1 {                
                 align-content: flex-start;
             }
 
@@ -86,6 +91,11 @@
             
             .LeftWrapper, .RightWrapper {
                 margin: 1rem;
+                margin-top: 0;
+                padding-top: 1rem;                
+            }
+            
+            .LeftWrapper {
                 overflow-y: auto;
                 max-height: calc(100vh - @CssConstants.HeaderHeight - 1rem);
             }
@@ -109,8 +119,23 @@
             #@id {                
                 max-width: calc(1.5 * @CssConstants.MainContentWidth);
             
-                .GridContainer1, .GridContainer2 {
+                .GridContainer2 {
                     grid-template-columns: @CssConstants.SidebarSize @CssConstants.MainContentWidth;
+                }
+                
+                .GridContainer1 {
+                    position: static;
+                    grid-template-columns: calc(100% - 1rem);
+                    overflow-y: auto;
+                    max-height: calc(100vh - @CssConstants.HeaderHeight);
+                    
+                }
+                
+                .GridContainer1Wrapper {
+                    width: calc(min(100%, @CssConstants.MainContentWidth / 2 - 1rem));                 
+                    position: fixed;
+                    top: @CssConstants.HeaderHeight;
+                    left: calc((100vw - @CssConstants.MainContentWidth * 1.5) / 2);       
                 }
                 
                 .LeftSidebar {
@@ -122,6 +147,7 @@
                 .LeftWrapper, .RightWrapper {
                     overflow-y: unset;
                     max-height: unset;
+                    margin-right: 0;
                 }
             
                 .RightSidebar {
@@ -134,12 +160,22 @@
             #@id {                
                 max-width: calc(min(100%, @CssConstants.MainContentWidth));
             
-                .GridContainer1, .GridContainer2 {
+                .GridContainer1Wrapper, .GridContainer2 {
                     position: static;
                 }
                 
+                .GridContainer1Wrapper {
+                    width: unset;                 
+                    position: static;
+                    top: unset;
+                    left: unset;  
+                }
+                
                 .GridContainer1 {
-                    grid-template-columns: @CssConstants.SidebarSize @CssConstants.SidebarSize;
+                    grid-template-columns: @CssConstants.SidebarSize @CssConstants.SidebarSize;                    
+                    margin: 0;
+                    overflow-y: unset;
+                    max-height: unset;
                 }
                 
                 .GridContainer2, .TitleContainer {
@@ -157,6 +193,10 @@
                 .TitleWrapper {
                     grid-column: 1;
                     text-align: center;
+                }
+                
+                .LeftWrapper, .RightWrapper {
+                    margin-right: 1rem;
                 }
             }           
         }
