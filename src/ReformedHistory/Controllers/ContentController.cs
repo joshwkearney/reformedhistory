@@ -26,4 +26,8 @@ public class ContentController : Controller {
     public IActionResult Catechisms(string id) {
         return View("Catechisms/" + id);
     }
+    
+    public IActionResult Sermons(string id) {
+        return View("Sermons/" + id);
+    }
 }

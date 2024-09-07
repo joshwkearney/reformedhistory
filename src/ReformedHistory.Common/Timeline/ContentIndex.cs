@@ -256,7 +256,7 @@ public class ContentIndex {
             Title = "Augustine's Sermon on the Eucharist",
             DateStart = 411,
             DateEnd = 411,
-            Url = "~/Content/Confessions/AugustineOnTheEucharist",
+            Url = "~/Content/Sermons/AugustineOnTheEucharist",
             Description = "Augustine explains that the Eucharist is the body of Christ, that it is grapsed by faith, " +
                           "and that it is composed of believers",
             Type = TimelineEventType.Sermon,
