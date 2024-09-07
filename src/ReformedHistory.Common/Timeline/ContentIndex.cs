@@ -221,6 +221,18 @@ public class ContentIndex {
             Era = TimelineEventEra.Ancient
         },
         new TimelineInfo.Event() {
+            Title = "The Council of Ephesus",
+            DateStart = 431,
+            DateEnd = 431,
+            Url = "~/Content/Councils/Ephesus",
+            Description = "Called in 431 to address the teachings of Nestorius, the Council of Ephesus " +
+                          "reaffirmed unity of Christ's two natures, that Christ's person is fully God, and the " +
+                          "propriety of calling Mary the mother of God.",
+            Type = TimelineEventType.Council,
+            Tradition = TimelineEventTradition.Reformed | TimelineEventTradition.Lutheran  | TimelineEventTradition.Anglican,
+            Era = TimelineEventEra.Ancient
+        },
+        new TimelineInfo.Event() {
             Title = "The Second Epistle of Cyril to Nestorius",
             DateStart = 430,
             DateEnd = 430,
