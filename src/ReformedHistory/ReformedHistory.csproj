@@ -89,10 +89,6 @@
     </ItemGroup>
 
     <ItemGroup>
-      <AdditionalFiles Include="Views\Content\Confessions\HeidelbergCatechism.cshtml" />
-    </ItemGroup>
-
-    <ItemGroup>
       <ProjectReference Include="..\ReformedHistory.Common\ReformedHistory.Common.csproj" />
     </ItemGroup>
     <Target Name="Tailwind" BeforeTargets="Build">
