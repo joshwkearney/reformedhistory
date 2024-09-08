@@ -23,7 +23,7 @@
             #@tableOfContentsId {
                 font-family: "EB Garamond", serif;
                 text-wrap: balance;
-                width: auto;        
+                width: auto;
                 color: black;
                 max-width: calc(@CssConstants.MainContentWidth / 2);
                 margin-left: auto;
@@ -50,7 +50,7 @@
                     list-style-type: decimal;
                     font-size: 13pt;
                     line-height: 15pt;
-                    
+
                     li {
                         margin-bottom: 5pt;
                         padding-left: 3pt;
@@ -64,6 +64,16 @@
 
                 a:hover {
                     text-decoration: underline;
+                }
+
+                @@media (prefers-color-scheme: dark) {
+                    color: @CssConstants.DarkModeTextColor;
+                    h1 {
+                        background-color: @CssConstants.DarkModeBackgroundColor;
+                    }
+                    a {
+                        color: @CssConstants.DarkModeTextColor;
+                    }
                 }
             }
         </style>

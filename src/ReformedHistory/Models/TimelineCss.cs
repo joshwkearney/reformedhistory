@@ -8,4 +8,6 @@ public static class TimelineCss {
     public static string LineThickness { get; } = "2px";
 
     public static string LineColor { get; } = "black";
+
+    public static string DarkModeLineColor {  get; } = "white";
 }

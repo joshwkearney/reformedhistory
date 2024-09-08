@@ -56,19 +56,19 @@
         #@id {
             --circle-diameter: @TimelineCss.MiddleWidth;
             --vertical-margin: 1rem;
-            
+
             .spacingRow {
                 .middle {
                     height: var(--vertical-margin);
                 }
             }
-            
+
             .contentRow {
                 .content {
                     margin-left: 1rem;
                     margin-top: 4pt;
                     margin-bottom: var(--vertical-margin);
-                    
+
                     span {
                         font-size: 13pt;
                         line-height: 14pt;
@@ -77,13 +77,13 @@
                     }
                 }
             }
-            
-            .headerRow {                
+
+            .headerRow {
                 .middle {
                     display: flex;
                     align-items: center;
                 }
-            
+
                 .date {
                     font-size: 18pt;
                     height: 100%;
@@ -95,7 +95,7 @@
                     letter-spacing: 4pt;
                     font-family: @Html.Raw(CssConstants.DocumentFont);
                 }
-                
+
                 .title {
                     font-size: 20pt;
                     line-height: 22pt;
@@ -106,20 +106,26 @@
                     text-align: left;
                     margin-left: 1rem;
                     text-wrap: balance;
-                    font-family: @Html.Raw(CssConstants.DocumentFont);    
-                    font-weight: 550;                
+                    font-family: @Html.Raw(CssConstants.DocumentFont);
+                    font-weight: 550;
                 }
-                
+
                 a {
                     color: black;
                     text-decoration: none;
-                }                    
-            
+                }
+
                 a:hover {
                     text-decoration: underline;
                 }
-            }           
-            
+
+                @@media (prefers-color-scheme: dark) {
+                    a {
+                        color: @CssConstants.DarkModeTextColor;
+                    }
+                }
+            }
+
             .circle {
                 width: calc(var(--circle-diameter) - 2 * @TimelineCss.LineThickness);
                 height: calc(var(--circle-diameter) - 2 * @TimelineCss.LineThickness);
@@ -128,6 +134,12 @@
                 border: @TimelineCss.LineThickness solid @TimelineCss.LineColor;
                 margin: auto;
                 z-index: 5;
+            }
+
+            @@media (prefers-color-scheme: dark) {
+                .circle {
+                    border: @TimelineCss.LineThickness solid @TimelineCss.DarkModeLineColor;
+                }
             }
         }
     </style>

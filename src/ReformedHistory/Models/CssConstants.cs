@@ -22,4 +22,11 @@ public static class CssConstants {
     public static string OneColumnMediaQuery => $"max-width: calc(1.5 * {MainContentWidth})";
     
     public static string SubOneColumnMediaQuery => $"max-width: {MainContentWidth}";
+
+    /* Dark Mode */
+    public static string DarkModeBackgroundColor { get; } = "#141414";
+
+    public static string DarkModeTextColor {  get; } = "#DDD";
+
+
 }

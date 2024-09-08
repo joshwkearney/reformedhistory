@@ -29,26 +29,26 @@
         #@id {
             --circle-diameter: 0.5rem;
             --vertical-margin: 1rem;
-            
+
             .spacingRow {
                 .middle {
                     height: var(--vertical-margin);
                 }
             }
-            
-            .headerRow {                
+
+            .headerRow {
                 .middle {
                     display: flex;
                     align-items: center;
                     position: relative;
-                    
+
                     .line {
                         position: absolute;
                         top: 0;
                         height: 50%;
                     }
                 }
-                
+
                 .title {
                     font-size: 20pt;
                     line-height: 22pt;
@@ -59,11 +59,11 @@
                     text-align: left;
                     margin-left: 1rem;
                     text-wrap: balance;
-                    font-family: "EB Garamond", serif;    
-                    font-style: italic;                
-                }                
+                    font-family: "EB Garamond", serif;
+                    font-style: italic;
+                }
             }
-            
+
             .circle {
                 width: calc(var(--circle-diameter) - 2 * @TimelineCss.LineThickness);
                 height: calc(var(--circle-diameter) - 2 * @TimelineCss.LineThickness);
@@ -72,6 +72,13 @@
                 border: @TimelineCss.LineThickness solid @TimelineCss.LineColor;
                 margin: auto;
                 z-index: 5;
+            }
+
+            @@media (prefers-color-scheme: dark) {
+                .circle {
+                    background-color: @TimelineCss.DarkModeLineColor;
+                    border: @TimelineCss.LineThickness solid @TimelineCss.DarkModeLineColor;
+                }
             }
         }
     </style>

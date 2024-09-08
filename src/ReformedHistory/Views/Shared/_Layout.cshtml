@@ -41,18 +41,18 @@
         overflow-y: scroll;
         overflow-x: clip;
         position: relative;
-        background-color: @CssConstants.BodyBackgroundColor;   
+        background-color: @CssConstants.BodyBackgroundColor;
         padding-top: @CssConstants.HeaderHeight;
-    
+
         header {
             width: 100%;
             height: @CssConstants.HeaderHeight;
             position: fixed;
-            top: 0;            
+            top: 0;
             background-color: @CssConstants.HeaderColor;
-            z-index: 1000;          
+            z-index: 1000;
         }
-        
+
         .TopNavigation {
             max-width: calc(@CssConstants.MainContentWidth - 2rem);
             margin-left: auto;
@@ -63,54 +63,61 @@
             display: flex;
             flex-direction: row;
             align-items: center;
-            position: relative;     
-        
+            position: relative;
+
             .LeftFlourish, .RightFlourish {
                 position: absolute;
                 height: 1.25rem;
                 width: auto;
             }
-            
+
             .LeftFlourish {
                 right: calc(100% + 1.5rem);
             }
-            
+
             .RightFlourish {
                 left: calc(100% + 1.5rem);
             }
-            
+
             @@media (max-width: calc(@CssConstants.MainContentWidth + 350px)) {
                 .LeftFlourish, .RightFlourish {
                     display: none;
                 }
             }
-            
+
             a {
                 font-size: 16pt;
                 line-height: 18pt;
-                font-family: @Html.Raw(CssConstants.DocumentFont);   
+                font-family: @Html.Raw(CssConstants.DocumentFont);
                 text-decoration: none;
                 color: @CssConstants.HighlightColor;
                 margin-right: 1.5rem;
                 flex-grow: 0;
-            }              
-            
+            }
+
             a:last-of-type {
                 margin-right: 0;
-            }      
-        
+            }
+
             a:hover {
                 text-decoration: underline;
             }
-            
+
             a.SiteLink {
                 font-style: italic;
             }
-            
+
             .Expander {
                 flex-grow: 1;
-            }    
-        }                    
+            }
+        }
+    }
+
+    @@media (prefers-color-scheme: dark) {
+        #@bodyId {
+            background-color: @CssConstants.DarkModeBackgroundColor;
+            color: @CssConstants.DarkModeTextColor !important;
+        }
     }
 </style>
 
