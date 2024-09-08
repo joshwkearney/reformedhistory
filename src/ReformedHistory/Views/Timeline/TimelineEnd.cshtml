@@ -67,18 +67,11 @@
             .circle {
                 width: calc(var(--circle-diameter) - 2 * @TimelineCss.LineThickness);
                 height: calc(var(--circle-diameter) - 2 * @TimelineCss.LineThickness);
-                background-color: @TimelineCss.LineColor;
+                background-color: currentcolor;
                 border-radius: 50%;
-                border: @TimelineCss.LineThickness solid @TimelineCss.LineColor;
+                border: @TimelineCss.LineThickness solid currentcolor;
                 margin: auto;
                 z-index: 5;
-            }
-
-            @@media (prefers-color-scheme: dark) {
-                .circle {
-                    background-color: @TimelineCss.DarkModeLineColor;
-                    border: @TimelineCss.LineThickness solid @TimelineCss.DarkModeLineColor;
-                }
             }
         }
     </style>

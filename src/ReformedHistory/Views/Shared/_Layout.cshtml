@@ -114,7 +114,8 @@
     }
 
     @@media (prefers-color-scheme: dark) {
-        #@bodyId {
+        #@bodyId, html {
+            color-scheme: dark;        
             background-color: @CssConstants.DarkModeBackgroundColor;
             color: @CssConstants.DarkModeTextColor !important;
         }

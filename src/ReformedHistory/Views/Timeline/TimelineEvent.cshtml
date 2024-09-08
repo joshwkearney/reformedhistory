@@ -111,18 +111,12 @@
                 }
 
                 a {
-                    color: black;
+                    color: inherit;
                     text-decoration: none;
                 }
 
                 a:hover {
                     text-decoration: underline;
-                }
-
-                @@media (prefers-color-scheme: dark) {
-                    a {
-                        color: @CssConstants.DarkModeTextColor;
-                    }
                 }
             }
 
@@ -131,14 +125,13 @@
                 height: calc(var(--circle-diameter) - 2 * @TimelineCss.LineThickness);
                 background-color: white;
                 border-radius: 50%;
-                border: @TimelineCss.LineThickness solid @TimelineCss.LineColor;
+                border: @TimelineCss.LineThickness solid currentcolor;
                 margin: auto;
                 z-index: 5;
             }
 
             @@media (prefers-color-scheme: dark) {
                 .circle {
-                    border: @TimelineCss.LineThickness solid @TimelineCss.DarkModeLineColor;
                     background-color: @CssConstants.DarkModeBackgroundColor;
                 }
             }
