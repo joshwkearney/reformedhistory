@@ -220,12 +220,18 @@
             a:hover {
                 text-decoration: underline;
             }
+
+            @@media (prefers-color-scheme: dark) {
+                a {
+                    color: @CssConstants.DarkModeTextColor;
+                }
+            }
         }
     </style>
 </div>
 
 <script>
-    /*var refTagger = {
+    var refTagger = {
         settings: {
             bibleVersion: 'ESV'
         }
@@ -238,5 +244,5 @@
         g.src = 'https://api.reftagger.com/v2/RefTagger.js';
         g.nonce = refTagger.settings.nonce;
         s.parentNode.insertBefore(g, s);
-    }(document, 'script'));*/
+    }(document, 'script'));
 </script>
