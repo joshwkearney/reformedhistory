@@ -16,6 +16,7 @@
     <ItemGroup>
       <Content Remove="package-lock.json" />
       <Content Remove="Views\Content\Confessions\HeidelbergCatechism.cshtml" />
+      <Content Remove="Views\Content\DocumentLayout.cshtml" />
     </ItemGroup>
     
     <ItemGroup>

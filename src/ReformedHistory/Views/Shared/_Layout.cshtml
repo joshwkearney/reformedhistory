@@ -27,6 +27,7 @@
         <div class="Expander"></div>
         <a href="~/Home">Home</a>
         <a href="~/Timeline/">Timeline</a>
+        <!--<a href="~/Quotes">Quotes</a>-->
         <img class="RightFlourish" src="~/img/RightFlourish.svg">
     </nav>
 </header>
@@ -69,6 +70,7 @@
                 position: absolute;
                 height: 1.25rem;
                 width: auto;
+                display: none;
             }
 
             .LeftFlourish {
@@ -118,6 +120,14 @@
             color-scheme: dark;        
             background-color: @CssConstants.DarkModeBackgroundColor;
             color: @CssConstants.DarkModeTextColor !important;
+            
+            header {
+                //background-color: @CssConstants.HeaderColor;
+                
+                a {
+                    //color: black !important;
+                }
+            }
         }
     }
 </style>
