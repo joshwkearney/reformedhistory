@@ -74,21 +74,21 @@
                     flex: 1;
                     position: relative;    
                 }
-            }    
-            
-            .line {
-                height: 100%;
-                width: @TimelineCss.LineThickness;
-                background-color: @TimelineCss.LineColor;
-                position: absolute;
-                left: calc(1rem / 2 - @TimelineCss.LineThickness / 2);
-            }
-
-            @@media (prefers-color-scheme: dark) {
+                
                 .line {
-                    background-color: @TimelineCss.DarkModeLineColor;
+                    height: 100%;
+                    width: @TimelineCss.LineThickness;
+                    background-color: @TimelineCss.LineColor;
+                    position: absolute;
+                    left: calc(1rem / 2 - @TimelineCss.LineThickness / 2);
                 }
-            }
+
+                @@media (prefers-color-scheme: dark) {
+                    .line {
+                        background-color: @TimelineCss.DarkModeLineColor;
+                    }
+                }
+            }              
         }
     </style>
 
