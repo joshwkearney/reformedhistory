@@ -20,22 +20,6 @@
 </head>
 <body id="@bodyId">
 
-<header>
-    <nav class="TopNavigation">
-        <img class="LeftFlourish" src="~/img/LeftFlourish.svg">
-        <a class="SiteLink" href="~/">ReformedHistory.com</a>
-        <div class="Expander"></div>
-        <a href="~/Home">Home</a>
-        <a href="~/Timeline/">Timeline</a>
-        <!--<a href="~/Quotes">Quotes</a>-->
-        <img class="RightFlourish" src="~/img/RightFlourish.svg">
-    </nav>
-</header>
-
-<main>
-    @RenderBody()
-</main>
-
 <style>
     #@bodyId {
         max-height: calc(100vh - @CssConstants.HeaderHeight);
@@ -131,6 +115,22 @@
         }
     }
 </style>
+
+<header>
+    <nav class="TopNavigation">
+        <img class="LeftFlourish" src="~/img/LeftFlourish.svg">
+        <a class="SiteLink" href="~/">ReformedHistory.com</a>
+        <div class="Expander"></div>
+        <a href="~/Home">Home</a>
+        <a href="~/Timeline/">Timeline</a>
+        <!--<a href="~/Quotes">Quotes</a>-->
+        <img class="RightFlourish" src="~/img/RightFlourish.svg">
+    </nav>
+</header>
+
+<main>
+    @RenderBody()
+</main>
 
 <!-- Include the site's javascript -->
 <script src="~/js/site.js" asp-append-version="true"></script>

@@ -49,23 +49,6 @@
 }
 
 <div id="@id">
-    <partial name="TimelineStart" />
-
-    @foreach (var item in content.GetTimeline()) {
-        if (item is TimelineInfo.Event e) {
-            if (CanShowEvent(e)) {
-                <partial name="TimelineEvent" model="e" />
-            }
-        }
-        else if (item is TimelineInfo.EraBoundary era) {
-            if (CanShowEra(era)) {
-                <partial name="TimelineEra" model="era" />
-            }
-        }
-    }
-
-    <partial name="TimelineEnd" />
-    
     <style>
         #@id {        
             .row {
@@ -108,4 +91,21 @@
             }
         }
     </style>
+
+    <partial name="TimelineStart" />
+
+    @foreach (var item in content.GetTimeline()) {
+        if (item is TimelineInfo.Event e) {
+            if (CanShowEvent(e)) {
+                <partial name="TimelineEvent" model="e" />
+            }
+        }
+        else if (item is TimelineInfo.EraBoundary era) {
+            if (CanShowEra(era)) {
+                <partial name="TimelineEra" model="era" />
+            }
+        }
+    }
+
+    <partial name="TimelineEnd" />
 </div>

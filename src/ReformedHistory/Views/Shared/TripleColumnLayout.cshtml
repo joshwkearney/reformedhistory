@@ -8,37 +8,6 @@
 }
 
 <div id="@id">
-    <div class="GridContainerContainer">
-        <div class="TitleContainer">
-            <div class="TitleWrapper">
-                @await RenderSectionAsync("Title", false)
-            </div>
-        </div>
-        
-        <div class="GridContainer1Wrapper">
-            <div class="GridContainer1">
-                <div class="LeftSidebar">
-                    <div class="LeftWrapper">
-                        @await RenderSectionAsync("Sidebar1", false)
-                    </div>
-                </div>
-                <div class="RightSidebar">
-                    <div class="RightWrapper">
-                        @await RenderSectionAsync("Sidebar2", false)
-                    </div>
-                </div>
-            </div>
-        </div>
-
-        <div class="GridContainer2">
-            <div class="MainColumn">
-                <div class="MainWrapper">
-                    @RenderBody()
-                </div>
-            </div>
-        </div>
-    </div>
-
     <style>              
         #@id {
             margin-left: auto;
@@ -227,4 +196,35 @@
             }           
         }
     </style>
+
+    <div class="GridContainerContainer">
+        <div class="TitleContainer">
+            <div class="TitleWrapper">
+                @await RenderSectionAsync("Title", false)
+            </div>
+        </div>
+
+        <div class="GridContainer1Wrapper">
+            <div class="GridContainer1">
+                <div class="LeftSidebar">
+                    <div class="LeftWrapper">
+                        @await RenderSectionAsync("Sidebar1", false)
+                    </div>
+                </div>
+                <div class="RightSidebar">
+                    <div class="RightWrapper">
+                        @await RenderSectionAsync("Sidebar2", false)
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="GridContainer2">
+            <div class="MainColumn">
+                <div class="MainWrapper">
+                    @RenderBody()
+                </div>
+            </div>
+        </div>
+    </div>
 </div>

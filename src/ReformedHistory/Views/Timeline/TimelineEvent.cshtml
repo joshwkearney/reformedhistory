@@ -7,51 +7,6 @@
 }
 
 <div id="@id">
-    <div class="row spacingRow">
-        <div class="left"></div>
-        <div class="middle"><div class="line"></div></div>
-        <div class="right"></div>
-    </div>
-    
-    <div class="row headerRow">
-        <div class="left">
-            @if (Model.DateStart == Model.DateEnd) {
-                <div class="date">@Model.DateStart</div>
-            }
-            else {
-                <div class="date">@(Model.DateStart)—@(Model.DateEnd)</div>
-            }
-        </div>
-
-        <div class="middle">
-            <div class="line"></div>
-            <div class="circle"></div>
-        </div>
-
-        <div class="right">
-            @if (string.IsNullOrWhiteSpace(this.Model.Url)) {
-                <div class="title">@Model.Title</div>
-            }
-            else {
-                <div class="title"><a href="@Url.Content(Model.Url)">@Model.Title</a></div>
-            }
-        </div>
-    </div>
-
-    <div class="row contentRow">
-        <div class="left"></div>
-
-        <div class="middle">
-            <div class="line"></div>
-        </div>
-
-        <div class="right">
-            <div class="content">
-                <span>@Model.Description</span>
-            </div>
-        </div>
-    </div>
-
     <style>
         #@id {
             --circle-diameter: @TimelineCss.MiddleWidth;
@@ -137,4 +92,49 @@
             }
         }
     </style>
+
+    <div class="row spacingRow">
+        <div class="left"></div>
+        <div class="middle"><div class="line"></div></div>
+        <div class="right"></div>
+    </div>
+
+    <div class="row headerRow">
+        <div class="left">
+            @if (Model.DateStart == Model.DateEnd) {
+            <div class="date">@Model.DateStart</div>
+            }
+            else {
+            <div class="date">@(Model.DateStart)—@(Model.DateEnd)</div>
+            }
+        </div>
+
+        <div class="middle">
+            <div class="line"></div>
+            <div class="circle"></div>
+        </div>
+
+        <div class="right">
+            @if (string.IsNullOrWhiteSpace(this.Model.Url)) {
+            <div class="title">@Model.Title</div>
+            }
+            else {
+            <div class="title"><a href="@Url.Content(Model.Url)">@Model.Title</a></div>
+            }
+        </div>
+    </div>
+
+    <div class="row contentRow">
+        <div class="left"></div>
+
+        <div class="middle">
+            <div class="line"></div>
+        </div>
+
+        <div class="right">
+            <div class="content">
+                <span>@Model.Description</span>
+            </div>
+        </div>
+    </div>
 </div>

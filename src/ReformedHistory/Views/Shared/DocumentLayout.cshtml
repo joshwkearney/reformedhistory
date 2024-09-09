@@ -17,8 +17,6 @@
 
 @section Sidebar1 {
     <nav id="@tableOfContentsId">
-        @await RenderSectionAsync("DocumentNavigation", false)
-
         <style>
             #@tableOfContentsId {
                 font-family: "EB Garamond", serif;
@@ -66,13 +64,13 @@
                 }
             }
         </style>
+
+        @await RenderSectionAsync("DocumentNavigation", false)
     </nav>
 }
 
 @section Sidebar2 {
     <div id="@detailsId">
-        @await RenderSectionAsync("DocumentDetails", false)
-
         <style>
             #@detailsId {
                 font-size: 13pt;
@@ -113,12 +111,12 @@
                 }
             }
         </style>
+
+        @await RenderSectionAsync("DocumentDetails", false)
     </div>
 }
 
 <div id="@contentId">
-    @await RenderSectionAsync("DocumentContent", true)
-
     <style>
         #@contentId, #@titleId {
             font-size: 16pt;
@@ -211,6 +209,8 @@
             }
         }
     </style>
+
+    @await RenderSectionAsync("DocumentContent", true)
 </div>
 
 <script>
