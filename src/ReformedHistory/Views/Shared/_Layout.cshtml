@@ -102,10 +102,9 @@
             }
             
             .HamburgerMenu {                
-                width: 1.25rem;
+                width: @CssConstants.HeaderHeight;
                 height: @CssConstants.HeaderHeight;
                 position: relative;
-                margin-right: 1.25rem;
                 display: none;
                 
                 input[type=checkbox] {
@@ -119,7 +118,7 @@
                     height: 1px;
                     width: 1.25rem;
                     position: absolute;
-                    left: 0;
+                    left: calc((100% - 1.25rem) / 2);
                     right: 0;
                     
                     transition: 
@@ -186,7 +185,7 @@
                 input[type=checkbox]:checked ~ .Line1 {
                     transform: rotate(45deg);
                     top: 50%;
-                    left: calc(-1 * (1.25rem * sqrt(2) - 1.25rem) / 2);
+                    left: calc((100% - 1.25rem) / 2 - (1.25rem * sqrt(2) - 1.25rem) / 2);
                     width: calc(1.25rem * sqrt(2) * 0.95);
                 }
                 
@@ -197,7 +196,7 @@
                 input[type=checkbox]:checked ~ .Line3 {
                     transform: rotate(-45deg);
                     top: 50%;
-                    left: calc(-1 * (1.25rem * sqrt(2) - 1.25rem) / 2);
+                    left: calc((100% - 1.25rem) / 2 - (1.25rem * sqrt(2) - 1.25rem) / 2);
                     width: calc(1.25rem * sqrt(2) * 0.95);
                 }
             }
