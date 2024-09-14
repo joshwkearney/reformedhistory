@@ -65,7 +65,11 @@
                 left: calc(100% + 1.5rem);
             }
 
-            @@media (max-width: calc(@CssConstants.MainContentWidth + 350px)) {
+            @@media (@CssConstants.TwoColumnsMediaQuery) {            
+                max-width: calc(min(@CssConstants.MainContentWidth * 1.5 - 2rem, 100% - 2rem));
+            }
+
+            @@media (max-width: calc(@CssConstants.MainContentWidth + 350px)) {            
                 .LeftFlourish, .RightFlourish {
                     display: none;
                 }
@@ -96,6 +100,107 @@
             .Expander {
                 flex-grow: 1;
             }
+            
+            .HamburgerMenu {                
+                width: 1.25rem;
+                height: @CssConstants.HeaderHeight;
+                position: relative;
+                margin-right: 1.25rem;
+                display: none;
+                
+                input[type=checkbox] {
+                    display: none;
+                }
+                
+                .Line1, .Line2, .Line3 {
+                    margin: 0;
+                    border: none;
+                    background-color: white;
+                    height: 1px;
+                    width: 1.25rem;
+                    position: absolute;
+                    left: 0;
+                    right: 0;
+                    
+                    transition: 
+                        top 150ms ease-in-out,
+                        bottom 150ms ease-in-out, 
+                        left 150ms ease-in-out, 
+                        width 150ms ease-in-out, 
+                        opacity 150ms ease-in-out,
+                        transform 150ms ease-in-out;
+                }
+                
+                .Line1 {
+                    top: calc((100% - 1.25rem) / 2);
+                }
+                
+                .Line2 {
+                    top: 50%;
+                }
+                
+                .Line3 {
+                    top: calc((100% - 1.25rem) / 2 + 1.25rem);
+                }
+                
+                .MobileNavigation {
+                    position: fixed;
+                    top: @CssConstants.HeaderHeight;
+                    bottom: 0;
+                    left: 0;
+                    right: 0;
+                    background-color: @CssConstants.GoldColor;
+                    justify-content: center;
+                    align-items: flex-start;
+                    display: flex;
+                    visibility: hidden;
+                    opacity: 0;
+                    color: black;
+                    
+                    transition: 
+                        visibility 100ms ease-in-out,
+                        opacity 100ms ease-in-out;
+                        
+                    .MobileLinks {
+                        display: flex;
+                        flex-direction: column;
+                        padding-top: 3rem;
+                    }
+                        
+                    a {
+                        color: inherit;
+                        display: block;
+                        margin-top: 2rem;
+                        width: 100%;
+                        text-align: center;
+                        margin-right: 0;
+                        font-size: 20pt;
+                    }
+                }
+                
+                input[type=checkbox]:checked ~ .MobileNavigation {
+                    visibility: visible;
+                    opacity: 1;
+                }
+                
+                input[type=checkbox]:checked ~ .Line1 {
+                    transform: rotate(45deg);
+                    top: 50%;
+                    left: calc(-1 * (1.25rem * sqrt(2) - 1.25rem) / 2);
+                    width: calc(1.25rem * sqrt(2) * 0.95);
+                }
+                
+                input[type=checkbox]:checked ~ .Line2 {
+                    opacity: 0;
+                }
+                
+                input[type=checkbox]:checked ~ .Line3 {
+                    transform: rotate(-45deg);
+                    top: 50%;
+                    left: calc(-1 * (1.25rem * sqrt(2) - 1.25rem) / 2);
+                    width: calc(1.25rem * sqrt(2) * 0.95);
+                }
+            }
         }
     }
 
@@ -104,14 +209,24 @@
             color-scheme: dark;        
             background-color: @CssConstants.DarkModeBackgroundColor;
             color: @CssConstants.DarkModeTextColor !important;
-            
-            header {
-                //background-color: @CssConstants.HeaderColor;
-                
-                a {
-                    //color: black !important;
-                }
+        }
+        
+        .HamburgerMenu .MobileNavigation {
+            background-color: #222 !important;
+        
+            a {
+                color: @CssConstants.DarkModeTextColor !important;
             }
+        }  
+    }
+    
+    @@media (max-width: 600px) {
+        .HamburgerMenu {
+            display: block !important;
+        }
+    
+        .TopNavigation > .PageLink {
+            display: none;
         }
     }
 </style>
@@ -121,9 +236,23 @@
         <img class="LeftFlourish" src="~/img/LeftFlourish.svg">
         <a class="SiteLink" href="~/">ReformedHistory.com</a>
         <div class="Expander"></div>
-        <a href="~/Home">Home</a>
-        <a href="~/Timeline/">Timeline</a>
+        <a class="PageLink" href="~/Home">Home</a>
+        <a class="PageLink" href="~/Timeline/">Timeline</a>
         <!--<a href="~/Quotes">Quotes</a>-->
+        
+        <label class="HamburgerMenu" for="HamburgerMenuToggle">
+            <input id="HamburgerMenuToggle" type="checkbox" />
+            <div class="Line1"></div>
+            <div class="Line2"></div>
+            <div class="Line3"></div>
+            <nav class="MobileNavigation">
+                <div class="MobileLinks">
+                    <a class="PageLink" href="~/Home">Home</a>
+                    <a class="PageLink" href="~/Timeline/">Timeline</a>
+                </div>
+            </nav>
+        </label>
+        
         <img class="RightFlourish" src="~/img/RightFlourish.svg">
     </nav>
 </header>
