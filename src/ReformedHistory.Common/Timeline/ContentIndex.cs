@@ -1,35 +1,36 @@
 using ReformedHistory.Models;
+using System;
 
 namespace ReformedHistory.Views.Content;
 
 public class ContentIndex {
     private static IReadOnlyList<TimelineInfo> Timelime { get; } = [
-		new TimelineInfo.Event() {
-			Title = "Westminster Shorter Catechism",
-			DateStart = 1647,
-			DateEnd = 1647,
-			Url = "~/Content/Catechisms/WestminsterShorter",
-			Description = "The Westminster Shorter Catechism, written alongside the longer, was based upon the Heidelberg " +
+        new TimelineInfo.Event() {
+            Title = "Westminster Shorter Catechism",
+            DateStart = 1647,
+            DateEnd = 1647,
+            Url = "~/Content/Catechisms/WestminsterShorter",
+            Description = "The Westminster Shorter Catechism, written alongside the longer, was based upon the Heidelberg " +
                           "Catechism and Calvin's Geneva Catechism to instruct children and families on the Christian faith. " +
                           "It provides a concise summary of Reformed doctrine and is capable of being memorized at any age.",
-			Type = TimelineEventType.Catechism,
-			Tradition = TimelineEventTradition.Reformed,
-			Era = TimelineEventEra.Reformation
-		},
-		new TimelineInfo.Event() {
-			Title = "Westminster Larger Catechism",
-			DateStart = 1647,
-			DateEnd = 1647,
-			Url = "~/Content/Catechisms/WestminsterLarger",
-			Description = "The Westminster Larger Catechism, written alongside the shorter, " +
+            Type = TimelineEventType.Catechism,
+            Tradition = TimelineEventTradition.Reformed,
+            Era = TimelineEventEra.Reformation
+        },
+        new TimelineInfo.Event() {
+            Title = "Westminster Larger Catechism",
+            DateStart = 1647,
+            DateEnd = 1647,
+            Url = "~/Content/Catechisms/WestminsterLarger",
+            Description = "The Westminster Larger Catechism, written alongside the shorter, " +
                           "was designed to supplement and expand upon the contents of the Shorter. It presents " +
                           "a full and balanced summary of the Christian faith and is more suitable for those who " +
                           "have attained some level of spiritual maturity",
-			Type = TimelineEventType.Catechism,
-			Tradition = TimelineEventTradition.Reformed,
-			Era = TimelineEventEra.Reformation
-		},
-		new TimelineInfo.Event() {
+            Type = TimelineEventType.Catechism,
+            Tradition = TimelineEventTradition.Reformed,
+            Era = TimelineEventEra.Reformation
+        },
+        new TimelineInfo.Event() {
             Title = "Westminster Confession of Faith",
             DateStart = 1646,
             DateEnd = 1646,
@@ -109,18 +110,18 @@ public class ContentIndex {
             Tradition = TimelineEventTradition.Reformed,
             Era = TimelineEventEra.Reformation
         },
-		new TimelineInfo.Event() {
-			Title = "Belgic Confession",
-			DateStart = 1561,
-			DateEnd = 1561,
-			Url = "~/Content/Confessions/BelgicConfession",
-			Description = "Written by Guido de Brès before his martyrdom, the Belgic confession is the primary " +
+        new TimelineInfo.Event() {
+            Title = "Belgic Confession",
+            DateStart = 1561,
+            DateEnd = 1561,
+            Url = "~/Content/Confessions/BelgicConfession",
+            Description = "Written by Guido de Brès before his martyrdom, the Belgic confession is the primary " +
                           "confession of the Dutch reformed church, and also one of the Three Forms of Unity.",
-			Type = TimelineEventType.Confession,
-			Tradition = TimelineEventTradition.Reformed,
-			Era = TimelineEventEra.Reformation
-		},
-		new TimelineInfo.Event() {
+            Type = TimelineEventType.Confession,
+            Tradition = TimelineEventTradition.Reformed,
+            Era = TimelineEventEra.Reformation
+        },
+        new TimelineInfo.Event() {
             Title = "The Scots Confession",
             DateStart = 1560,
             DateEnd = 1560,
@@ -162,6 +163,18 @@ public class ContentIndex {
             Description = "Written by Ulrich Zwingli in 1523 as a defense of his protestant theology, these articles " +
                           "would begin the Swiss Reformation.",
             Type = TimelineEventType.Confession,
+            Tradition = TimelineEventTradition.Reformed,
+            Era = TimelineEventEra.Reformation
+        },
+        new TimelineInfo.Event() {
+            Title = "Disputation on the Power and Efficacy of Indulgences (Ninety-five Theses)",
+            DateStart = 1517,
+            DateEnd = 1517,
+            Url = "~/Content/Letters/95Theses",
+            Description = "The 95 Theses were written by Martin Luther in 1517 to address and critique the practice of selling " +
+                          "indulgences in the Catholic Church. Luther sought to encourage debate on the nature of repentance and the role of " +
+                          "indulgences in Christian life, calling for a return to biblical teachings on forgiveness and grace.",
+            Type = TimelineEventType.Letter,
             Tradition = TimelineEventTradition.Reformed,
             Era = TimelineEventEra.Reformation
         },
