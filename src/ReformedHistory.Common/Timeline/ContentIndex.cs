@@ -170,7 +170,7 @@ public class ContentIndex {
             Title = "Luther's Ninety-Five Theses",
             DateStart = 1517,
             DateEnd = 1517,
-            Url = "~/Content/Letters/95Theses",
+            Url = "~/Content/Confessions/95Theses",
             Description = "Written by Martin Luther in 1517 to address the practice of selling " +
                           "indulgences, the ninety-five thesis presented a critique of the medieval church that " + 
                           "kicked off the protestant reformation.",
@@ -217,6 +217,17 @@ public class ContentIndex {
             Url = "~/Content/Councils/Orange2",
             Description = "Convened to address semi-Pelagianism, the second council of Orange emphasized the necessity " +
                           "of grace and the inability of man to seek God without grace",
+            Type = TimelineEventType.Council,
+            Tradition = TimelineEventTradition.Reformed | TimelineEventTradition.Lutheran  | TimelineEventTradition.Anglican,
+            Era = TimelineEventEra.Ancient
+        },
+        new TimelineInfo.Event() {
+            Title = "The Council of Chalcedon",
+            DateStart = 451,
+            DateEnd = 451,
+            Url = "~/Content/Councils/Chalcedon",
+            Description = "Chalcedon sought to uphold the two natures of Christ without confusion or admixture against " +
+                          "the monophysites, the error opposite of Nestorianism",
             Type = TimelineEventType.Council,
             Tradition = TimelineEventTradition.Reformed | TimelineEventTradition.Lutheran  | TimelineEventTradition.Anglican,
             Era = TimelineEventEra.Ancient
