@@ -83,7 +83,7 @@ public class ContentIndex {
             Description = "Written after Henry VIII broke with the Roman church, the 39 articles created a via media " +
                           "between catholic and protestant doctrine, and would be the standard for the Church of England",
             Type = TimelineEventType.Confession,
-            Tradition = TimelineEventTradition.Anglican,
+            Tradition = TimelineEventTradition.Anglican | TimelineEventTradition.Reformed,
             Era = TimelineEventEra.Reformation
         },
         new TimelineInfo.Event() {
@@ -167,15 +167,15 @@ public class ContentIndex {
             Era = TimelineEventEra.Reformation
         },
         new TimelineInfo.Event() {
-            Title = "Disputation on the Power and Efficacy of Indulgences (Ninety-five Theses)",
+            Title = "Luther's Ninety-Five Theses",
             DateStart = 1517,
             DateEnd = 1517,
             Url = "~/Content/Letters/95Theses",
-            Description = "The 95 Theses were written by Martin Luther in 1517 to address and critique the practice of selling " +
-                          "indulgences in the Catholic Church. Luther sought to encourage debate on the nature of repentance and the role of " +
-                          "indulgences in Christian life, calling for a return to biblical teachings on forgiveness and grace.",
+            Description = "Written by Martin Luther in 1517 to address the practice of selling " +
+                          "indulgences, the ninety-five thesis presented a critique of the medieval church that " + 
+                          "kicked off the protestant reformation.",
             Type = TimelineEventType.Letter,
-            Tradition = TimelineEventTradition.Reformed,
+            Tradition = TimelineEventTradition.Reformed | TimelineEventTradition.Lutheran,
             Era = TimelineEventEra.Reformation
         },
         new TimelineInfo.EraBoundary() {
