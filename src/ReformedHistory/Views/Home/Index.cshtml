@@ -8,37 +8,12 @@
 }
 
 <div id="@id">
-    <div class="Banner">
-        <div class="Content">
-            <h1>Welcome to Reformed History</h1>
-            <p>Providing high-quality access to the reformed tradition</p>
-        </div>
-    </div>
-
-    <div class="Intro">
-        <div class="Content">
-            <h2>Our Mission</h2>
-            <p>
-                This site is dedicated to making the primary sources from the reformed tradition more widely
-                accessible for study and devotion. We hope to help preserve the rich heritage of the reformed faith,
-                from the ancient ecumenical councils of the early church to the many confessions of the reformation.
-            </p>
-            <p>
-                Below you can explore our timeline of significant confessions, councils, and other documents from
-                church history, organized by type, time period, and tradition. 
-            </p>
-            <br />
-            <div class="ExploreContainer">
-                <a class="Button" href="~/Timeline" role="button">Explore the Timeline</a>
-            </div>
-        </div>
-    </div>
-
     <style>
         #@id {        
             .Content {
                 max-width: calc(@CssConstants.MainContentWidth - 2rem);                  
                 padding: 1rem;
+                padding-bottom: 3rem;
                 font-family: @Html.Raw(CssConstants.DocumentFont);
                 margin-left: auto;
                 margin-right: auto;
@@ -118,4 +93,30 @@
             }
         }        
     </style>
+
+    <div class="Banner">
+        <div class="Content">
+            <h1>Welcome to Reformed History</h1>
+            <p>Providing high-quality access to the reformed tradition</p>
+        </div>
+    </div>
+
+    <div class="Intro">
+        <div class="Content">
+            <h2>Our Mission</h2>
+            <p>
+                This site is dedicated to making the primary sources from the reformed tradition more widely
+                accessible for those interested. We hope to help preserve the rich history of the reformed faith,
+                from the ancient ecumenical councils of the early church to the many confessions of the reformation.
+            </p>
+            <p>
+                Below you can explore our timeline of significant confessions, councils, and other documents from
+                church history, organized by type, time period, and tradition.
+            </p>
+            <br />
+            <div class="ExploreContainer">
+                <a class="Button" href="~/Timeline" role="button">Explore the Timeline</a>
+            </div>
+        </div>
+    </div>
 </div>
