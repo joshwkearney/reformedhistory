@@ -12,6 +12,7 @@ public class TimelineFilters {
             | TimelineEventType.Council
             | TimelineEventType.Letter
             | TimelineEventType.Sermon
+            | TimelineEventType.Commentary
     };
     
     public required string TextSearch { get; init; }
