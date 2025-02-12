@@ -11,11 +11,12 @@ public enum TimelineEventTradition {
 [Flags]
 public enum TimelineEventType {
     None       = 0,
-    Confession = 0b00001, 
-    Council    = 0b00010, 
-    Letter     = 0b00100,
-    Sermon     = 0b01000,
-    Catechism  = 0b10000
+    Confession = 0b000001, 
+    Council    = 0b000010, 
+    Letter     = 0b000100,
+    Sermon     = 0b001000,
+    Catechism  = 0b010000,
+    Commentary = 0b100000
 }
 
 [Flags]

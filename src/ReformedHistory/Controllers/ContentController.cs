@@ -31,8 +31,8 @@ public class ContentController : Controller {
         return View("Sermons/" + id);
     }
 
-    public IActionResult OtherTexts(string id)
+    public IActionResult Commentaries(string id)
     {
-        return View("OtherTexts/" + id);
+        return View("Commentaries/" + id);
     }
 }

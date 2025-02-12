@@ -172,7 +172,7 @@ public class ContentIndex {
             DateEnd = 1517,
             Url = "~/Content/Confessions/95Theses",
             Description = "Written by Martin Luther in 1517 to address the practice of selling " +
-                          "indulgences, the ninety-five thesis presented a critique of the medieval church that " + 
+                          "indulgences, the ninety-five thesis presented a critique of the medieval church that " +
                           "kicked off the protestant reformation.",
             Type = TimelineEventType.Letter,
             Tradition = TimelineEventTradition.Reformed | TimelineEventTradition.Lutheran,
@@ -309,6 +309,17 @@ public class ContentIndex {
                           "synod that was recognized as ecumenical at Chalcedon in 451.",
             Type = TimelineEventType.Council,
             Tradition = TimelineEventTradition.Reformed | TimelineEventTradition.Lutheran  | TimelineEventTradition.Anglican,
+            Era = TimelineEventEra.Ancient
+        },
+        new TimelineInfo.Event() {
+            Title = "Athanasius On Luke 10:22 and Matthew 11:27",
+            DateStart = 330,
+            DateEnd = 330,
+            Url = "~/Content/Commentaries/AthanasiusOnLuke1022Matthew1127",
+            Description = "Combatting the Arian heresy, Athansius writes on Luke 10:22 and Matthew 11:27 seeking to prove the " +
+                          "eternal unity of the Father and the Son, and to refute the Arian interpretation of these passages.",
+            Type = TimelineEventType.Commentary,
+            Tradition = TimelineEventTradition.Reformed | TimelineEventTradition.Lutheran | TimelineEventTradition.Anglican,
             Era = TimelineEventEra.Ancient
         },
         new TimelineInfo.Event() {
