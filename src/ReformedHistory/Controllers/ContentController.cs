@@ -30,4 +30,8 @@ public class ContentController : Controller {
     public IActionResult Sermons(string id) {
         return View("Sermons/" + id);
     }
+    
+    public IActionResult Secret() {
+        return View("Confessions/Secret/Index");
+    }
 }

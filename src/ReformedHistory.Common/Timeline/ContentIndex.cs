@@ -143,6 +143,18 @@ public class ContentIndex {
             Tradition = TimelineEventTradition.Lutheran,
             Era = TimelineEventEra.Reformation
         },
+        /*new TimelineInfo.Event() {
+            Title = "On the One and Eternal Covenant of God",
+            DateStart = 1534,
+            DateEnd = 1534,
+            Url = "~/Content/Sermons/BullingerOnTheCovenant",
+            Description = "This treatise was Bullinger's defense of covenant theology, where he argues for one " + 
+                          "covenant of grace from Adam to Christ, condition on faith and obedience. He also defends " + 
+                          "the inclusion of infants in the covenant.",
+            Type = TimelineEventType.Confession,
+            Tradition = TimelineEventTradition.Reformed,
+            Era = TimelineEventEra.Reformation
+        },*/
         new TimelineInfo.Event() {
             Title = "The Augsburg Confession",
             DateStart = 1530,
