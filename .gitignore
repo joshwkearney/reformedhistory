@@ -8,3 +8,4 @@ obj
 ./dotnet-install.sh
 ./publish/
 /publish
+src/ReformedHistory/ReformedHistory.csproj.user

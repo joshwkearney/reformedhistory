@@ -222,6 +222,15 @@
 
                         <label for="CatechismCheckbox">Catechisms</label>
                     </div>
+                    <div class="checkbox">
+                        <input id="CommentaryCheckbox"
+                               name="CommentaryCheckbox"
+                               type="checkbox"
+                               value="true"
+                               @(model.Type.HasFlag(TimelineEventType.Commentary) ? "checked" : "")>
+
+                        <label for="CommentaryCheckbox">Commentaries</label>
+                    </div>
                 </div>
             </div>
         </form>

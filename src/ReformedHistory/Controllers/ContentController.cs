@@ -34,4 +34,9 @@ public class ContentController : Controller {
     public IActionResult Secret() {
         return View("Confessions/Secret/Index");
     }
+
+    public IActionResult Commentaries(string id)
+    {
+        return View("Commentaries/" + id);
+    }
 }

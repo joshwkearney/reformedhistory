@@ -51,6 +51,11 @@ public class TimelineController : Controller {
         if (!string.IsNullOrWhiteSpace(request.SermonCheckbox)) {
             type |= TimelineEventType.Sermon;
         }
+
+        if (!string.IsNullOrWhiteSpace(request.CommentaryCheckbox))
+        {
+            type |= TimelineEventType.Commentary;
+        }
         
         if (!string.IsNullOrWhiteSpace(request.CatechismCheckbox)) {
             type |= TimelineEventType.Catechism;
@@ -93,6 +98,7 @@ public record TimelineContentRequest {
     public string CouncilCheckbox { get; init; } = string.Empty;
     public string CatechismCheckbox { get; init; } = string.Empty;
     public string SermonCheckbox { get; init; } = string.Empty;
+    public string CommentaryCheckbox { get; init; } = string.Empty;
     
     public string ReformationCheckbox { get; init; } = string.Empty;
     public string MedievalCheckbox { get; init; } = string.Empty;
